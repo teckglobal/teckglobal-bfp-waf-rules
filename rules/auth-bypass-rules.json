@@ -1,7 +1,7 @@
 [
     {
         "id": "custom-950-100",
-        "pattern": "@rx (?i)(?:admin=1|user_id=1|role=admin|wp_capabilities)|;[\s\x0b]*?(?:or|and)[\s\x0b]*?['\"][\s\x0b]*?(?:1=1|true)",
+        "pattern": "(?i)(?:admin=1|user_id=1|role=admin|wp_capabilities)|;[\\s\\x0b]*?(?:or|and)[\\s\\x0b]*?['\"][\\s\\x0b]*?(?:1=1|true)",
         "msg": "Authentication bypass attempt detected",
         "score": 5,
         "action": "drop",
