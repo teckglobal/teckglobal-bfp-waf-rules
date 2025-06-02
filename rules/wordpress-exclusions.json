@@ -1,0 +1,44 @@
+[
+    {
+        "id": "custom-900-100",
+        "pattern": "/wp-login\\.php",
+        "msg": "Allow WordPress login form",
+        "score": 0,
+        "action": "allow",
+        "phase": 1,
+        "paranoia_level": 1,
+        "targets": "REQUEST_URI",
+        "transformations": ["none"],
+        "enabled": true,
+        "chain_level": 0,
+        "parent_rule_id": null
+    },
+    {
+        "id": "custom-900-110",
+        "pattern": "/wp-comments-post\\.php",
+        "msg": "Allow WordPress comment posting",
+        "score": 0,
+        "action": "allow",
+        "phase": 1,
+        "paranoia_level": 1,
+        "targets": "REQUEST_URI",
+        "transformations": ["none"],
+        "enabled": true,
+        "chain_level": 0,
+        "parent_rule_id": null
+    },
+    {
+        "id": "custom-900-120",
+        "pattern": "/wp-json/wp/v[0-9]+/(?:posts|pages|templates)",
+        "msg": "Allow Gutenberg editor",
+        "score": 0,
+        "action": "allow",
+        "phase": 1,
+        "paranoia_level": 1,
+        "targets": "REQUEST_URI",
+        "transformations": ["none"],
+        "enabled": true,
+        "chain_level": 0,
+        "parent_rule_id": null
+    }
+]

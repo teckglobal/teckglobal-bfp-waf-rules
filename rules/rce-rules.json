@@ -1,7 +1,7 @@
 [
     {
         "id": "custom-932-100",
-        "pattern": "(?i)\\b(?:system|exec|passthru|shell_exec|eval|proc_open|popen|curl_exec|xp_cmdshell)\\b|\\b(?:whoami|net\\s+user|ping|tracert|cmd\\.exe)\\b|[|&;`\\$\\(\\)]",
+        "pattern": "(?i)\\b(?:system|exec|passthru|shell_exec|eval|proc_open|popen|curl_exec|xp_cmdshell)\\b|\\b(?:whoami|net\\s+user|ping|tracert|cmd\\.exe)\\b|[;&|`\\$]",
         "msg": "Remote Code Execution attempt detected",
         "score": 5,
         "action": "drop",
