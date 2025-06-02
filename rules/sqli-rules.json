@@ -1,14 +1,14 @@
 [
     {
         "id": "custom-942-100",
-        "pattern": "union\\s+select|information_schema|@@version",
+        "pattern": "(?i)(?:union\\s+(?:all\\s+)?select|information_schema|@@version|(?:select|insert|update|delete)\\b.*?\\b(?:from|into|where))|(?:--|#|;|\/\\*\\!|\\b(?:exec|benchmark|waitfor|sleep)\\b)",
         "msg": "SQL injection attempt detected",
         "score": 5,
         "action": "drop",
         "phase": 2,
         "paranoia_level": 1,
-        "targets": "REQUEST_COOKIES|!REQUEST_COOKIES:/__utm/|REQUEST_COOKIES_NAMES|REQUEST_HEADERS:User-Agent|REQUEST_HEADERS:Referer|ARGS_NAMES|ARGS|XML:/*",
-        "transformations": ["none", "utf8toUnicode", "urlDecodeUni", "removeNulls"],
+        "targets": "REQUEST_COOKIES|!REQUEST_COOKIES:/__utm/|REQUEST_COOKIES_NAMES|REQUEST_HEADERS:User-Agent|REQUEST_HEADERS:Referer|ARGS_NAMES|ARGS|REQUEST_URI",
+        "transformations": ["none", "urlDecodeUni", "removeNulls"],
         "enabled": true,
         "chain_level": 0,
         "parent_rule_id": null
