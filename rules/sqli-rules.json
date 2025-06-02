@@ -1,22 +1,8 @@
 [
     {
         "id": "custom-942-100",
-        "pattern": "(?i)(?:union\\s+(?:all\\s+)?select|information_schema|@@version|(?:select|insert|update|delete)\\b.*?\\b(?:from|into|where))|(?:--|#|;|\/\\*\\!|\\b(?:exec|benchmark|xp_cmdshell)\\b)",
+        "pattern": "(?i)(?:union\\s+(?:all\\s+)?select|information_schema|@@version|(?:select|insert|update|delete)\\b.*?\\b(?:from|into|where))|(?:--|#|;|\/\\*\\!|\\b(?:exec|benchmark|waitfor|sleep)\\b)",
         "msg": "SQL injection attempt detected",
-        "score": 5,
-        "action": "drop",
-        "phase": 2,
-        "paranoia_level": 1,
-        "targets": "REQUEST_COOKIES|!REQUEST_COOKIES:/__utm/|REQUEST_COOKIES_NAMES|REQUEST_HEADERS:User-Agent|REQUEST_HEADERS:Referer|ARGS_NAMES|ARGS|REQUEST_URI",
-        "transformations": ["none", "urlDecodeUni", "removeNulls"],
-        "enabled": true,
-        "chain_level": 0,
-        "parent_rule_id": null
-    },
-    {
-        "id": "custom-942-110",
-        "pattern": "(?i)\\b(?:sleep|waitfor\\s+delay|pg_sleep|dbms_lock.sleep)\\b",
-        "msg": "Time-based SQL injection attempt detected",
         "score": 5,
         "action": "drop",
         "phase": 2,

@@ -1,22 +1,8 @@
 [
     {
         "id": "custom-941-100",
-        "pattern": "(?i)<(?:script|iframe|img|object|embed|svg|form|input|meta)\\b[^>]*>|(?:javascript:|data:|vbscript:)",
+        "pattern": "(?i)<(?:script|iframe|img|object|embed|svg|form|input|meta)\\b[^>]*>|(?:on\\w+\\s*=|javascript:|data:|vbscript:)",
         "msg": "XSS attempt detected",
-        "score": 5,
-        "action": "drop",
-        "phase": 2,
-        "paranoia_level": 1,
-        "targets": "REQUEST_COOKIES|!REQUEST_COOKIES:/__utm/|REQUEST_COOKIES_NAMES|REQUEST_HEADERS:User-Agent|REQUEST_HEADERS:Referer|ARGS_NAMES|ARGS|REQUEST_URI",
-        "transformations": ["none", "urlDecodeUni", "htmlEntityDecode", "jsDecode", "removeNulls"],
-        "enabled": true,
-        "chain_level": 0,
-        "parent_rule_id": null
-    },
-    {
-        "id": "custom-941-110",
-        "pattern": "(?i)on(?:error|load|click|mouseover|submit|focus|blur|change|key(?:down|up|press))\\s*=",
-        "msg": "XSS event handler attempt detected",
         "score": 5,
         "action": "drop",
         "phase": 2,
