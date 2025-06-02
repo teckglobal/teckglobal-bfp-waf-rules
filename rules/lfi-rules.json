@@ -1,0 +1,16 @@
+[
+    {
+        "id": "custom-930-100",
+        "pattern": "(?i)(?:\\/|\\\\)(?:etc\\/(?:passwd|shadow|group)|windows\\/(?:win\\.ini|system\\.ini)|boot\\.ini)|\\.\\.\\/|\\.\\.\\\\",
+        "msg": "Local File Inclusion attempt detected",
+        "score": 5,
+        "action": "drop",
+        "phase": 2,
+        "paranoia_level": 1,
+        "targets": "REQUEST_COOKIES|!REQUEST_COOKIES:/__utm/|REQUEST_COOKIES_NAMES|REQUEST_HEADERS:User-Agent|REQUEST_HEADERS:Referer|ARGS_NAMES|ARGS|REQUEST_URI",
+        "transformations": ["none", "urlDecodeUni", "removeNulls"],
+        "enabled": true,
+        "chain_level": 0,
+        "parent_rule_id": null
+    }
+]

@@ -1,7 +1,7 @@
 [
     {
         "id": "custom-949-100",
-        "pattern": "_wpnonce=|[?&](action|method)=(delete|update|edit|add)|form\\s+action=[\"'][^\"']*wp-admin",
+        "pattern": "(?i)_wpnonce=|[?&](?:action|method)=(?:delete|update|edit|add)(?:$|&)|form\\s+action=[\"'][^\"']*(?:wp-admin|wp-login\\.php)",
         "msg": "Potential CSRF attack detected",
         "score": 5,
         "action": "drop",
