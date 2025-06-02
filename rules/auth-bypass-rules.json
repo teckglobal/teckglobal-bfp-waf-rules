@@ -8,6 +8,8 @@
         "phase": 2,
         "paranoia_level": 1,
         "targets": "REQUEST_COOKIES|!REQUEST_COOKIES:/__utm/|REQUEST_COOKIES_NAMES|ARGS_NAMES|ARGS|REQUEST_URI",
-        "transformations": ["none", "urlDecodeUni", "htmlEntityDecode", "removeNulls"]
+        "transformations": ["none", "urlDecodeUni", "htmlEntityDecode", "removeNulls"],
+        "chain_level": 0,
+        "parent_rule_id": null
     }
 ]
