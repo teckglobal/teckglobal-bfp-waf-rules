@@ -1,0 +1,13 @@
+[
+    {
+        "id": "custom-949-100",
+        "pattern": "@rx (?i)_wpnonce=|[?&](?:action|method)=[^&]*(?:delete|update|edit|add)|form[^>]*action=[\"'][^\"']*wp-admin",
+        "msg": "Potential CSRF attack detected",
+        "score": 5,
+        "action": "drop",
+        "phase": 2,
+        "paranoia_level": 1,
+        "targets": "REQUEST_COOKIES|!REQUEST_COOKIES:/__utm/|REQUEST_COOKIES_NAMES|REQUEST_HEADERS:Referer|ARGS_NAMES|ARGS|REQUEST_URI",
+        "transformations": ["none", "urlDecodeUni", "htmlEntityDecode", "removeNulls"]
+    }
+]

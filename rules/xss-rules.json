@@ -1,0 +1,13 @@
+[
+    {
+        "id": "custom-941-100",
+        "pattern": "@detectXSS",
+        "msg": "XSS via libinjection",
+        "score": 5,
+        "action": "drop",
+        "phase": 2,
+        "paranoia_level": 1,
+        "targets": "REQUEST_COOKIES|!REQUEST_COOKIES:/__utm/|REQUEST_COOKIES_NAMES|REQUEST_HEADERS:User-Agent|REQUEST_HEADERS:Referer|ARGS_NAMES|ARGS|XML:/*",
+        "transformations": ["none", "utf8toUnicode", "urlDecodeUni", "htmlEntityDecode", "jsDecode", "cssDecode", "removeNulls"]
+    }
+]
