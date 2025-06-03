@@ -1,13 +1,13 @@
 [
     {
         "id": "custom-932-100",
-        "pattern": "(?i)\\b(?:system|exec|passthru|shell_exec|eval|proc_open|popen|curl_exec|xp_cmdshell)\\b|\\b(?:whoami|net\\s+user|ping|tracert|cmd\\.exe)\\b|[;&|`\\$]",
+        "pattern": "(?i)\\b(?:system|exec|passthru|shell_exec|eval|proc_open|popen|curl_exec|xp_cmdshell)\\b|\\b(?:whoami|net\\s+user|ping|tracert|cmd\\.exe)\\b|[;&|`]",
         "msg": "Remote Code Execution attempt detected",
         "score": 5,
         "action": "drop",
         "phase": 2,
         "paranoia_level": 1,
-        "targets": "REQUEST_COOKIES|!REQUEST_COOKIES:/__utm/|REQUEST_COOKIES_NAMES|REQUEST_HEADERS:User-Agent|REQUEST_HEADERS:Referer|ARGS_NAMES|ARGS|REQUEST_URI",
+        "targets": "REQUEST_COOKIES|!REQUEST_COOKIES:/__utm/|REQUEST_COOKIES_NAMES|REQUEST_HEADERS:Referer|ARGS_NAMES|ARGS|REQUEST_URI",
         "transformations": ["none", "urlDecodeUni", "removeNulls"],
         "enabled": true,
         "chain_level": 0,

@@ -1,0 +1,16 @@
+[
+    {
+        "id": "custom-913-100",
+        "pattern": "(?i)(?:nessus|sqlmap|nikto|burp|owasp|zap|arachni|w3af)",
+        "msg": "Scanner detection",
+        "score": 5,
+        "action": "drop",
+        "phase": 1,
+        "paranoia_level": 1,
+        "targets": "REQUEST_HEADERS:User-Agent",
+        "transformations": ["none"],
+        "enabled": true,
+        "chain_level": 0,
+        "parent_rule_id": null
+    }
+]
