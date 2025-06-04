@@ -1,0 +1,567 @@
+[
+  {
+    "id": "901001",
+    "pattern": "0",
+    "msg": "CRS is deployed without configuration! Please copy the crs-setup.conf.example template to crs-setup.conf, and include the crs-setup.conf file in your webserver configuration before including the CRS rules. See the INSTALL file in the CRS directory for detailed instructions",
+    "score": 5,
+    "action": "log",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901100",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901110",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901111",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901115",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901120",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901125",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901130",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901140",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901141",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901142",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901143",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901160",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901162",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901168",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901163",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901164",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901165",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901171",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901167",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901169",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901170",
+    "pattern": "0",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901200",
+    "pattern": "",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901320",
+    "pattern": "1",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 1,
+    "parent_rule_id": "901200",
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "custom-288671",
+    "pattern": "1",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 2,
+    "parent_rule_id": "901200",
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "custom-33833",
+    "pattern": "",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "sha1",
+      "hexEncode"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901340",
+    "pattern": "(?:URLENCODED|MULTIPART|XML|JSON)",
+    "msg": "Enabling body inspection",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901350",
+    "pattern": "1",
+    "msg": "Enabling forced body inspection for ASCII content",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni"
+    ],
+    "enabled": true,
+    "chain_level": 1,
+    "parent_rule_id": "901340",
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "custom-412225",
+    "pattern": "(?:URLENCODED|MULTIPART|XML|JSON)",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901400",
+    "pattern": "100",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901410",
+    "pattern": "^[a-f]*([0-9])[a-f]*([0-9])",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "sha1",
+      "hexEncode"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901450",
+    "pattern": "%{tx.sampling_percentage}",
+    "msg": "Sampling: Disable the rule engine based on sampling_percentage %{TX.sampling_percentage} and random number %{TX.sampling_rnd100}",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901500",
+    "pattern": "%{tx.blocking_paranoia_level}",
+    "msg": "Detection paranoia level configured is lower than the paranoia level itself. This is illegal. Blocking request. Aborting",
+    "score": 0,
+    "action": "log",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  }
+]
