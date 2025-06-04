@@ -51,24 +51,6 @@
     "category": "RFI"
   },
   {
-    "id": "931110",
-    "pattern": "(?i)(?:\\binclude\\s*\\([^)]*|mosConfig_absolute_path|_CONF\\[path\\]|_SERVER\\[DOCUMENT_ROOT\\]|GALLERY_BASEDIR|path\\[docroot\\]|appserv_root|config\\[root_dir\\])=(?:file|ftps?|https?)://",
-    "msg": "Possible Remote File Inclusion (RFI) Attack: Common RFI Vulnerable Parameter Name used w/URL Payload",
-    "score": 5,
-    "action": "block",
-    "phase": 2,
-    "paranoia_level": 1,
-    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
-    "transformations": [
-      "none",
-      "urlDecodeUni"
-    ],
-    "enabled": true,
-    "chain_level": 0,
-    "parent_rule_id": null,
-    "category": "RFI"
-  },
-  {
     "id": "931120",
     "pattern": "^(?i:file|ftps?|https?).*?\\?+$",
     "msg": "Possible Remote File Inclusion (RFI) Attack: URL Payload Used w/Trailing Question Mark Character (?)",
