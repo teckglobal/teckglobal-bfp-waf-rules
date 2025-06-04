@@ -1,0 +1,176 @@
+[
+  {
+    "id": "901320",
+    "pattern": "1",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 1,
+    "parent_rule_id": "901200",
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "custom-27333d78",
+    "pattern": "1",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 2,
+    "parent_rule_id": "901200",
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "custom-fe51f9d4",
+    "pattern": "",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none",
+      "sha1",
+      "hexEncode"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901340",
+    "pattern": "(?:URLENCODED|MULTIPART|XML|JSON)",
+    "msg": "Enabling body inspection",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901350",
+    "pattern": "1",
+    "msg": "Enabling forced body inspection for ASCII content",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none",
+      "urlDecodeUni"
+    ],
+    "enabled": true,
+    "chain_level": 1,
+    "parent_rule_id": "901340",
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "custom-b8c11fb1",
+    "pattern": "(?:URLENCODED|MULTIPART|XML|JSON)",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901400",
+    "pattern": "100",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901410",
+    "pattern": "^[a-f]*([0-9])[a-f]*([0-9])",
+    "msg": "INITIALIZATION Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "sha1",
+      "hexEncode"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901450",
+    "pattern": "%{tx.sampling_percentage}",
+    "msg": "Sampling: Disable the rule engine based on sampling_percentage %{TX.sampling_percentage} and random number %{TX.sampling_rnd100}",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  },
+  {
+    "id": "901500",
+    "pattern": "%{tx.blocking_paranoia_level}",
+    "msg": "Detection paranoia level configured is lower than the paranoia level itself. This is illegal. Blocking request. Aborting",
+    "score": 0,
+    "action": "log",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "INITIALIZATION"
+  }
+]
