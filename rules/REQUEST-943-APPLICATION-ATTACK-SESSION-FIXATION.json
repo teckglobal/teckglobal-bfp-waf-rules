@@ -1,0 +1,265 @@
+[
+  {
+    "id": "943011",
+    "pattern": "1",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "943012",
+    "pattern": "1",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "943100",
+    "pattern": "(?i:\\.cookie\\b.*?;\\W*?(?:expires|domain)\\W*?=|\\bhttp-equiv\\W+set-cookie\\b)",
+    "msg": "Possible Session Fixation Attack: Setting Cookie Values in HTML",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "943110",
+    "pattern": "^(?:jsessionid|aspsessionid|asp\\.net_sessionid|phpsession|phpsessid|weblogicsession|session_id|session-id|sessionid|cfid|cftoken|cfsid|jservsession|jwsession|_flask_session|_session_id|connect\\.sid|laravel_session)$",
+    "msg": "Possible Session Fixation Attack: SessionID Parameter Name with Off-Domain Referer",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 1,
+    "parent_rule_id": "943100",
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "custom-950098",
+    "pattern": "^(?:ht|f)tps?://(.*?)/",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 2,
+    "parent_rule_id": "943100",
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "custom-397446",
+    "pattern": "%{request_headers.host}",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "943120",
+    "pattern": "^(?:jsessionid|aspsessionid|asp\\.net_sessionid|phpsession|phpsessid|weblogicsession|session_id|session-id|sessionid|cfid|cftoken|cfsid|jservsession|jwsession|_flask_session|_session_id|connect\\.sid|laravel_session)$",
+    "msg": "Possible Session Fixation Attack: SessionID Parameter Name with No Referer",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 1,
+    "parent_rule_id": "custom-397446",
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "custom-597835",
+    "pattern": "0",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "943013",
+    "pattern": "2",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "943014",
+    "pattern": "2",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "943015",
+    "pattern": "3",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "943016",
+    "pattern": "3",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "943017",
+    "pattern": "4",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  },
+  {
+    "id": "943018",
+    "pattern": "4",
+    "msg": "SESSION_FIXATION Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SESSION_FIXATION"
+  }
+]

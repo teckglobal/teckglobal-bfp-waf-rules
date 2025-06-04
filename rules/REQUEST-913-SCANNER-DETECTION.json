@@ -1,0 +1,171 @@
+[
+  {
+    "id": "913011",
+    "pattern": "1",
+    "msg": "SCANNER Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SCANNER"
+  },
+  {
+    "id": "913012",
+    "pattern": "1",
+    "msg": "SCANNER Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SCANNER"
+  },
+  {
+    "id": "913100",
+    "pattern": "scanners-user-agents.data",
+    "msg": "Found User-Agent associated with security scanner",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SCANNER"
+  },
+  {
+    "id": "913013",
+    "pattern": "2",
+    "msg": "SCANNER Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SCANNER"
+  },
+  {
+    "id": "913014",
+    "pattern": "2",
+    "msg": "SCANNER Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SCANNER"
+  },
+  {
+    "id": "913015",
+    "pattern": "3",
+    "msg": "SCANNER Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SCANNER"
+  },
+  {
+    "id": "913016",
+    "pattern": "3",
+    "msg": "SCANNER Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SCANNER"
+  },
+  {
+    "id": "913017",
+    "pattern": "4",
+    "msg": "SCANNER Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SCANNER"
+  },
+  {
+    "id": "913018",
+    "pattern": "4",
+    "msg": "SCANNER Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "SCANNER"
+  }
+]

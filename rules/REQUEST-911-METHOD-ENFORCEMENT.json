@@ -1,0 +1,173 @@
+[
+  {
+    "id": "911011",
+    "pattern": "1",
+    "msg": "RCE Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "RCE"
+  },
+  {
+    "id": "911012",
+    "pattern": "1",
+    "msg": "RCE Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "RCE"
+  },
+  {
+    "id": "911100",
+    "pattern": "%{tx.allowed_methods}",
+    "msg": "Method is not allowed by policy",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "RCE"
+  },
+  {
+    "id": "911013",
+    "pattern": "2",
+    "msg": "RCE Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "RCE"
+  },
+  {
+    "id": "911014",
+    "pattern": "2",
+    "msg": "RCE Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "RCE"
+  },
+  {
+    "id": "911015",
+    "pattern": "3",
+    "msg": "RCE Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "RCE"
+  },
+  {
+    "id": "911016",
+    "pattern": "3",
+    "msg": "RCE Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "RCE"
+  },
+  {
+    "id": "911017",
+    "pattern": "4",
+    "msg": "RCE Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "RCE"
+  },
+  {
+    "id": "911018",
+    "pattern": "4",
+    "msg": "RCE Detected",
+    "score": 5,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "",
+    "transformations": [
+      "none",
+      "urlDecodeUni",
+      "lowercase"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "RCE"
+  }
+]
