@@ -161,24 +161,6 @@
     "category": "PROTOCOL"
   },
   {
-    "id": "921200",
-    "pattern": "^[^:\\(\\)\\&\\|\\!\\<\\>\\~]*\\)\\s*(?:\\((?:[^,\\(\\)\\=\\&\\|\\!\\<\\>\\~]+[><~]?=|\\s*[&!|]\\s*(?:\\)|\\()?\\s*)|\\)\\s*\\(\\s*[\\&\\|\\!]\\s*|[&!|]\\s*\\([^\\(\\)\\=\\&\\|\\!\\<\\>\\~]+[><~]?=[^:\\(\\)\\&\\|\\!\\<\\>\\~]*)",
-    "msg": "LDAP Injection Attack",
-    "score": 5,
-    "action": "block",
-    "phase": 2,
-    "paranoia_level": 1,
-    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
-    "transformations": [
-      "none",
-      "htmlEntityDecode"
-    ],
-    "enabled": true,
-    "chain_level": 0,
-    "parent_rule_id": null,
-    "category": "PROTOCOL"
-  },
-  {
     "id": "921421",
     "pattern": "^[^\\s\\x0b,;]+[\\s\\x0b,;].*?(?:application/(?:.+\\+)?json|(?:application/(?:soap\\+)?|text/)xml)",
     "msg": "Content-Type header: Dangerous content type outside the mime type declaration",
