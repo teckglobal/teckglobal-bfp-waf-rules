@@ -370,23 +370,6 @@
     "category": "PROTOCOL"
   },
   {
-    "id": "921210",
-    "pattern": "(][^\\]]+$|][^\\]]+\\[)",
-    "msg": "HTTP Parameter Pollution after detecting bogus char after parameter array",
-    "score": 5,
-    "action": "pass",
-    "phase": 2,
-    "paranoia_level": 3,
-    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
-    "transformations": [
-      "none"
-    ],
-    "enabled": true,
-    "chain_level": 0,
-    "parent_rule_id": null,
-    "category": "PROTOCOL"
-  },
-  {
     "id": "921017",
     "pattern": "4",
     "msg": "PROTOCOL Detected",
@@ -411,23 +394,6 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
-    "transformations": [
-      "none"
-    ],
-    "enabled": true,
-    "chain_level": 0,
-    "parent_rule_id": null,
-    "category": "PROTOCOL"
-  },
-  {
-    "id": "921220",
-    "pattern": "\\[",
-    "msg": "HTTP Parameter Pollution possible via array notation",
-    "score": 5,
-    "action": "pass",
-    "phase": 2,
-    "paranoia_level": 4,
     "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
