@@ -1,0 +1,240 @@
+[
+  {
+    "id": "954010",
+    "pattern": "gzip compress deflate br zstd",
+    "msg": "DATA_LEAKAGES Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954011",
+    "pattern": "1",
+    "msg": "DATA_LEAKAGES Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 3,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954012",
+    "pattern": "1",
+    "msg": "DATA_LEAKAGES Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954100",
+    "pattern": "(?i)[a-z]:[\\x5c/]inetpub\\b",
+    "msg": "Disclosure of IIS install location",
+    "score": 0,
+    "action": "block",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954110",
+    "pattern": "(?:Microsoft OLE DB Provider for SQL Server(?:</font>.{1,20}?error '800(?:04005|40e31)'.{1,40}?Timeout expired| \\(0x80040e31\\)<br>Timeout expired<br>)|<h1>internal server error</h1>.*?<h2>part of the server has crashed or it has a configuration error\\.</h2>|cannot connect to the server: timed out)",
+    "msg": "Application Availability Error",
+    "score": 0,
+    "action": "block",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954120",
+    "pattern": "iis-errors.data",
+    "msg": "IIS Information Leakage",
+    "score": 0,
+    "action": "block",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954130",
+    "pattern": "^404$",
+    "msg": "IIS Information Leakage",
+    "score": 0,
+    "action": "block",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 1,
+    "parent_rule_id": "954120",
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "custom-7987b469",
+    "pattern": "\\bServer Error in.{0,50}?\\bApplication\\b",
+    "msg": "DATA_LEAKAGES Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954013",
+    "pattern": "2",
+    "msg": "DATA_LEAKAGES Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 3,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954014",
+    "pattern": "2",
+    "msg": "DATA_LEAKAGES Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954015",
+    "pattern": "3",
+    "msg": "DATA_LEAKAGES Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 3,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954016",
+    "pattern": "3",
+    "msg": "DATA_LEAKAGES Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954017",
+    "pattern": "4",
+    "msg": "DATA_LEAKAGES Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 3,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  },
+  {
+    "id": "954018",
+    "pattern": "4",
+    "msg": "DATA_LEAKAGES Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "DATA_LEAKAGES"
+  }
+]

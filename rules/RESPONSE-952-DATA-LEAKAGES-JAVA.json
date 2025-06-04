@@ -1,0 +1,172 @@
+[
+  {
+    "id": "952010",
+    "pattern": "gzip compress deflate br zstd",
+    "msg": "JAVA Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "JAVA"
+  },
+  {
+    "id": "952011",
+    "pattern": "1",
+    "msg": "JAVA Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 3,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "JAVA"
+  },
+  {
+    "id": "952012",
+    "pattern": "1",
+    "msg": "JAVA Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "JAVA"
+  },
+  {
+    "id": "952110",
+    "pattern": "java-errors.data",
+    "msg": "Java Errors",
+    "score": 0,
+    "action": "block",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "JAVA"
+  },
+  {
+    "id": "952013",
+    "pattern": "2",
+    "msg": "JAVA Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 3,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "JAVA"
+  },
+  {
+    "id": "952014",
+    "pattern": "2",
+    "msg": "JAVA Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "JAVA"
+  },
+  {
+    "id": "952015",
+    "pattern": "3",
+    "msg": "JAVA Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 3,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "JAVA"
+  },
+  {
+    "id": "952016",
+    "pattern": "3",
+    "msg": "JAVA Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "JAVA"
+  },
+  {
+    "id": "952017",
+    "pattern": "4",
+    "msg": "JAVA Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 3,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "JAVA"
+  },
+  {
+    "id": "952018",
+    "pattern": "4",
+    "msg": "JAVA Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 4,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "JAVA"
+  }
+]

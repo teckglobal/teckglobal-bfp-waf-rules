@@ -1,0 +1,495 @@
+[
+  {
+    "id": "949052",
+    "pattern": "1",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949152",
+    "pattern": "1",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949053",
+    "pattern": "2",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949153",
+    "pattern": "2",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949054",
+    "pattern": "3",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949154",
+    "pattern": "3",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949055",
+    "pattern": "4",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949155",
+    "pattern": "4",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949059",
+    "pattern": "",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949159",
+    "pattern": "",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949060",
+    "pattern": "1",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949160",
+    "pattern": "1",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949061",
+    "pattern": "2",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949161",
+    "pattern": "2",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949062",
+    "pattern": "3",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949162",
+    "pattern": "3",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949063",
+    "pattern": "4",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949163",
+    "pattern": "4",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949111",
+    "pattern": "%{tx.inbound_anomaly_score_threshold}",
+    "msg": "Inbound Anomaly Score Exceeded in phase 1 (Total Score: %{TX.BLOCKING_INBOUND_ANOMALY_SCORE})",
+    "score": 0,
+    "action": "block",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 1,
+    "parent_rule_id": "949163",
+    "category": "BLOCKING"
+  },
+  {
+    "id": "custom-9479a222",
+    "pattern": "1",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949110",
+    "pattern": "%{tx.inbound_anomaly_score_threshold}",
+    "msg": "Inbound Anomaly Score Exceeded (Total Score: %{TX.BLOCKING_INBOUND_ANOMALY_SCORE})",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949011",
+    "pattern": "1",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949012",
+    "pattern": "1",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949013",
+    "pattern": "2",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949014",
+    "pattern": "2",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949015",
+    "pattern": "3",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949016",
+    "pattern": "3",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949017",
+    "pattern": "4",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  },
+  {
+    "id": "949018",
+    "pattern": "4",
+    "msg": "BLOCKING Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "BLOCKING"
+  }
+]

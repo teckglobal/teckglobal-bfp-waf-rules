@@ -1,0 +1,87 @@
+[
+  {
+    "id": "905100",
+    "pattern": "GET /",
+    "msg": "EXCEPTIONS Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 1,
+    "parent_rule_id": null,
+    "category": "EXCEPTIONS"
+  },
+  {
+    "id": "custom-b2528389",
+    "pattern": "127.0.0.1,::1",
+    "msg": "EXCEPTIONS Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "EXCEPTIONS"
+  },
+  {
+    "id": "905110",
+    "pattern": "127.0.0.1,::1",
+    "msg": "EXCEPTIONS Detected",
+    "score": 0,
+    "action": "pass",
+    "phase": 1,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 1,
+    "parent_rule_id": "custom-b2528389",
+    "category": "EXCEPTIONS"
+  },
+  {
+    "id": "custom-f8f06ab6",
+    "pattern": "(internal dummy connection)",
+    "msg": "EXCEPTIONS Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 2,
+    "parent_rule_id": "custom-b2528389",
+    "category": "EXCEPTIONS"
+  },
+  {
+    "id": "custom-1915a844",
+    "pattern": "^(?:GET /|OPTIONS \\*) HTTP/[12]\\.[01]$",
+    "msg": "EXCEPTIONS Detected",
+    "score": 0,
+    "action": "block",
+    "phase": 2,
+    "paranoia_level": 1,
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
+    "transformations": [
+      "none"
+    ],
+    "enabled": true,
+    "chain_level": 0,
+    "parent_rule_id": null,
+    "category": "EXCEPTIONS"
+  }
+]
