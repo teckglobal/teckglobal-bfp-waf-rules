@@ -7,7 +7,7 @@
     "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -24,7 +24,7 @@
     "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -41,7 +41,7 @@
     "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -58,7 +58,7 @@
     "action": "block",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -75,7 +75,7 @@
     "action": "block",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -92,7 +92,7 @@
     "action": "block",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -109,7 +109,7 @@
     "action": "block",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -119,14 +119,14 @@
     "category": "DATA_LEAKAGES"
   },
   {
-    "id": "custom-813369",
+    "id": "custom-7987b469",
     "pattern": "\\bServer Error in.{0,50}?\\bApplication\\b",
     "msg": "DATA_LEAKAGES Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -143,7 +143,7 @@
     "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -160,7 +160,7 @@
     "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -177,7 +177,7 @@
     "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -194,7 +194,7 @@
     "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -211,7 +211,7 @@
     "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -228,7 +228,7 @@
     "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],

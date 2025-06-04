@@ -7,7 +7,7 @@
     "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -24,7 +24,7 @@
     "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -41,7 +41,7 @@
     "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -58,7 +58,7 @@
     "action": "block",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -75,7 +75,7 @@
     "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -92,7 +92,7 @@
     "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -109,7 +109,7 @@
     "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -126,7 +126,7 @@
     "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -143,7 +143,7 @@
     "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -160,7 +160,7 @@
     "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],

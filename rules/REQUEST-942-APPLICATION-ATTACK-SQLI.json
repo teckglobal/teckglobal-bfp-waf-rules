@@ -7,7 +7,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -24,7 +24,7 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -41,7 +41,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "utf8toUnicode",
@@ -61,7 +61,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -79,7 +79,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -97,7 +97,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni",
@@ -116,7 +116,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -134,7 +134,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni",
@@ -153,7 +153,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -171,7 +171,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -189,7 +189,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -207,7 +207,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -225,7 +225,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -243,7 +243,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -261,7 +261,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -279,7 +279,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -297,7 +297,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -315,7 +315,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -333,7 +333,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -351,7 +351,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni",
@@ -370,7 +370,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni",
@@ -389,7 +389,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni",
@@ -409,7 +409,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -426,7 +426,7 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -443,7 +443,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "utf8toUnicode",
@@ -462,7 +462,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni",
@@ -474,14 +474,14 @@
     "category": "SQLI"
   },
   {
-    "id": "custom-489194",
+    "id": "custom-6a3fee7d",
     "pattern": "%{TX.2}",
     "msg": "SQLI Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -498,7 +498,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni",
@@ -506,18 +506,18 @@
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-489194",
+    "parent_rule_id": "custom-6a3fee7d",
     "category": "SQLI"
   },
   {
-    "id": "custom-765919",
+    "id": "custom-4529558f",
     "pattern": "%{TX.2}",
     "msg": "SQLI Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -534,7 +534,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -552,7 +552,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -570,7 +570,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -588,7 +588,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -606,7 +606,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -624,7 +624,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -642,7 +642,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -660,7 +660,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -678,7 +678,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -696,7 +696,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -714,7 +714,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -732,7 +732,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -750,7 +750,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -768,7 +768,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -786,7 +786,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -804,7 +804,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -822,7 +822,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -840,7 +840,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -858,7 +858,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -876,7 +876,7 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -893,7 +893,7 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -910,7 +910,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -921,14 +921,14 @@
     "category": "SQLI"
   },
   {
-    "id": "custom-656122",
+    "id": "custom-79056a8c",
     "pattern": "^ey[\\-0-9A-Z_a-z]+\\.ey[\\-0-9A-Z_a-z]+\\.[\\-0-9A-Z_a-z]+$",
     "msg": "SQLI Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -945,7 +945,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -963,7 +963,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -981,7 +981,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -999,7 +999,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1010,14 +1010,14 @@
     "category": "SQLI"
   },
   {
-    "id": "custom-830545",
+    "id": "custom-1287cecc",
     "pattern": "^(?:and|or)$",
     "msg": "SQLI Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1034,7 +1034,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1052,7 +1052,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "utf8toUnicode",
@@ -1072,7 +1072,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1090,7 +1090,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1108,7 +1108,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1125,7 +1125,7 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1142,7 +1142,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1160,7 +1160,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1178,7 +1178,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1196,7 +1196,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1214,7 +1214,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1231,7 +1231,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1249,7 +1249,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1267,7 +1267,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1284,7 +1284,7 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1301,7 +1301,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 4,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1319,7 +1319,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 4,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"

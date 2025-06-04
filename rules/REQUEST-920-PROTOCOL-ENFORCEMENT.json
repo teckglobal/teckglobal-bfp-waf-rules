@@ -7,7 +7,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -24,7 +24,7 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -41,7 +41,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -58,7 +58,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -76,7 +76,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -93,7 +93,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -103,14 +103,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-471113",
+    "id": "custom-5e7487ec",
     "pattern": "^0?$",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -127,24 +127,24 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-471113",
+    "parent_rule_id": "custom-5e7487ec",
     "category": "RCE"
   },
   {
-    "id": "custom-500506",
+    "id": "custom-e7800d5c",
     "pattern": "0",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -161,58 +161,58 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-500506",
+    "parent_rule_id": "custom-e7800d5c",
     "category": "RCE"
   },
   {
-    "id": "custom-601517",
+    "id": "custom-903a466a",
     "pattern": "POST",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 2,
-    "parent_rule_id": "custom-500506",
+    "parent_rule_id": "custom-e7800d5c",
     "category": "RCE"
   },
   {
-    "id": "custom-563081",
+    "id": "custom-5d34165a",
     "pattern": "0",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 3,
-    "parent_rule_id": "custom-500506",
+    "parent_rule_id": "custom-e7800d5c",
     "category": "RCE"
   },
   {
-    "id": "custom-378589",
+    "id": "custom-f36a2860",
     "pattern": "0",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -229,24 +229,24 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-378589",
+    "parent_rule_id": "custom-f36a2860",
     "category": "RCE"
   },
   {
-    "id": "custom-800399",
+    "id": "custom-9ab8df9b",
     "pattern": "0",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -263,24 +263,24 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-800399",
+    "parent_rule_id": "custom-9ab8df9b",
     "category": "RCE"
   },
   {
-    "id": "custom-521482",
+    "id": "custom-b5383bca",
     "pattern": "%{tx.1}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -297,7 +297,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -314,7 +314,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -324,14 +324,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-894478",
+    "id": "custom-8aa8c212",
     "pattern": "",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -348,7 +348,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -365,7 +365,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -383,7 +383,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -400,7 +400,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -417,7 +417,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -427,14 +427,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-241437",
+    "id": "custom-66b86754",
     "pattern": "^OPTIONS$",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -444,14 +444,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-722246",
+    "id": "custom-7c4f97eb",
     "pattern": "AppleWebKit Android Business Enterprise Entreprise",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -468,41 +468,41 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-722246",
+    "parent_rule_id": "custom-7c4f97eb",
     "category": "RCE"
   },
   {
-    "id": "custom-630443",
+    "id": "custom-74b5e2e0",
     "pattern": "^OPTIONS$",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 2,
-    "parent_rule_id": "custom-722246",
+    "parent_rule_id": "custom-7c4f97eb",
     "category": "RCE"
   },
   {
-    "id": "custom-911169",
+    "id": "custom-10e5a8b7",
     "pattern": "0",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -519,7 +519,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -536,7 +536,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -546,14 +546,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-569927",
+    "id": "custom-5e7f4ace",
     "pattern": "0",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -570,7 +570,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -587,7 +587,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -597,14 +597,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-327576",
+    "id": "custom-55e8a990",
     "pattern": "%{tx.max_num_args}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -621,24 +621,24 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-327576",
+    "parent_rule_id": "custom-55e8a990",
     "category": "RCE"
   },
   {
-    "id": "custom-497865",
+    "id": "custom-e3a7367d",
     "pattern": "%{tx.arg_name_length}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "length"
@@ -656,24 +656,24 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-497865",
+    "parent_rule_id": "custom-e3a7367d",
     "category": "RCE"
   },
   {
-    "id": "custom-228707",
+    "id": "custom-f1eb5039",
     "pattern": "%{tx.arg_length}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "length"
@@ -691,24 +691,24 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-228707",
+    "parent_rule_id": "custom-f1eb5039",
     "category": "RCE"
   },
   {
-    "id": "custom-606701",
+    "id": "custom-f18338d6",
     "pattern": "%{tx.total_arg_length}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -725,41 +725,41 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-606701",
+    "parent_rule_id": "custom-f18338d6",
     "category": "RCE"
   },
   {
-    "id": "custom-28026",
+    "id": "custom-db2ca04f",
     "pattern": "^(?i)multipart/form-data",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 2,
-    "parent_rule_id": "custom-606701",
+    "parent_rule_id": "custom-f18338d6",
     "category": "RCE"
   },
   {
-    "id": "custom-495508",
+    "id": "custom-82ef276e",
     "pattern": "%{tx.max_file_size}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -776,24 +776,24 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-495508",
+    "parent_rule_id": "custom-82ef276e",
     "category": "RCE"
   },
   {
-    "id": "custom-468993",
+    "id": "custom-f9f110e4",
     "pattern": "%{tx.combined_file_sizes}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -810,7 +810,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "lowercase"
@@ -828,7 +828,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -838,14 +838,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-983104",
+    "id": "custom-f5140f63",
     "pattern": "%{tx.allowed_request_content_type}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "lowercase"
     ],
@@ -862,24 +862,24 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-983104",
+    "parent_rule_id": "custom-f5140f63",
     "category": "RCE"
   },
   {
-    "id": "custom-538171",
+    "id": "custom-57c8bd4b",
     "pattern": "%{tx.allowed_request_content_type_charset}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "lowercase"
     ],
@@ -896,7 +896,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "lowercase"
@@ -914,7 +914,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -931,7 +931,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -942,14 +942,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-829638",
+    "id": "custom-b07d52b3",
     "pattern": "%{tx.restricted_extensions}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "lowercase"
@@ -967,7 +967,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -985,7 +985,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "lowercase"
@@ -996,14 +996,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-758838",
+    "id": "custom-5ca5787e",
     "pattern": "%{tx.restricted_headers_basic}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1020,7 +1020,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "lowercase",
@@ -1039,7 +1039,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "lowercase"
@@ -1057,7 +1057,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1067,14 +1067,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-59257",
+    "id": "custom-5920fe06",
     "pattern": "(?i)\\x5cu[0-9a-f]{4}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1091,7 +1091,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1108,7 +1108,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1125,7 +1125,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1142,7 +1142,7 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1159,7 +1159,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1169,14 +1169,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-159032",
+    "id": "custom-e380f23f",
     "pattern": ".pdf",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1193,25 +1193,25 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-159032",
+    "parent_rule_id": "custom-e380f23f",
     "category": "RCE"
   },
   {
-    "id": "custom-363258",
+    "id": "custom-760efaee",
     "pattern": "^bytes=(?:(?:\\d+)?-(?:\\d+)?\\s*,?\\s*){63}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1228,7 +1228,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1245,7 +1245,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1263,7 +1263,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1280,7 +1280,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1298,7 +1298,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1308,14 +1308,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-209750",
+    "id": "custom-5940af65",
     "pattern": "0",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1332,25 +1332,25 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "lowercase"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-209750",
+    "parent_rule_id": "custom-5940af65",
     "category": "RCE"
   },
   {
-    "id": "custom-657909",
+    "id": "custom-fc2a0189",
     "pattern": "%{tx.restricted_headers_extended}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1367,41 +1367,41 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 2,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-657909",
+    "parent_rule_id": "custom-fc2a0189",
     "category": "RCE"
   },
   {
-    "id": "custom-189593",
+    "id": "custom-0d3ab756",
     "pattern": "\\x25",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 2,
-    "parent_rule_id": "custom-657909",
+    "parent_rule_id": "custom-fc2a0189",
     "category": "RCE"
   },
   {
-    "id": "custom-445186",
+    "id": "custom-52a1e687",
     "pattern": "",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1418,7 +1418,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1435,7 +1435,7 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1452,7 +1452,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1470,7 +1470,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1480,14 +1480,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-454853",
+    "id": "custom-7725f11c",
     "pattern": "^(?:OPTIONS|CONNECT)$",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1497,14 +1497,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-378036",
+    "id": "custom-31ab1c76",
     "pattern": "AppleWebKit Android",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1521,24 +1521,24 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-378036",
+    "parent_rule_id": "custom-31ab1c76",
     "category": "RCE"
   },
   {
-    "id": "custom-985868",
+    "id": "custom-101e7bd9",
     "pattern": "^(?i)up",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1555,24 +1555,24 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-985868",
+    "parent_rule_id": "custom-101e7bd9",
     "category": "RCE"
   },
   {
-    "id": "custom-6636",
+    "id": "custom-36a214d9",
     "pattern": "^(?:(?:max-age=[0-9]+|min-fresh=[0-9]+|no-cache|no-store|no-transform|only-if-cached|max-stale(?:=[0-9]+)?)(?:\\s*\\,\\s*|$)){1,7}$",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1589,7 +1589,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 3,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "lowercase"
@@ -1607,7 +1607,7 @@
     "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1624,7 +1624,7 @@
     "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1641,7 +1641,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 4,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1652,14 +1652,14 @@
     "category": "RCE"
   },
   {
-    "id": "custom-574542",
+    "id": "custom-e5d01fcb",
     "pattern": "^bytes=(?:(?:\\d+)?-(?:\\d+)?\\s*,?\\s*){6}",
     "msg": "RCE Detected",
     "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none"
     ],
@@ -1676,7 +1676,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 4,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1694,7 +1694,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 4,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1712,7 +1712,7 @@
     "action": "block",
     "phase": 1,
     "paranoia_level": 4,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "urlDecodeUni"
@@ -1730,7 +1730,7 @@
     "action": "block",
     "phase": 2,
     "paranoia_level": 4,
-    "targets": "",
+    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
     "transformations": [
       "none",
       "htmlEntityDecode",
