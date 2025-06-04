@@ -3,15 +3,13 @@
     "id": "933011",
     "pattern": "1",
     "msg": "PHP Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -22,15 +20,13 @@
     "id": "933012",
     "pattern": "1",
     "msg": "PHP Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -256,15 +252,13 @@
     "id": "933013",
     "pattern": "2",
     "msg": "PHP Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -275,15 +269,13 @@
     "id": "933014",
     "pattern": "2",
     "msg": "PHP Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -297,7 +289,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -314,7 +306,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -331,7 +323,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -345,15 +337,13 @@
     "id": "933015",
     "pattern": "3",
     "msg": "PHP Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -364,15 +354,13 @@
     "id": "933016",
     "pattern": "3",
     "msg": "PHP Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -386,7 +374,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -405,7 +393,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none"
@@ -422,7 +410,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -440,7 +428,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -458,7 +446,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -475,15 +463,13 @@
     "id": "933017",
     "pattern": "4",
     "msg": "PHP Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -494,15 +480,13 @@
     "id": "933018",
     "pattern": "4",
     "msg": "PHP Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,

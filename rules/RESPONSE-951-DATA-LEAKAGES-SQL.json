@@ -3,15 +3,13 @@
     "id": "951010",
     "pattern": "gzip compress deflate br zstd",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -22,15 +20,13 @@
     "id": "951011",
     "pattern": "1",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -41,15 +37,13 @@
     "id": "951012",
     "pattern": "1",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -60,8 +54,8 @@
     "id": "951100",
     "pattern": "sql-errors.data",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
@@ -349,15 +343,13 @@
     "id": "951013",
     "pattern": "2",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -368,15 +360,13 @@
     "id": "951014",
     "pattern": "2",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -387,15 +377,13 @@
     "id": "951015",
     "pattern": "3",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -406,15 +394,13 @@
     "id": "951016",
     "pattern": "3",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -425,15 +411,13 @@
     "id": "951017",
     "pattern": "4",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -444,15 +428,13 @@
     "id": "951018",
     "pattern": "4",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,

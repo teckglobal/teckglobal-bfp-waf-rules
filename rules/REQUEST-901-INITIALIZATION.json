@@ -4,14 +4,12 @@
     "pattern": "0",
     "msg": "CRS is deployed without configuration! Please copy the crs-setup.conf.example template to crs-setup.conf, and include the crs-setup.conf file in your webserver configuration before including the CRS rules. See the INSTALL file in the CRS directory for detailed instructions",
     "score": 5,
-    "action": "block",
+    "action": "log",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -22,15 +20,13 @@
     "id": "901100",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -41,15 +37,13 @@
     "id": "901110",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -60,15 +54,13 @@
     "id": "901111",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -79,15 +71,13 @@
     "id": "901115",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -98,15 +88,13 @@
     "id": "901120",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -117,15 +105,13 @@
     "id": "901125",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -136,15 +122,13 @@
     "id": "901130",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -155,15 +139,13 @@
     "id": "901140",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -174,15 +156,13 @@
     "id": "901141",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -193,15 +173,13 @@
     "id": "901142",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -212,15 +190,13 @@
     "id": "901143",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -231,15 +207,13 @@
     "id": "901160",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -250,15 +224,13 @@
     "id": "901162",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -269,15 +241,13 @@
     "id": "901168",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -288,15 +258,13 @@
     "id": "901163",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -307,15 +275,13 @@
     "id": "901164",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -326,15 +292,13 @@
     "id": "901165",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -345,15 +309,13 @@
     "id": "901171",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -364,15 +326,13 @@
     "id": "901167",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -383,15 +343,13 @@
     "id": "901169",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -402,15 +360,13 @@
     "id": "901170",
     "pattern": "0",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -419,10 +375,10 @@
   },
   {
     "id": "901200",
-    "pattern": "@streq none",
+    "pattern": "",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
@@ -438,15 +394,13 @@
     "id": "901320",
     "pattern": "1",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 1,
@@ -454,18 +408,16 @@
     "category": "INITIALIZATION"
   },
   {
-    "id": "custom-761257",
+    "id": "custom-288671",
     "pattern": "1",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 2,
@@ -473,10 +425,10 @@
     "category": "INITIALIZATION"
   },
   {
-    "id": "custom-177358",
+    "id": "custom-33833",
     "pattern": "",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -495,15 +447,13 @@
     "id": "901340",
     "pattern": "(?:URLENCODED|MULTIPART|XML|JSON)",
     "msg": "Enabling body inspection",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -514,8 +464,8 @@
     "id": "901350",
     "pattern": "1",
     "msg": "Enabling forced body inspection for ASCII content",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
@@ -529,18 +479,16 @@
     "category": "INITIALIZATION"
   },
   {
-    "id": "custom-194000",
+    "id": "custom-412225",
     "pattern": "(?:URLENCODED|MULTIPART|XML|JSON)",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -551,15 +499,13 @@
     "id": "901400",
     "pattern": "100",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -570,8 +516,8 @@
     "id": "901410",
     "pattern": "^[a-f]*([0-9])[a-f]*([0-9])",
     "msg": "INITIALIZATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
@@ -588,15 +534,13 @@
     "id": "901450",
     "pattern": "%{tx.sampling_percentage}",
     "msg": "Sampling: Disable the rule engine based on sampling_percentage %{TX.sampling_percentage} and random number %{TX.sampling_rnd100}",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -607,8 +551,8 @@
     "id": "901500",
     "pattern": "%{tx.blocking_paranoia_level}",
     "msg": "Detection paranoia level configured is lower than the paranoia level itself. This is illegal. Blocking request. Aborting",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "log",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",

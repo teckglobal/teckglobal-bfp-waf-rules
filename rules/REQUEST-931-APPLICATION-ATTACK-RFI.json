@@ -3,15 +3,13 @@
     "id": "931011",
     "pattern": "1",
     "msg": "RFI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -22,15 +20,13 @@
     "id": "931012",
     "pattern": "1",
     "msg": "RFI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -93,15 +89,13 @@
     "id": "931013",
     "pattern": "2",
     "msg": "RFI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -112,15 +106,13 @@
     "id": "931014",
     "pattern": "2",
     "msg": "RFI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -134,7 +126,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -145,18 +137,16 @@
     "category": "RFI"
   },
   {
-    "id": "custom-577143",
+    "id": "custom-85784",
     "pattern": ".%{request_headers.host}",
     "msg": "RFI Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -170,7 +160,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -178,22 +168,20 @@
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-577143",
+    "parent_rule_id": "custom-85784",
     "category": "RFI"
   },
   {
-    "id": "custom-581589",
+    "id": "custom-112201",
     "pattern": ".%{request_headers.host}",
     "msg": "RFI Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -204,15 +192,13 @@
     "id": "931015",
     "pattern": "3",
     "msg": "RFI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -223,15 +209,13 @@
     "id": "931016",
     "pattern": "3",
     "msg": "RFI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -242,15 +226,13 @@
     "id": "931017",
     "pattern": "4",
     "msg": "RFI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -261,15 +243,13 @@
     "id": "931018",
     "pattern": "4",
     "msg": "RFI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,

@@ -1,10 +1,10 @@
 [
   {
     "id": "980099",
-    "pattern": "@streq none",
+    "pattern": "",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
@@ -20,15 +20,13 @@
     "id": "980041",
     "pattern": "0",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -39,15 +37,13 @@
     "id": "980042",
     "pattern": "5",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -58,15 +54,13 @@
     "id": "980043",
     "pattern": "0",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -77,15 +71,13 @@
     "id": "980044",
     "pattern": "%{tx.inbound_anomaly_score_threshold}",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -96,15 +88,13 @@
     "id": "980045",
     "pattern": "%{tx.outbound_anomaly_score_threshold}",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -115,15 +105,13 @@
     "id": "980046",
     "pattern": "2",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -134,15 +122,13 @@
     "id": "980047",
     "pattern": "%{tx.inbound_anomaly_score_threshold}",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -153,15 +139,13 @@
     "id": "980048",
     "pattern": "%{tx.outbound_anomaly_score_threshold}",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -172,15 +156,13 @@
     "id": "980049",
     "pattern": "3",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -191,15 +173,13 @@
     "id": "980050",
     "pattern": "0",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -210,15 +190,13 @@
     "id": "980051",
     "pattern": "4",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -227,10 +205,10 @@
   },
   {
     "id": "980170",
-    "pattern": "@streq none",
+    "pattern": "",
     "msg": "Anomaly Scores: \\\n(Inbound Scores: blocking=%{tx.blocking_inbound_anomaly_score}, detection=%{tx.detection_inbound_anomaly_score}, per_pl=%{tx.inbound_anomaly_score_pl1}-%{tx.inbound_anomaly_score_pl2}-%{tx.inbound_anomaly_score_pl3}-%{tx.inbound_anomaly_score_pl4}, threshold=%{tx.inbound_anomaly_score_threshold}) - \\\n(Outbound Scores: blocking=%{tx.blocking_outbound_anomaly_score}, detection=%{tx.detection_outbound_anomaly_score}, per_pl=%{tx.outbound_anomaly_score_pl1}-%{tx.outbound_anomaly_score_pl2}-%{tx.outbound_anomaly_score_pl3}-%{tx.outbound_anomaly_score_pl4}, threshold=%{tx.outbound_anomaly_score_threshold}) - \\\n(SQLI=%{tx.sql_injection_score}, XSS=%{tx.xss_score}, RFI=%{tx.rfi_score}, LFI=%{tx.lfi_score}, RCE=%{tx.rce_score}, PHPI=%{tx.php_injection_score}, HTTP=%{tx.http_violation_score}, SESS=%{tx.session_fixation_score}, COMBINED_SCORE=%{tx.anomaly_score})",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 5,
     "paranoia_level": 1,
     "targets": "",
@@ -246,15 +224,13 @@
     "id": "980011",
     "pattern": "1",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -265,15 +241,13 @@
     "id": "980012",
     "pattern": "1",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -284,15 +258,13 @@
     "id": "980013",
     "pattern": "2",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -303,15 +275,13 @@
     "id": "980014",
     "pattern": "2",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -322,15 +292,13 @@
     "id": "980015",
     "pattern": "3",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -341,15 +309,13 @@
     "id": "980016",
     "pattern": "3",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -360,15 +326,13 @@
     "id": "980017",
     "pattern": "4",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -379,15 +343,13 @@
     "id": "980018",
     "pattern": "4",
     "msg": "CORRELATION Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,

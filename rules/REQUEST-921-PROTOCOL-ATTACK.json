@@ -3,15 +3,13 @@
     "id": "921011",
     "pattern": "1",
     "msg": "PROTOCOL Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -22,15 +20,13 @@
     "id": "921012",
     "pattern": "1",
     "msg": "PROTOCOL Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -241,15 +237,13 @@
     "id": "921013",
     "pattern": "2",
     "msg": "PROTOCOL Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -260,15 +254,13 @@
     "id": "921014",
     "pattern": "2",
     "msg": "PROTOCOL Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -282,7 +274,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -299,7 +291,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -314,15 +306,13 @@
     "id": "921015",
     "pattern": "3",
     "msg": "PROTOCOL Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -333,15 +323,13 @@
     "id": "921016",
     "pattern": "3",
     "msg": "PROTOCOL Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -355,7 +343,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none"
@@ -369,15 +357,13 @@
     "id": "921170",
     "pattern": ".",
     "msg": "PROTOCOL Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -389,14 +375,12 @@
     "pattern": "1",
     "msg": "HTTP Parameter Pollution (%{MATCHED_VAR_NAME})",
     "score": 5,
-    "action": "block",
+    "action": "pass",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -408,14 +392,12 @@
     "pattern": "(][^\\]]+$|][^\\]]+\\[)",
     "msg": "HTTP Parameter Pollution after detecting bogus char after parameter array",
     "score": 5,
-    "action": "block",
+    "action": "pass",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -426,15 +408,13 @@
     "id": "921017",
     "pattern": "4",
     "msg": "PROTOCOL Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -445,15 +425,13 @@
     "id": "921018",
     "pattern": "4",
     "msg": "PROTOCOL Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -465,14 +443,12 @@
     "pattern": "\\[",
     "msg": "HTTP Parameter Pollution possible via array notation",
     "score": 5,
-    "action": "block",
+    "action": "pass",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 4,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,

@@ -3,15 +3,13 @@
     "id": "950021",
     "pattern": "1",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -22,15 +20,13 @@
     "id": "950010",
     "pattern": "gzip compress deflate br zstd",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -41,15 +37,13 @@
     "id": "950011",
     "pattern": "1",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -60,15 +54,13 @@
     "id": "950012",
     "pattern": "1",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -79,7 +71,7 @@
     "id": "950130",
     "pattern": "(?:<(?:TITLE>Index of.*?<H|title>Index of.*?<h)1>Index of|>\\[To Parent Directory\\]</[Aa]><br>)",
     "msg": "Directory Listing",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 4,
     "paranoia_level": 1,
@@ -96,7 +88,7 @@
     "id": "950140",
     "pattern": "^#\\!\\s?/",
     "msg": "CGI source code leakage",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 4,
     "paranoia_level": 1,
@@ -113,15 +105,13 @@
     "id": "950013",
     "pattern": "2",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -132,15 +122,13 @@
     "id": "950014",
     "pattern": "2",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -151,10 +139,10 @@
     "id": "950100",
     "pattern": "^5\\d{2}$",
     "msg": "The Application Returned a 500-Level Status Code",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 3,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -168,15 +156,13 @@
     "id": "950015",
     "pattern": "3",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -187,15 +173,13 @@
     "id": "950016",
     "pattern": "3",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -206,15 +190,13 @@
     "id": "950017",
     "pattern": "4",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 3,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -225,15 +207,13 @@
     "id": "950018",
     "pattern": "4",
     "msg": "DATA_LEAKAGES Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 4,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,

@@ -3,15 +3,13 @@
     "id": "941011",
     "pattern": "1",
     "msg": "XSS Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -22,15 +20,13 @@
     "id": "941012",
     "pattern": "1",
     "msg": "XSS Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -41,8 +37,8 @@
     "id": "941010",
     "pattern": "20, 45-47, 48-57, 65-90, 95, 97-122",
     "msg": "XSS Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
@@ -515,18 +511,16 @@
     "category": "XSS"
   },
   {
-    "id": "custom-35366",
+    "id": "custom-42210",
     "pattern": "(?:\\xbc\\s*/\\s*[^\\xbe>]*[\\xbe>])|(?:<\\s*/\\s*[^\\xbe]*\\xbe)",
     "msg": "XSS Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -631,15 +625,13 @@
     "id": "941013",
     "pattern": "2",
     "msg": "XSS Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -650,15 +642,13 @@
     "id": "941014",
     "pattern": "2",
     "msg": "XSS Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -672,7 +662,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -695,7 +685,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -718,7 +708,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -741,7 +731,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -765,7 +755,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -784,7 +774,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -803,7 +793,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -822,7 +812,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -836,15 +826,13 @@
     "id": "941015",
     "pattern": "3",
     "msg": "XSS Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -855,15 +843,13 @@
     "id": "941016",
     "pattern": "3",
     "msg": "XSS Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -874,15 +860,13 @@
     "id": "941017",
     "pattern": "4",
     "msg": "XSS Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -893,15 +877,13 @@
     "id": "941018",
     "pattern": "4",
     "msg": "XSS Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,

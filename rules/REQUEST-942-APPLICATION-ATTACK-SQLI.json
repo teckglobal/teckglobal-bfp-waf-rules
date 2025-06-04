@@ -3,15 +3,13 @@
     "id": "942011",
     "pattern": "1",
     "msg": "SQLI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -22,15 +20,13 @@
     "id": "942012",
     "pattern": "1",
     "msg": "SQLI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -409,15 +405,13 @@
     "id": "942013",
     "pattern": "2",
     "msg": "SQLI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -428,15 +422,13 @@
     "id": "942014",
     "pattern": "2",
     "msg": "SQLI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -450,7 +442,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -469,7 +461,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -482,10 +474,10 @@
     "category": "SQLI"
   },
   {
-    "id": "custom-69121",
+    "id": "custom-489194",
     "pattern": "%{TX.2}",
     "msg": "SQLI Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -505,7 +497,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -514,14 +506,14 @@
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-69121",
+    "parent_rule_id": "custom-489194",
     "category": "SQLI"
   },
   {
-    "id": "custom-730484",
+    "id": "custom-765919",
     "pattern": "%{TX.2}",
     "msg": "SQLI Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -541,7 +533,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -559,7 +551,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -577,7 +569,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -595,7 +587,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -613,7 +605,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -631,7 +623,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -649,7 +641,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -667,7 +659,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -685,7 +677,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -703,7 +695,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -721,7 +713,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -739,7 +731,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -757,7 +749,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -775,7 +767,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -793,7 +785,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -811,7 +803,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -829,7 +821,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -847,7 +839,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -862,10 +854,10 @@
     "id": "942430",
     "pattern": "((?:[~!@#\\$%\\^&\\*\\(\\)\\-\\+=\\{\\}\\[\\]\\|:;\\\"'\u00b4\u2019\u2018`<>][^~!@#\\$%\\^&\\*\\(\\)\\-\\+=\\{\\}\\[\\]\\|:;\\\"'\u00b4\u2019\u2018`<>]*?){12})",
     "msg": "Restricted SQL Character Anomaly Detection (args): # of special characters exceeded (12)",
-    "score": 5,
+    "score": 3,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -880,8 +872,8 @@
     "id": "942441",
     "pattern": "[a-zA-Z0-9_-]{61,61}",
     "msg": "SQLI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
@@ -897,8 +889,8 @@
     "id": "942442",
     "pattern": "[a-zA-Z0-9_-]{91,91}",
     "msg": "SQLI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
@@ -917,7 +909,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -929,10 +921,10 @@
     "category": "SQLI"
   },
   {
-    "id": "custom-502796",
+    "id": "custom-656122",
     "pattern": "^ey[\\-0-9A-Z_a-z]+\\.ey[\\-0-9A-Z_a-z]+\\.[\\-0-9A-Z_a-z]+$",
     "msg": "SQLI Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -952,7 +944,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -970,7 +962,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -988,7 +980,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -1006,7 +998,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -1018,10 +1010,10 @@
     "category": "SQLI"
   },
   {
-    "id": "custom-582667",
+    "id": "custom-830545",
     "pattern": "^(?:and|or)$",
     "msg": "SQLI Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -1041,7 +1033,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -1059,7 +1051,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -1079,7 +1071,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -1097,7 +1089,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -1112,15 +1104,13 @@
     "id": "942015",
     "pattern": "3",
     "msg": "SQLI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -1131,15 +1121,13 @@
     "id": "942016",
     "pattern": "3",
     "msg": "SQLI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -1153,7 +1141,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -1171,7 +1159,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -1186,10 +1174,10 @@
     "id": "942420",
     "pattern": "((?:[~!@#\\$%\\^&\\*\\(\\)\\-\\+=\\{\\}\\[\\]\\|:;\\\"'\u00b4\u2019\u2018`<>][^~!@#\\$%\\^&\\*\\(\\)\\-\\+=\\{\\}\\[\\]\\|:;\\\"'\u00b4\u2019\u2018`<>]*?){8})",
     "msg": "Restricted SQL Character Anomaly Detection (cookies): # of special characters exceeded (8)",
-    "score": 5,
+    "score": 3,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -1204,10 +1192,10 @@
     "id": "942431",
     "pattern": "((?:[~!@#\\$%\\^&\\*\\(\\)\\-\\+=\\{\\}\\[\\]\\|:;\\\"'\u00b4\u2019\u2018`<>][^~!@#\\$%\\^&\\*\\(\\)\\-\\+=\\{\\}\\[\\]\\|:;\\\"'\u00b4\u2019\u2018`<>]*?){6})",
     "msg": "Restricted SQL Character Anomaly Detection (args): # of special characters exceeded (6)",
-    "score": 5,
+    "score": 3,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -1222,10 +1210,10 @@
     "id": "942460",
     "pattern": "\\W{4}",
     "msg": "Meta-Character Anomaly Detection Alert - Repetitive Non-Word Characters",
-    "score": 5,
+    "score": 3,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none"
@@ -1242,7 +1230,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -1260,7 +1248,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -1275,15 +1263,13 @@
     "id": "942017",
     "pattern": "4",
     "msg": "SQLI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -1294,15 +1280,13 @@
     "id": "942018",
     "pattern": "4",
     "msg": "SQLI Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -1313,10 +1297,10 @@
     "id": "942421",
     "pattern": "((?:[~!@#\\$%\\^&\\*\\(\\)\\-\\+=\\{\\}\\[\\]\\|:;\\\"'\u00b4\u2019\u2018`<>][^~!@#\\$%\\^&\\*\\(\\)\\-\\+=\\{\\}\\[\\]\\|:;\\\"'\u00b4\u2019\u2018`<>]*?){3})",
     "msg": "Restricted SQL Character Anomaly Detection (cookies): # of special characters exceeded (3)",
-    "score": 5,
+    "score": 3,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 4,
     "targets": "",
     "transformations": [
       "none",
@@ -1331,10 +1315,10 @@
     "id": "942432",
     "pattern": "((?:[~!@#\\$%\\^&\\*\\(\\)\\-\\+=\\{\\}\\[\\]\\|:;\\\"'\u00b4\u2019\u2018`<>][^~!@#\\$%\\^&\\*\\(\\)\\-\\+=\\{\\}\\[\\]\\|:;\\\"'\u00b4\u2019\u2018`<>]*?){2})",
     "msg": "Restricted SQL Character Anomaly Detection (args): # of special characters exceeded (2)",
-    "score": 5,
+    "score": 3,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 4,
     "targets": "",
     "transformations": [
       "none",

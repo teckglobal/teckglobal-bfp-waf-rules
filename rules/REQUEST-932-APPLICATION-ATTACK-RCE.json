@@ -3,15 +3,13 @@
     "id": "932011",
     "pattern": "1",
     "msg": "RCE Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -22,15 +20,13 @@
     "id": "932012",
     "pattern": "1",
     "msg": "RCE Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -338,15 +334,13 @@
     "id": "932013",
     "pattern": "2",
     "msg": "RCE Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -357,15 +351,13 @@
     "id": "932014",
     "pattern": "2",
     "msg": "RCE Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -379,7 +371,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -396,7 +388,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -414,7 +406,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -427,10 +419,10 @@
     "category": "RCE"
   },
   {
-    "id": "custom-44675",
+    "id": "custom-929088",
     "pattern": "/",
     "msg": "RCE Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -444,10 +436,10 @@
     "category": "RCE"
   },
   {
-    "id": "custom-39700",
+    "id": "custom-818660",
     "pattern": "\\s",
     "msg": "RCE Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -467,7 +459,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -476,14 +468,14 @@
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-39700",
+    "parent_rule_id": "custom-818660",
     "category": "RCE"
   },
   {
-    "id": "custom-772952",
+    "id": "custom-824962",
     "pattern": "^[^\\.]+\\.[^;\\?]+[;\\?](.*(['\\*\\?\\x5c`][^\\n/]+/|/[^/]+?['\\*\\?\\x5c`]|\\$[!#\\$\\(\\*\\-0-9\\?-\\[_a-\\{]))",
     "msg": "RCE Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -493,14 +485,14 @@
     ],
     "enabled": true,
     "chain_level": 2,
-    "parent_rule_id": "custom-39700",
+    "parent_rule_id": "custom-818660",
     "category": "RCE"
   },
   {
-    "id": "custom-833238",
+    "id": "custom-576120",
     "pattern": "/",
     "msg": "RCE Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -510,14 +502,14 @@
     ],
     "enabled": true,
     "chain_level": 3,
-    "parent_rule_id": "custom-39700",
+    "parent_rule_id": "custom-818660",
     "category": "RCE"
   },
   {
-    "id": "custom-407391",
+    "id": "custom-39139",
     "pattern": "\\s",
     "msg": "RCE Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -537,7 +529,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -546,14 +538,14 @@
     ],
     "enabled": true,
     "chain_level": 1,
-    "parent_rule_id": "custom-407391",
+    "parent_rule_id": "custom-39139",
     "category": "RCE"
   },
   {
-    "id": "custom-403042",
+    "id": "custom-735470",
     "pattern": "/",
     "msg": "RCE Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -563,14 +555,14 @@
     ],
     "enabled": true,
     "chain_level": 2,
-    "parent_rule_id": "custom-407391",
+    "parent_rule_id": "custom-39139",
     "category": "RCE"
   },
   {
-    "id": "custom-941245",
+    "id": "custom-773360",
     "pattern": "\\s",
     "msg": "RCE Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -590,7 +582,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -607,7 +599,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -618,10 +610,10 @@
     "category": "RCE"
   },
   {
-    "id": "custom-234499",
+    "id": "custom-955534",
     "pattern": "[0-9]\\s*\\'\\s*[0-9]",
     "msg": "RCE Detected",
-    "score": 5,
+    "score": 0,
     "action": "block",
     "phase": 2,
     "paranoia_level": 1,
@@ -641,7 +633,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -660,7 +652,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -678,7 +670,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -696,7 +688,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -714,7 +706,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -732,7 +724,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -749,7 +741,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none"
@@ -766,7 +758,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 2,
     "targets": "",
     "transformations": [
       "none",
@@ -782,15 +774,13 @@
     "id": "932015",
     "pattern": "3",
     "msg": "RCE Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -801,15 +791,13 @@
     "id": "932016",
     "pattern": "3",
     "msg": "RCE Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -823,7 +811,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none"
@@ -840,7 +828,7 @@
     "score": 5,
     "action": "block",
     "phase": 1,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -859,7 +847,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -878,7 +866,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -897,7 +885,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -915,7 +903,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -933,7 +921,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none",
@@ -951,7 +939,7 @@
     "score": 5,
     "action": "block",
     "phase": 2,
-    "paranoia_level": 1,
+    "paranoia_level": 3,
     "targets": "",
     "transformations": [
       "none"
@@ -965,15 +953,13 @@
     "id": "932017",
     "pattern": "4",
     "msg": "RCE Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 1,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
@@ -984,15 +970,13 @@
     "id": "932018",
     "pattern": "4",
     "msg": "RCE Detected",
-    "score": 5,
-    "action": "block",
+    "score": 0,
+    "action": "pass",
     "phase": 2,
     "paranoia_level": 1,
     "targets": "",
     "transformations": [
-      "none",
-      "urlDecodeUni",
-      "lowercase"
+      "none"
     ],
     "enabled": true,
     "chain_level": 0,
