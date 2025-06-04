@@ -34,23 +34,6 @@
     "category": "RCE"
   },
   {
-    "id": "920100",
-    "pattern": "(?i)^(?:get /[^#\\?]*(?:\\?[^\\s\\x0b#]*)?(?:#[^\\s\\x0b]*)?|(?:connect (?:(?:[0-9]{1,3}\\.){3}[0-9]{1,3}\\.?(?::[0-9]+)?|[\\--9A-Z_a-z]+:[0-9]+)|options \\*|[a-z]{3,10}[\\s\\x0b]+(?:[0-9A-Z_a-z]{3,7}?://[\\--9A-Z_a-z]*(?::[0-9]+)?)?/[^#\\?]*(?:\\?[^\\s\\x0b#]*)?(?:#[^\\s\\x0b]*)?)[\\s\\x0b]+[\\.-9A-Z_a-z]+)$",
-    "msg": "Invalid HTTP Request Line",
-    "score": 3,
-    "action": "block",
-    "phase": 1,
-    "paranoia_level": 1,
-    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
-    "transformations": [
-      "none"
-    ],
-    "enabled": true,
-    "chain_level": 0,
-    "parent_rule_id": null,
-    "category": "RCE"
-  },
-  {
     "id": "920120",
     "pattern": "(?i)^(?:&(?:(?:[acegilnorsuz]acut|[aeiou]grav|[aino]tild)e|[c-elnr-tz]caron|(?:[cgklnr-t]cedi|[aeiouy]um)l|[aceg-josuwy]circ|[au]ring|a(?:mp|pos)|nbsp|oslash);|[^\\\"';=\\x5c])*$",
     "msg": "Attempted multipart/form-data bypass",
@@ -1025,24 +1008,6 @@
       "none",
       "lowercase",
       "length"
-    ],
-    "enabled": true,
-    "chain_level": 0,
-    "parent_rule_id": null,
-    "category": "RCE"
-  },
-  {
-    "id": "920600",
-    "pattern": "^(?:(?:\\*|[^!\\\"\\(\\),/:-\\?\\[-\\]\\{\\}]+)/(?:\\*|[^!\\\"\\(\\),/:-\\?\\[-\\]\\{\\}]+)|\\*)(?:[\\s\\x0b]*;[\\s\\x0b]*(?:charset[\\s\\x0b]*=[\\s\\x0b]*\\\"?(?:iso-8859-15?|utf-8|windows-1252)\\b\\\"?|(?:[^\\s\\x0b-\\\"\\(\\),/:-\\?\\[-\\]c\\{\\}]|c(?:[^!\\\"\\(\\),/:-\\?\\[-\\]h\\{\\}]|h(?:[^!\\\"\\(\\),/:-\\?\\[-\\]a\\{\\}]|a(?:[^!\\\"\\(\\),/:-\\?\\[-\\]r\\{\\}]|r(?:[^!\\\"\\(\\),/:-\\?\\[-\\]s\\{\\}]|s(?:[^!\\\"\\(\\),/:-\\?\\[-\\]e\\{\\}]|e[^!\\\"\\(\\),/:-\\?\\[-\\]t\\{\\}]))))))[^!\\\"\\(\\),/:-\\?\\[-\\]\\{\\}]*[\\s\\x0b]*=[\\s\\x0b]*[^!\\(\\),/:-\\?\\[-\\]\\{\\}]+);?)*(?:[\\s\\x0b]*,[\\s\\x0b]*(?:(?:\\*|[^!\\\"\\(\\),/:-\\?\\[-\\]\\{\\}]+)/(?:\\*|[^!\\\"\\(\\),/:-\\?\\[-\\]\\{\\}]+)|\\*)(?:[\\s\\x0b]*;[\\s\\x0b]*(?:charset[\\s\\x0b]*=[\\s\\x0b]*\\\"?(?:iso-8859-15?|utf-8|windows-1252)\\b\\\"?|(?:[^\\s\\x0b-\\\"\\(\\),/:-\\?\\[-\\]c\\{\\}]|c(?:[^!\\\"\\(\\),/:-\\?\\[-\\]h\\{\\}]|h(?:[^!\\\"\\(\\),/:-\\?\\[-\\]a\\{\\}]|a(?:[^!\\\"\\(\\),/:-\\?\\[-\\]r\\{\\}]|r(?:[^!\\\"\\(\\),/:-\\?\\[-\\]s\\{\\}]|s(?:[^!\\\"\\(\\),/:-\\?\\[-\\]e\\{\\}]|e[^!\\\"\\(\\),/:-\\?\\[-\\]t\\{\\}]))))))[^!\\\"\\(\\),/:-\\?\\[-\\]\\{\\}]*[\\s\\x0b]*=[\\s\\x0b]*[^!\\(\\),/:-\\?\\[-\\]\\{\\}]+);?)*)*$",
-    "msg": "Illegal Accept header: charset parameter",
-    "score": 5,
-    "action": "block",
-    "phase": 1,
-    "paranoia_level": 1,
-    "targets": "REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS|ARGS_NAMES|REQUEST_URI|REQUEST_HEADERS|REQUEST_BODY",
-    "transformations": [
-      "none",
-      "lowercase"
     ],
     "enabled": true,
     "chain_level": 0,
