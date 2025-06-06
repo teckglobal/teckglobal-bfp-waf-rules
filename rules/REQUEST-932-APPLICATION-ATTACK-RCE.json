@@ -11,7 +11,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -28,7 +28,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -45,7 +45,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -62,7 +62,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -79,7 +79,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"cmdLine\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"language-powershell\", \"platform-windows\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"phrase_match_file\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -96,7 +96,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-windows\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -113,7 +113,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"cmdLine\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -130,7 +130,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"cmdLine\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-windows\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -147,7 +147,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"cmdLine\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -164,7 +164,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -181,7 +181,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -198,7 +198,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -215,7 +215,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"cmdLine\", \"normalizePath\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"phrase_match_file\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -232,7 +232,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"urlDecodeUni\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -249,7 +249,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"urlDecodeUni\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -266,7 +266,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -283,7 +283,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"phrase_match_file\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -300,7 +300,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-windows\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -317,7 +317,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-windows\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -334,7 +334,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -351,7 +351,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -368,7 +368,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -385,7 +385,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"cmdLine\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -402,13 +402,13 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\", \"urlDecodeUni\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{TX.932200_MATCHED_VAR_NAME}: %{MATCHED_VAR}"
   },
   {
-    "rule_id": "custom-688e4645",
+    "rule_id": "custom-6f305154",
     "rule_pattern": "/",
     "action": "log",
     "enabled": true,
@@ -419,13 +419,13 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 1,
     "parent_rule_id": "932200",
     "logdata": "RCE Detected"
   },
   {
-    "rule_id": "custom-b0d798cd",
+    "rule_id": "custom-20ad24e0",
     "rule_pattern": "\\s",
     "action": "log",
     "enabled": true,
@@ -436,9 +436,9 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 2,
-    "parent_rule_id": "custom-688e4645",
+    "parent_rule_id": "custom-6f305154",
     "logdata": "RCE Detected"
   },
   {
@@ -453,13 +453,13 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\", \"urlDecodeUni\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.2} found within %{TX.932205_MATCHED_VAR_NAME}: %{MATCHED_VAR}"
   },
   {
-    "rule_id": "custom-0efc3017",
+    "rule_id": "custom-b2b988bb",
     "rule_pattern": "^[^\\.]+\\.[^;\\?]+[;\\?](.*(['\\*\\?\\x5c`][^\\n/]+/|/[^/]+?['\\*\\?\\x5c`]|\\$[!#\\$\\(\\*\\-0-9\\?-\\[_a-\\{]))",
     "action": "log",
     "enabled": true,
@@ -470,13 +470,13 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 1,
     "parent_rule_id": "932205",
     "logdata": "RCE Detected"
   },
   {
-    "rule_id": "custom-45d978e5",
+    "rule_id": "custom-5be66a29",
     "rule_pattern": "/",
     "action": "log",
     "enabled": true,
@@ -487,13 +487,13 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 2,
-    "parent_rule_id": "custom-0efc3017",
+    "parent_rule_id": "custom-b2b988bb",
     "logdata": "RCE Detected"
   },
   {
-    "rule_id": "custom-12cb465c",
+    "rule_id": "custom-f56d8d33",
     "rule_pattern": "\\s",
     "action": "log",
     "enabled": true,
@@ -504,9 +504,9 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 3,
-    "parent_rule_id": "custom-45d978e5",
+    "parent_rule_id": "custom-5be66a29",
     "logdata": "RCE Detected"
   },
   {
@@ -521,13 +521,13 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\", \"urlDecodeUni\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{TX.932206_MATCHED_VAR_NAME}: %{MATCHED_VAR}"
   },
   {
-    "rule_id": "custom-9725edde",
+    "rule_id": "custom-7177420e",
     "rule_pattern": "/",
     "action": "log",
     "enabled": true,
@@ -538,13 +538,13 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 1,
     "parent_rule_id": "932206",
     "logdata": "RCE Detected"
   },
   {
-    "rule_id": "custom-eddbb9b9",
+    "rule_id": "custom-f8d0a70f",
     "rule_pattern": "\\s",
     "action": "log",
     "enabled": true,
@@ -555,9 +555,9 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 2,
-    "parent_rule_id": "custom-9725edde",
+    "parent_rule_id": "custom-7177420e",
     "logdata": "RCE Detected"
   },
   {
@@ -572,7 +572,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -589,13 +589,13 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{TX.932240_MATCHED_VAR_NAME}: %{MATCHED_VAR}"
   },
   {
-    "rule_id": "custom-87757802",
+    "rule_id": "custom-b311c1ad",
     "rule_pattern": "[0-9]\\s*\\'\\s*[0-9]",
     "action": "log",
     "enabled": true,
@@ -606,7 +606,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 1,
     "parent_rule_id": "932240",
     "logdata": "RCE Detected"
@@ -623,7 +623,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"escapeSeqDecode\", \"compressWhitespace\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -640,7 +640,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"cmdLine\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -657,7 +657,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"escapeSeqDecode\"], \"raw_tags\": [\"application-multi\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/137/134\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -674,7 +674,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"escapeSeqDecode\"], \"raw_tags\": [\"application-multi\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/137/134\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -691,7 +691,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"escapeSeqDecode\"], \"raw_tags\": [\"application-multi\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/137/134\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -708,7 +708,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -725,7 +725,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -742,7 +742,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"cmdLine\", \"normalizePath\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"phrase_match_file\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -759,7 +759,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -776,7 +776,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -793,7 +793,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -810,7 +810,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"cmdLine\", \"normalizePath\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -827,7 +827,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"cmdLine\", \"normalizePath\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -844,7 +844,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"normalizePath\", \"cmdLine\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -861,7 +861,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"escapeSeqDecode\"], \"raw_tags\": [\"application-multi\", \"platform-multi\", \"attack-rce\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/137/134\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -878,7 +878,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"escapeSeqDecode\"], \"raw_tags\": [\"application-multi\", \"platform-multi\", \"attack-rce\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/137/134\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -895,7 +895,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"escapeSeqDecode\"], \"raw_tags\": [\"application-multi\", \"platform-multi\", \"attack-rce\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/137/134\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -912,7 +912,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-shell\", \"platform-unix\", \"attack-rce\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-RCE\", \"capec/1000/152/248/88\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -929,7 +929,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -946,7 +946,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"

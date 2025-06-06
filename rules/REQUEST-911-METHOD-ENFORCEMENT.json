@@ -11,7 +11,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -28,7 +28,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -45,7 +45,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-generic\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/METHOD-ENFORCEMENT\", \"capec/1000/210/272/220/274\", \"PCI/12.1\"], \"operator\": \"within\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "%{MATCHED_VAR}"
@@ -62,7 +62,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -79,7 +79,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -96,7 +96,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -113,7 +113,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -130,7 +130,7 @@
     "category": "RCE",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"
@@ -147,7 +147,7 @@
     "category": "RCE",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "RCE Detected"

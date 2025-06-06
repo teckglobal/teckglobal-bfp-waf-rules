@@ -11,7 +11,7 @@
     "category": "JAVA",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"
@@ -28,7 +28,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"
@@ -45,7 +45,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/137/6\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}"
@@ -62,13 +62,13 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/248\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}"
   },
   {
-    "rule_id": "custom-0941b4d4",
+    "rule_id": "custom-cdd72d5f",
     "rule_pattern": "(?:unmarshaller|base64data|java\\.)",
     "action": "log",
     "enabled": true,
@@ -79,7 +79,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 1,
     "parent_rule_id": "944110",
     "logdata": "JAVA Detected"
@@ -96,13 +96,13 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/248\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}"
   },
   {
-    "rule_id": "custom-2f86e472",
+    "rule_id": "custom-53455f75",
     "rule_pattern": "(?:runtime|processbuilder)",
     "action": "log",
     "enabled": true,
@@ -113,7 +113,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 1,
     "parent_rule_id": "944120",
     "logdata": "JAVA Detected"
@@ -130,7 +130,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/248\", \"PCI/6.5.2\"], \"operator\": \"phrase_match_file\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}"
@@ -147,7 +147,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-injection-java\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/242\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -164,7 +164,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"urlDecodeUni\", \"jsDecode\", \"htmlEntityDecode\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/137/6\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"
@@ -181,7 +181,7 @@
     "category": "JAVA",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"
@@ -198,7 +198,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"
@@ -215,7 +215,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"urlDecodeUni\", \"jsDecode\", \"htmlEntityDecode\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/137/6\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"
@@ -232,7 +232,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/248\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}"
@@ -249,7 +249,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/248\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}"
@@ -266,7 +266,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/248\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}"
@@ -283,7 +283,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/248\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}"
@@ -300,7 +300,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"urlDecodeUni\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/248\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}"
@@ -317,7 +317,7 @@
     "category": "JAVA",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"
@@ -334,7 +334,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"
@@ -351,7 +351,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/248\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}"
@@ -368,7 +368,7 @@
     "category": "JAVA",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"
@@ -385,7 +385,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"
@@ -402,7 +402,7 @@
     "category": "JAVA",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"urlDecodeUni\", \"jsDecode\", \"htmlEntityDecode\"], \"raw_tags\": [\"application-multi\", \"language-java\", \"platform-multi\", \"attack-rce\", \"paranoia-level/4\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-JAVA\", \"capec/1000/152/137/6\", \"PCI/6.5.2\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "JAVA Detected"

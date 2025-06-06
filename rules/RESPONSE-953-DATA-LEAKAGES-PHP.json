@@ -11,7 +11,7 @@
     "category": "PHP",
     "phase": 4,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\", \"OWASP_CRS/DATA-LEAKAGES-PHP\"], \"operator\": \"phrase_match\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PHP Detected"
@@ -28,7 +28,7 @@
     "category": "PHP",
     "phase": 3,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PHP Detected"
@@ -45,7 +45,7 @@
     "category": "PHP",
     "phase": 4,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PHP Detected"
@@ -62,7 +62,7 @@
     "category": "PHP",
     "phase": 4,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-php\", \"platform-multi\", \"attack-disclosure\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/DATA-LEAKAGES-PHP\", \"capec/1000/118/116\", \"PCI/6.5.6\"], \"operator\": \"phrase_match_file\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}"
@@ -79,7 +79,7 @@
     "category": "PHP",
     "phase": 4,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-php\", \"platform-multi\", \"attack-disclosure\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/DATA-LEAKAGES-PHP\", \"capec/1000/118/116\", \"PCI/6.5.6\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}"
@@ -96,7 +96,7 @@
     "category": "PHP",
     "phase": 4,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-php\", \"platform-multi\", \"attack-disclosure\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/DATA-LEAKAGES-PHP\", \"capec/1000/118/116\", \"PCI/6.5.6\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}"
@@ -113,7 +113,7 @@
     "category": "PHP",
     "phase": 3,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PHP Detected"
@@ -130,7 +130,7 @@
     "category": "PHP",
     "phase": 4,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PHP Detected"
@@ -147,7 +147,7 @@
     "category": "PHP",
     "phase": 4,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-php\", \"platform-multi\", \"attack-disclosure\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/DATA-LEAKAGES-PHP\", \"capec/1000/118/116\", \"PCI/6.5.6\"], \"operator\": \"phrase_match_file\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}"
@@ -164,7 +164,7 @@
     "category": "PHP",
     "phase": 3,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PHP Detected"
@@ -181,7 +181,7 @@
     "category": "PHP",
     "phase": 4,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PHP Detected"
@@ -198,7 +198,7 @@
     "category": "PHP",
     "phase": 3,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PHP Detected"
@@ -215,7 +215,7 @@
     "category": "PHP",
     "phase": 4,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PHP Detected"

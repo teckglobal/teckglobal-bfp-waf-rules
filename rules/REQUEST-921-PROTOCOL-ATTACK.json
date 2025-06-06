@@ -11,7 +11,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PROTOCOL Detected"
@@ -28,7 +28,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PROTOCOL Detected"
@@ -45,7 +45,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"htmlEntityDecode\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220/33\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -62,7 +62,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220/34\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -79,7 +79,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"htmlEntityDecode\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220/34\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -96,7 +96,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"urlDecodeUni\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220/273\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -113,7 +113,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220/33\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -130,7 +130,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220/33\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -147,7 +147,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"urlDecodeUni\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220/34\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -164,7 +164,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"htmlEntityDecode\"], \"raw_tags\": [\"application-multi\", \"language-ldap\", \"platform-multi\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/152/248/136\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -181,7 +181,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/255/153\", \"PCI/12.1\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -198,7 +198,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"urlDecodeUni\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-apache\", \"attack-protocol\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220/33\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -215,7 +215,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"attack-protocol\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220/33\"], \"operator\": \"string_equal\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -232,7 +232,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PROTOCOL Detected"
@@ -249,7 +249,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PROTOCOL Detected"
@@ -266,7 +266,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220/33\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -283,7 +283,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/2\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/255/153\", \"PCI/12.1\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -300,7 +300,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PROTOCOL Detected"
@@ -317,7 +317,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PROTOCOL Detected"
@@ -334,7 +334,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/210/272/220\"], \"operator\": \"unknown\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: Header %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -351,7 +351,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/152/137/15/460\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PROTOCOL Detected"
@@ -368,7 +368,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/152/137/15/460\"], \"operator\": \"unknown\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{MATCHED_VAR} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -385,7 +385,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/152/137/15/460\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -402,7 +402,7 @@
     "category": "PROTOCOL",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PROTOCOL Detected"
@@ -419,7 +419,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "PROTOCOL Detected"
@@ -436,7 +436,7 @@
     "category": "PROTOCOL",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"paranoia-level/4\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ATTACK\", \"capec/1000/152/137/15/460\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"

@@ -11,7 +11,7 @@
     "category": "SESSION_FIXATION",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "SESSION_FIXATION Detected"
@@ -28,7 +28,7 @@
     "category": "SESSION_FIXATION",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "SESSION_FIXATION Detected"
@@ -45,7 +45,7 @@
     "category": "SESSION_FIXATION",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"urlDecodeUni\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-fixation\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-SESSION-FIXATION\", \"capec/1000/225/21/593/61\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
@@ -62,13 +62,13 @@
     "category": "SESSION_FIXATION",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-fixation\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-SESSION-FIXATION\", \"capec/1000/225/21/593/61\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{TX.943110_MATCHED_VAR_NAME}: %{MATCHED_VAR}"
   },
   {
-    "rule_id": "custom-d3cc633b",
+    "rule_id": "custom-b4f73dfb",
     "rule_pattern": "^(?:ht|f)tps?://(.*?)/",
     "action": "log",
     "enabled": true,
@@ -79,13 +79,13 @@
     "category": "SESSION_FIXATION",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 1,
     "parent_rule_id": "943110",
     "logdata": "SESSION_FIXATION Detected"
   },
   {
-    "rule_id": "custom-f177018a",
+    "rule_id": "custom-f8e255f6",
     "rule_pattern": "%{request_headers.host}",
     "action": "log",
     "enabled": true,
@@ -96,9 +96,9 @@
     "category": "SESSION_FIXATION",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"ends_with\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 2,
-    "parent_rule_id": "custom-d3cc633b",
+    "parent_rule_id": "custom-b4f73dfb",
     "logdata": "SESSION_FIXATION Detected"
   },
   {
@@ -113,13 +113,13 @@
     "category": "SESSION_FIXATION",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\", \"lowercase\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-fixation\", \"paranoia-level/1\", \"OWASP_CRS\", \"OWASP_CRS/ATTACK-SESSION-FIXATION\", \"capec/1000/225/21/593/61\"], \"operator\": \"regex\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "Matched Data: %{TX.0} found within %{TX.943120_MATCHED_VAR_NAME}: %{MATCHED_VAR}"
   },
   {
-    "rule_id": "custom-efd342bb",
+    "rule_id": "custom-2fac5251",
     "rule_pattern": "0",
     "action": "log",
     "enabled": true,
@@ -130,7 +130,7 @@
     "category": "SESSION_FIXATION",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"unknown\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 1,
     "parent_rule_id": "943120",
     "logdata": "SESSION_FIXATION Detected"
@@ -147,7 +147,7 @@
     "category": "SESSION_FIXATION",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "SESSION_FIXATION Detected"
@@ -164,7 +164,7 @@
     "category": "SESSION_FIXATION",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "SESSION_FIXATION Detected"
@@ -181,7 +181,7 @@
     "category": "SESSION_FIXATION",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "SESSION_FIXATION Detected"
@@ -198,7 +198,7 @@
     "category": "SESSION_FIXATION",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "SESSION_FIXATION Detected"
@@ -215,7 +215,7 @@
     "category": "SESSION_FIXATION",
     "phase": 1,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "SESSION_FIXATION Detected"
@@ -232,7 +232,7 @@
     "category": "SESSION_FIXATION",
     "phase": 2,
     "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"OWASP_CRS\"], \"operator\": \"less_than\"}",
-    "version": "4.15.0",
+    "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
     "logdata": "SESSION_FIXATION Detected"
