@@ -14,7 +14,7 @@
   "version": "4.16.0",
   "chain_level": 0,
   "parent_rule_id": null,
-  "logdata": "INITIALIZATION Detected"
+  "logdata": "CRS is deployed without configuration! Please copy the crs-setup.conf.example template to crs-setup.conf, and include the crs-setup.conf file in your webserver configuration before including the CRS rules."
   },
   {
     "rule_id": "901100",
