@@ -1540,7 +1540,7 @@
     "severity": "CRITICAL",
     "category": "RCE",
     "phase": 1,
-    "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"header-allowlist\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ENFORCEMENT\", \"capec/1000/210/272\"], \"operator\": \"unknown\"}",
+    "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"header-allowlist\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ENFORCEMENT\", \"capec/1000/210/272\"], \"operator\": \"greater_than\"}",
     "version": "4.16.0",
     "chain_level": 0,
     "parent_rule_id": null,
