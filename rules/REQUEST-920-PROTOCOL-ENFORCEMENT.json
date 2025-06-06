@@ -1549,19 +1549,19 @@
   {
     "rule_id": "custom-8d7c4015",
     "rule_pattern": "^(?:(?:max-age=[0-9]+|min-fresh=[0-9]+|no-cache|no-store|no-transform|only-if-cached|max-stale(?:=[0-9]+)?)(?:\\s*\\,\\s*|$)){1,7}$",
-    "action": "log",
+    "action": "block",
     "enabled": true,
-    "score": 2,
-    "paranoia_level": 1,
-    "anomaly_score": 2,
-    "severity": "NOTICE",
-    "category": "RCE",
-    "phase": 2,
-    "tags": "{\"targets\": [\"REQUEST_COOKIES\", \"REQUEST_COOKIES_NAMES\", \"ARGS\", \"ARGS_NAMES\", \"REQUEST_URI\", \"REQUEST_HEADERS\", \"REQUEST_BODY\"], \"transformations\": [\"none\"], \"raw_tags\": [], \"operator\": \"regex\"}",
+    "score": 5,
+    "paranoia_level": 3,
+    "anomaly_score": 30,
+    "severity": "CRITICAL",
+    "category": "PROTOCOL-ENFORCEMENT",
+    "phase": 1,
+    "tags": "{\"targets\": [\"REQUEST_HEADERS:Cache-Control\"], \"transformations\": [\"none\"], \"raw_tags\": [\"application-multi\", \"language-multi\", \"platform-multi\", \"attack-protocol\", \"header-allowlist\", \"paranoia-level/3\", \"OWASP_CRS\", \"OWASP_CRS/PROTOCOL-ENFORCEMENT\", \"capec/1000/210/272\"], \"operator\": \"regex\", \"negated\": true}",
     "version": "4.16.0",
     "chain_level": 1,
     "parent_rule_id": "920510",
-    "logdata": "RCE Detected"
+    "logdata": "Invalid Cache-Control value in request found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}"
   },
   {
     "rule_id": "920521",
