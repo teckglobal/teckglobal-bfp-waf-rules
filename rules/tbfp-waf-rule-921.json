@@ -164,7 +164,7 @@
     {
         "id": "921200",
         "rule_name": "921200",
-        "rule_pattern": "^[^:\\(\\)&\\|\\!\\<\\>\\~]*\\)\\s*(?:(?:\\((?:[^,\\(\\)=\\&\\|\\!\\<\\>\\~]+[><~]?=|\\s*[&!|]\\s*(?:\\)|\\()?)|\\)\\s*\\(\\s*[\\&\\|\\!]\\s*|[&!|]\\s*\\([^\\(\\)=\\&\\|\\!\\<\\>\\~]+[><~]?=[^:\\(\\)&\\|\\!\\<\\>\\~]*)",
+        "rule_pattern": "^[^:\\(\\)&\\|\\!\\<\\>\\~]*\\)\\s*(?:(?:\\((?:[^,\\(\\)=\\&\\|\\!\\<\\>\\~]+[><~]?=|\\s*[&!|]\\s*(?:\\)|\\())?)|\\)\\s*\\(\\s*[\\&\\|\\!]\\s*|[&!|]\\s*\\([^\\(\\)=\\&\\|\\!\\<\\>\\~]+[><~]?=[^:\\(\\)&\\|\\!\\<\\>\\~]*)",
         "action": "block",
         "score": 10,
         "paranoia_level": 1,
@@ -176,7 +176,7 @@
         "version": "4.16.0-dev",
         "chain_level": 0,
         "parent_rule_id": null,
-        "logdata": "LDAP Injection detected",
+        "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
         "enabled": true
     },
     {
@@ -200,7 +200,7 @@
     {
         "id": "921250",
         "rule_name": "921250",
-        "rule_pattern": "1",
+        "rule_pattern": "\\x22?\\x24Version",
         "action": "block",
         "score": 10,
         "paranoia_level": 1,
@@ -290,7 +290,7 @@
     {
         "id": "921422",
         "rule_name": "921422",
-        "rule_pattern": "^[^\\s\\x0b,;]+[\\s\\x0b,;].*?\\b(?:(?:tex|multipar)t|application)|((?:audi|vide)o|image|cs[sv]|(?:vn|relate)d|p(?:df|lain)|json|(?:soa|cs)p|x(?:ml|-www-form-urlencoded)|form-data|x-amf|(?:octe|repor)t|stream)|([\\+/]))\\b",
+        "rule_pattern": "^[^\\s\\x0b,;]+[\\s\\x0b,;].*?\\b(?:(?:tex|multipar)t|application|(?:audi|vide)o|image|cs[sv]|(?:vn|relate)d|p(?:df|lain)|json|(?:soa|cs)p|x(?:ml|-www-form-urlencoded)|form-data|x-amf|(?:octe|repor)t|stream|[+/])\b",
         "action": "block",
         "score": 10,
         "paranoia_level": 2,
