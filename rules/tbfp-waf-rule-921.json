@@ -200,7 +200,7 @@
     {
         "id": "921250",
         "rule_name": "921250",
-        "rule_pattern": "1",
+        "rule_pattern": "\\x22?\\x24Version",
         "action": "block",
         "score": 10,
         "paranoia_level": 1,
