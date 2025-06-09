@@ -1,5 +1,5 @@
 id,rule_id,rule_pattern,action,enabled,score,paranoia_level,anomaly_score,severity,category,phase,tags,version,chain_level,parent_rule_id,logdata,capture,transformations,multiMatch
-"",942011,"TX:DETECTION_PARANOIA_LEVEL ""@lt 1""","pass",1,0,0,0,"INFO","attack-sqli",1,"OWASP_CRS","OWASP_CRS/4.16.0-dev",0,0,"Skips SQLi rules for PL0",0,"",0
+"","942011","TX:DETECTION_PARANOIA_LEVEL ""@lt 1""","pass",1,0,0,0,"INFO","attack-sqli",1,"OWASP_CRS","OWASP_CRS/4.16.0-dev",0,0,"Skips SQLi rules for PL0",0,"",0
 "",942012,"TX:DETECTION_PARANOIA_LEVEL ""@lt 1""","pass",1,0,0,0,"INFO","attack-sqli",2,"OWASP_CRS","OWASP_CRS/4.16.0-dev",0,0,"Skips SQLi rules for PL0",0,"",0
 "",942013,"TX:DETECTION_PARANOIA_LEVEL ""@lt 2""","pass",1,0,0,0,"INFO","attack-sqli",1,"OWASP_CRS","OWASP_CRS/4.16.0-dev",0,0,"Skips SQLi rules for PL1",0,"",0
 "",942014,"TX:DETECTION_PARANOIA_LEVEL ""@lt 2""","pass",1,0,0,0,"INFO","attack-sqli",2,"OWASP_CRS","OWASP_CRS/4.16.0-dev",0,0,"Skips SQLi rules for PL1",0,"",0
