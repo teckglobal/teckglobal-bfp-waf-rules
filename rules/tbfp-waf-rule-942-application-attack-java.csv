@@ -1,5 +1,4 @@
 id,rule_id,rule_pattern,action,enabled,score,paranoia_level,category,phase,tags,version,chain_level,parent_rule_id,logdata,capture,transformations,multiMatch
-id,rule_id,rule_pattern,action,enabled,score,paranoia_level,category,phase,tags,version,chain_level,parent_rule_id,logdata,capture,transformations,multiMatch
 "","942100","","block","1","5","1","attack-sqli","2","REQUEST_COOKIES,REQUEST_COOKIES_NAMES,REQUEST_HEADERS:User-Agent,REQUEST_HEADERS:Referer,ARGS_NAMES,ARGS,XML:/*,operator:detectSQLi,attack-sqli,paranoia-level/1","teckglobal_bfp/1.2.0","0","0","Matched SQLi attempt","1","none,urlDecodeUni","0"
 "","942101","","block","1","5","1","attack-sqli","2","REQUEST_COOKIES,REQUEST_COOKIES_NAMES,REQUEST_HEADERS:User-Agent,REQUEST_HEADERS:Referer,ARGS_NAMES,ARGS,XML:/*,operator:detectSQLi,attack-sqli,paranoia-level/1","teckglobal_bfp/1.2.0","0","0","Matched SQLi attempt","1","none,urlDecodeUni","0"
 "","942011","@lt 1","block","1","5","1","attack-sqli","2","TX:DETECTION_PARANOIA_LEVEL,operator:lt,attack-sqli,paranoia-level/1","teckglobal_bfp/1.2.0","0","0","Paranoia level check","0","none","0"
