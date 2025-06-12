@@ -1,0 +1,2 @@
+"id","rule_id","rule_pattern","action","capture","transformations","score","paranoia_level","severity","category","phase","tags","version","chain_level","parent_rule_id","logdata","enabled","multiMatch"
+"","942011","1","pass","0","none","0","0","NOTICE","exception","1","TX:DETECTION_PARANOIA_LEVEL,operator:lt,paranoia-level/0,skipAfter:TECKGLOBAL_SQLI_END","teckglobal_bfp/1.2.0","0","0","Paranoia level too low","1","0"
