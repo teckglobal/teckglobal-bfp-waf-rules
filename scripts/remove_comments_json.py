@@ -7,7 +7,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Precompile regex
-SECRULE_RE = re.compile(r'^SecRule\s+([^\s]+)\s+("[^"]*"|[^\s"]*)?\s*(.*)$', re.DOTALL)
+SECRULE_RE = re.compile(r'^SecRule\s+([^\s]+)\s+("[^"]*"|[^\s"]+)?\s*(.*)$', re.DOTALL)
 SECMARKER_RE = re.compile(r'^SecMarker\s+"([^"]+)"$')
 
 # Define parse_rule function
@@ -59,6 +59,7 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
             char = actions_str[i]
             if char == '\\' and not escape_next:
                 escape_next = True
+                current_part += char
             elif char == '"' and not escape_next:
                 in_quotes = not in_quotes
                 current_part += char
@@ -66,6 +67,7 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
                 if current_part.strip():
                     action_parts.append(current_part.strip())
                 current_part = ""
+                escape_next = False
             else:
                 current_part += char
                 escape_next = False
@@ -78,22 +80,23 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
             if not part:
                 continue
             if part.startswith('tag:'):
-                tag_value = part[4:].strip('"\'')
-                tags.append(tag_value)
+                tags.append(part[4:].strip('"\''))
             elif part.startswith('t:'):
-                transform_value = part[2:].strip('"\'')
-                transforms.append(transform_value)
+                transforms.append(part[2:].strip('"\''))
             elif part.startswith('setvar:'):
                 if '=' in part[7:]:
                     var, val = part[7:].split('=', 1)
                     score_type = "attack" if "score" in var.lower() and "anomaly" not in var.lower() else ("anomaly" if "anomaly" in var.lower() else "other")
                     setvars.append({"variable": var.strip('"\''), "value": val.strip('"\''), "score_type": score_type})
             elif part.startswith('ctl:'):
-                ctl_value = part[4:].strip('"\'')
-                ctl.append(ctl_value)
+                ctl.append(part[4:].strip('"\''))
             elif ':' in part:
-                key, value = part.split(':', 1)
-                actions[key.strip()] = value.strip('"\'')
+                try:
+                    key, value = part.split(':', 1)
+                    actions[key.strip()] = value.strip('"\'')
+                except ValueError:
+                    logging.warning(f"Invalid action format in rule {rule_count}: {part[:50]}...")
+                    rule["parsing_status"] = "partial"
             else:
                 actions[part.strip('"\'')] = True
         
@@ -135,9 +138,9 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
         rule["rule_source"] = actions.get('ver', "OWASP_CRS/4.16.0-dev")
         rule["execution_phase"] = {1: "request_headers", 2: "request_body", 3: "response_headers", 4: "response_body", 5: "logging"}.get(int(actions.get('phase', 0)), None)
         
-        if not actions.get('id') and not rule["rule_id"].startswith("unknown-"):
+        if not actions.get('id') or rule["rule_id"].startswith("unknown-"):
             rule["parsing_status"] = "partial"
-            logging.warning(f"Partial parse for rule {rule_count} in {conf_file}: incomplete actions")
+            logging.warning(f"Partial parse for rule {rule_count} in {conf_file}: missing or invalid id")
         
         logging.debug(f"Parsed SecRule: {rule['rule_id']} with {len(tags)} tags, {len(transforms)} transforms")
         return rule, new_chain_id, new_chain_order
