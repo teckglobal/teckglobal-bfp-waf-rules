@@ -7,7 +7,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Precompile regex
-SECRULE_RE = re.compile(r'^SecRule\s+([^\s]+)\s+("[^"]*"|[^\s"]*)?\s*(.*)$', re.DOTALL)
+SECRULE_RE = re.compile(r'^SecRule\s+([^\s]+)\s+("[^"]*"|[^\s"]*)?\s*(".*"|.*)$', re.DOTALL)
 SECMARKER_RE = re.compile(r'^SecMarker\s+"([^"]+)"$')
 
 # Define parse_rule function
@@ -58,7 +58,6 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules):
             char = actions_str[i]
             if char == '"' and (i == 0 or actions_str[i-1] != '\\'):
                 in_quotes = not in_quotes
-                current_part += char
             elif char == ',' and not in_quotes:
                 if current_part.strip():
                     action_parts.append(current_part.strip())
@@ -184,7 +183,7 @@ for conf_file in conf_files:
                         chain_id = None
                         chain_order = 0
                     else:
-                        chain_id = parsed_rule["rule_id"] if parsed_rule.get("actions", {}).get("chain", False) and parsed_rule["rule_id"].startswith("unknown-") else None
+                        chain_id = parsed_rule["rule_id"] if parsed_rule.get("actions", {}).get("chain", False) and not parsed_rule["rule_id"].startswith("unknown-") else None
                         chain_order = 1 if chain_id else 0
                     rules.append(parsed_rule)
                 current_rule = []
