@@ -15,7 +15,7 @@
       "ver": "'OWASP_CRS/4.16.0-dev'",
       "skipAfter": "END-REQUEST-941-APPLICATION-ATTACK-XSS",
       "tags": [
-        "OWASP_CRS'"
+        "'OWASP_CRS'"
       ],
       "transforms": [],
       "setvars": []
@@ -37,7 +37,7 @@
       "ver": "'OWASP_CRS/4.16.0-dev'",
       "skipAfter": "END-REQUEST-941-APPLICATION-ATTACK-XSS",
       "tags": [
-        "OWASP_CRS'"
+        "'OWASP_CRS'"
       ],
       "transforms": [],
       "setvars": []
@@ -59,7 +59,7 @@
       "ver": "'OWASP_CRS/4.16.0-dev'",
       "skipAfter": "END-REQUEST-941-APPLICATION-ATTACK-XSS",
       "tags": [
-        "OWASP_CRS'"
+        "'OWASP_CRS'"
       ],
       "transforms": [],
       "setvars": []
@@ -81,7 +81,7 @@
       "ver": "'OWASP_CRS/4.16.0-dev'",
       "skipAfter": "END-REQUEST-941-APPLICATION-ATTACK-XSS",
       "tags": [
-        "OWASP_CRS'"
+        "'OWASP_CRS'"
       ],
       "transforms": [],
       "setvars": []
@@ -103,7 +103,7 @@
       "ver": "'OWASP_CRS/4.16.0-dev'",
       "skipAfter": "END-REQUEST-941-APPLICATION-ATTACK-XSS",
       "tags": [
-        "OWASP_CRS'"
+        "'OWASP_CRS'"
       ],
       "transforms": [],
       "setvars": []
@@ -125,7 +125,7 @@
       "ver": "'OWASP_CRS/4.16.0-dev'",
       "skipAfter": "END-REQUEST-941-APPLICATION-ATTACK-XSS",
       "tags": [
-        "OWASP_CRS'"
+        "'OWASP_CRS'"
       ],
       "transforms": [],
       "setvars": []
@@ -147,7 +147,7 @@
       "ver": "'OWASP_CRS/4.16.0-dev'",
       "skipAfter": "END-REQUEST-941-APPLICATION-ATTACK-XSS",
       "tags": [
-        "OWASP_CRS'"
+        "'OWASP_CRS'"
       ],
       "transforms": [],
       "setvars": []
@@ -169,7 +169,7 @@
       "ver": "'OWASP_CRS/4.16.0-dev'",
       "skipAfter": "END-REQUEST-941-APPLICATION-ATTACK-XSS",
       "tags": [
-        "OWASP_CRS'"
+        "'OWASP_CRS'"
       ],
       "transforms": [],
       "setvars": []
