@@ -21,13 +21,12 @@ def parse_rule(rule_text, conf_file):
         return rule
     
     # Match SecRule with flexible parsing
-    # Capture variables, operator (quoted or unquoted), and actions
-    secrule_match = re.match(r'^SecRule\s+([^\s"]+)(?:\s+("[^"]*"|[^\s"]+))?(?:\s+(.+))?$', rule_text, re.DOTALL)
+    secrule_match = re.match(r'^SecRule\s+([^\s]+)(?:\s+("[^"]*"|[^\s]+))?(?:\s+(.+))?$', rule_text, re.DOTALL)
     if secrule_match:
         rule["directive"] = "SecRule"
         rule["variables"] = [v.strip() for v in secrule_match.group(1).split('|') if v.strip()]
         rule["operator"] = secrule_match.group(2).strip('"') if secrule_match.group(2) else ""
-        actions_str = secrule_match.group(3) or ""
+        actions_str = secrule_match.group(3).strip('"') if secrule_match.group(3) else ""
         
         actions = {}
         tags = []
@@ -59,18 +58,18 @@ def parse_rule(rule_text, conf_file):
             if not part:
                 continue
             if part.startswith('tag:'):
-                tag_value = part[4:].strip('"')
+                tag_value = part[4:].strip('"\'')
                 tags.append(tag_value)
             elif part.startswith('t:'):
-                transform_value = part[2:].strip('"')
+                transform_value = part[2:].strip('"\'')
                 transforms.append(transform_value)
             elif part.startswith('setvar:'):
                 if '=' in part[7:]:
                     var, val = part[7:].split('=', 1)
-                    setvars.append({"variable": var.strip('"'), "value": val.strip('"')})
-            elif ':' in part:
+                    setvars.append({"variable": var.strip('"\''), "value": val.strip('"\'')})
+            elif ':' in part and not part.startswith('ctl:'):
                 key, value = part.split(':', 1)
-                actions[key.strip()] = value.strip('"')
+                actions[key.strip()] = value.strip('"\'')
             else:
                 actions[part] = True
         
