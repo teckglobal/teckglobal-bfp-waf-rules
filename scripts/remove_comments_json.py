@@ -15,7 +15,7 @@ ACTION_KEY_RE = re.compile(r'^([^:]+):(.+)$')
 # Define parse_rule function
 def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id, chain_order):
     rule = {
-        "file_name": os.path.splitext(conf_file)[0] + "-strip.conf",
+        "file_name": os.path.splitext(conf_file)[0] + "-strip.json",
         "comments": comments,
         "parsing_status": "success",
         "raw_rule": rule_text.strip()
@@ -93,11 +93,15 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
             match = ACTION_KEY_RE.match(part)
             if match and not part.startswith(('http:', 'https:')):
                 key = match.group(1).strip()
-                value = match.group(2).strip('"\'')
-                if key == 'tag':
-                    tags.append(value)
+                value = match.group(2).strip()
+                # Preserve quotes for msg and logdata
+                if key in ['msg', 'logdata']:
+                    value = value.strip('"\'')
+                    actions[key] = value
+                elif key == 'tag':
+                    tags.append(value.strip('"\''))
                 elif key == 't':
-                    transforms.append(value)
+                    transforms.append(value.strip('"\''))
                 elif key == 'setvar':
                     var_val_match = re.match(r'^([^=]+)=(.*)$', value)
                     if var_val_match:
@@ -109,9 +113,9 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
                         logging.warning(f"Invalid setvar format in rule {rule_count}: {part[:50]}...")
                         rule["parsing_status"] = "partial"
                 elif key == 'ctl':
-                    ctl.append(value)
+                    ctl.append(value.strip('"\''))
                 else:
-                    actions[key] = value if value else True
+                    actions[key] = value.strip('"\'') if value.strip('"\'') else True
             else:
                 actions[part.strip('"\'')] = True
         
