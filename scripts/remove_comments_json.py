@@ -89,12 +89,13 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
             elif part.startswith('ctl:'):
                 ctl.append(part[4:].strip('"\''))
             elif ':' in part:
-                try:
-                    key, value = part.split(':', 1)
-                    key = key.strip()
-                    value = value.strip('"\'')
+                # Handle key-value pairs with potential colons in value
+                match = re.match(r'^([^:]+):(.*)$', part)
+                if match:
+                    key = match.group(1).strip()
+                    value = match.group(2).strip('"\'')
                     actions[key] = value if value else True
-                except ValueError:
+                else:
                     logging.warning(f"Invalid action format in rule {rule_count}: {part[:50]}...")
                     rule["parsing_status"] = "partial"
             else:
