@@ -53,7 +53,7 @@ for conf_file in conf_files:
             in_rule = True
             current_rule.append(line.strip())
         elif in_rule and line.strip().startswith('\\'):
-            # Continuation line, append content after '\'
+            # Continuation line, append content after '\', replacing with space
             current_rule.append(line.strip()[1:].strip())
         elif in_rule:
             # Part of multi-line rule
