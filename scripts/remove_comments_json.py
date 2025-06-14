@@ -77,24 +77,25 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
             part = part.strip()
             if not part:
                 continue
-            if part.startswith('tag:'):
-                tags.append(part[4:].strip('"\''))
-            elif part.startswith('t:'):
-                transforms.append(part[2:].strip('"\''))
-            elif part.startswith('setvar:'):
-                if '=' in part[7:]:
-                    var, val = part[7:].split('=', 1)
-                    score_type = "attack" if "score" in var.lower() and "anomaly" not in var.lower() else ("anomaly" if "anomaly" in var.lower() else "other")
-                    setvars.append({"variable": var.strip('"\''), "value": val.strip('"\''), "score_type": score_type})
-            elif part.startswith('ctl:'):
-                ctl.append(part[4:].strip('"\''))
-            elif ':' in part:
-                # Handle key-value pairs with potential colons in value
-                match = re.match(r'^([^:]+):(.*)$', part)
+            # Handle key-value pairs and lists
+            if ':' in part and not part.startswith(('http:', 'https:')):
+                match = re.match(r'^([^:]+):(.+)$', part)
                 if match:
                     key = match.group(1).strip()
                     value = match.group(2).strip('"\'')
-                    actions[key] = value if value else True
+                    if key == 'tag':
+                        tags.append(value)
+                    elif key == 't':
+                        transforms.append(value)
+                    elif key == 'setvar':
+                        if '=' in value:
+                            var, val = value.split('=', 1)
+                            score_type = "attack" if "score" in var.lower() and "anomaly" not in var.lower() else ("anomaly" if "anomaly" in var.lower() else "other")
+                            setvars.append({"variable": var.strip('"\''), "value": val.strip('"\''), "score_type": score_type})
+                    elif key == 'ctl':
+                        ctl.append(value)
+                    else:
+                        actions[key] = value if value else True
                 else:
                     logging.warning(f"Invalid action format in rule {rule_count}: {part[:50]}...")
                     rule["parsing_status"] = "partial"
