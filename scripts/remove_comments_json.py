@@ -88,27 +88,30 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
             part = part.strip()
             if not part:
                 continue
-            if ':' in part and not part.startswith(('http:', 'https:')):
-                match = re.match(r'^([^:]+):(.+)$', part)
-                if match:
-                    key = match.group(1).strip()
-                    value = match.group(2).strip('"\'')
-                    if key == 'tag':
-                        tags.append(value)
-                    elif key == 't':
-                        transforms.append(value)
-                    elif key == 'setvar':
-                        if '=' in value:
-                            var, val = value.split('=', 1)
+            # Handle key-value pairs and lists
+            match = re.match(r'^([^:]+):(.+)$', part)
+            if match and not part.startswith(('http:', 'https:')):
+                key = match.group(1).strip()
+                value = match.group(2).strip('"\'')
+                if key == 'tag':
+                    tags.append(value)
+                elif key == 't':
+                    transforms.append(value)
+                elif key == 'setvar':
+                    if '=' in value:
+                        var_val_match = re.match(r'^([^=]+)=(.*)$', value)
+                        if var_val_match:
+                            var = var_val_match.group(1).strip('"\'')
+                            val = var_val_match.group(2).strip('"\'')
                             score_type = "attack" if "score" in var.lower() and "anomaly" not in var.lower() else ("anomaly" if "anomaly" in var.lower() else "other")
-                            setvars.append({"variable": var.strip('"\''), "value": val.strip('"\''), "score_type": score_type})
-                    elif key == 'ctl':
-                        ctl.append(value)
-                    else:
-                        actions[key] = value if value else True
+                            setvars.append({"variable": var, "value": val, "score_type": score_type})
+                        else:
+                            logging.warning(f"Invalid setvar format in rule {rule_count}: {part[:50]}...")
+                            rule["parsing_status"] = "partial"
+                elif key == 'ctl':
+                    ctl.append(value)
                 else:
-                    logging.warning(f"Invalid action format in rule {rule_count}: {part[:50]}...")
-                    rule["parsing_status"] = "partial"
+                    actions[key] = value if value else True
             else:
                 actions[part.strip('"\'')] = True
         
@@ -211,7 +214,7 @@ for conf_file in conf_files:
     
     # Validate rule count
     if rule_count != total_rules:
-        logging.warning(f"Parsed {rule_count} of {total_rules} rules in {conf_file}; missing rules detected")
+        logging.error(f"Parsed {rule_count} of {total_rules} rules in {conf_file}; missing rules detected")
     
     # Create output filename with -strip.json suffix
     output_filename = os.path.splitext(conf_file)[0] + ".json"
