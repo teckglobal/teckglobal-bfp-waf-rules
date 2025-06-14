@@ -6,26 +6,27 @@ import logging
 # Set up logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Define parse_rule function first
+# Define parse_rule function
 def parse_rule(rule_text, conf_file):
     rule = {
         "file_name": os.path.splitext(conf_file)[0] + "-strip.conf"
     }
     
-    # Match SecRule or SecMarker with flexible format
-    secrule_match = re.match(r'^SecRule\s+([^\s"]+)(?:\s+"([^"]*)")?(?:\s+"([^"]*)")?$', rule_text)
+    # Match SecMarker
     secmarker_match = re.match(r'^SecMarker\s+"([^"]+)"$', rule_text)
-    
     if secmarker_match:
         rule["directive"] = "SecMarker"
         rule["rule_id"] = secmarker_match.group(1)
         logging.debug(f"Parsed SecMarker: {rule['rule_id']}")
         return rule
     
+    # Match SecRule with flexible parsing
+    # Capture variables, operator (quoted or unquoted), and actions
+    secrule_match = re.match(r'^SecRule\s+([^\s"]+)(?:\s+("[^"]*"|[^\s"]+))?(?:\s+(.+))?$', rule_text, re.DOTALL)
     if secrule_match:
         rule["directive"] = "SecRule"
         rule["variables"] = [v.strip() for v in secrule_match.group(1).split('|') if v.strip()]
-        rule["operator"] = secrule_match.group(2) or ""
+        rule["operator"] = secrule_match.group(2).strip('"') if secrule_match.group(2) else ""
         actions_str = secrule_match.group(3) or ""
         
         actions = {}
@@ -33,19 +34,23 @@ def parse_rule(rule_text, conf_file):
         transforms = []
         setvars = []
         
-        # Parse actions with comma handling
+        # Parse actions, handling commas outside quotes
         action_parts = []
         current_part = ""
         in_quotes = False
-        for char in actions_str:
-            if char == '"' and (len(current_part) == 0 or current_part[-1] != '\\'):
+        i = 0
+        while i < len(actions_str):
+            char = actions_str[i]
+            if char == '"' and (i == 0 or actions_str[i-1] != '\\'):
                 in_quotes = not in_quotes
                 current_part += char
             elif char == ',' and not in_quotes:
-                action_parts.append(current_part.strip())
+                if current_part.strip():
+                    action_parts.append(current_part.strip())
                 current_part = ""
             else:
                 current_part += char
+            i += 1
         if current_part.strip():
             action_parts.append(current_part.strip())
         
