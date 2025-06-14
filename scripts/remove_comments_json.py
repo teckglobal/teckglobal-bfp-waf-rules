@@ -59,10 +59,8 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
             char = actions_str[i]
             if char == '\\' and not escape_next:
                 escape_next = True
-                current_part += char
             elif char == '"' and not escape_next:
                 in_quotes = not in_quotes
-                current_part += char
             elif char == ',' and not in_quotes:
                 if current_part.strip():
                     action_parts.append(current_part.strip())
@@ -93,7 +91,9 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
             elif ':' in part:
                 try:
                     key, value = part.split(':', 1)
-                    actions[key.strip()] = value.strip('"\'')
+                    key = key.strip()
+                    value = value.strip('"\'')
+                    actions[key] = value if value else True
                 except ValueError:
                     logging.warning(f"Invalid action format in rule {rule_count}: {part[:50]}...")
                     rule["parsing_status"] = "partial"
