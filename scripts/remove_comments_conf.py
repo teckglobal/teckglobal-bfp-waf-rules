@@ -17,24 +17,21 @@ for conf_file in conf_files:
     with open(input_path, 'r') as f:
         content = f.read()
     
-    # Split content into lines and remove comments and empty lines
-    lines = content.splitlines()
-    cleaned_lines = [line for line in lines if line.strip() and not line.strip().startswith('#')]
+    # Remove comments and empty lines
+    lines = [line for line in content.splitlines() if line.strip() and not line.strip().startswith('#')]
+    content = '\n'.join(lines)
     
-    # Combine lines into a single string for processing
-    content = '\n'.join(cleaned_lines)
-    
-    # Use regex to find SecRule and SecMarker directives and collapse each into a single line
-    # Match SecRule or SecMarker until the next SecRule/SecMarker or end of file
-    rule_pattern = r'(SecRule|SecMarker)[^\n]*(?:\n\s*\\[^\n]*)*?(?=\nSec(?:Rule|Marker)|$|(?:\n\s*\\[^\n]*)*)'
+    # Split content into individual SecRule/SecMarker directives
+    # Match SecRule or SecMarker, capturing the entire rule including continuations
+    rule_pattern = r'(SecRule|SecMarker)\s+[^\n]*(?:\n\s*\\[^\n]*)*?(?=\n(?:SecRule|SecMarker)|$|\n\s*[^\\])'
     rules = re.findall(rule_pattern, content, re.DOTALL)
     
     # Process each rule to collapse into a single line
     processed_rules = []
     for rule in rules:
-        # Remove line continuations (\) and collapse whitespace
-        rule = rule.replace('\\\n', ' ').replace('\n', ' ')
-        # Replace multiple spaces with a single space, preserving quoted strings
+        # Remove line continuations (\) and collapse newlines
+        rule = re.sub(r'\\\n\s*', ' ', rule)
+        # Replace multiple spaces with a single space, preserving quoted content
         rule = re.sub(r'\s+', ' ', rule.strip())
         processed_rules.append(rule)
     
