@@ -1,5 +1,4 @@
 import os
-import re
 
 # Input and output directories
 input_dir = "rules"
@@ -25,25 +24,46 @@ for conf_file in conf_files:
     input_path = os.path.join(input_dir, conf_file)
     try:
         with open(input_path, 'r') as f:
-            content = f.read()
+            lines = f.readlines()
     except Exception as e:
         print(f"Error reading {conf_file}: {e}")
         continue
     
-    # Remove comments and empty lines
-    lines = [line for line in content.splitlines() if line.strip() and not line.strip().startswith('#')]
-    content = '\n'.join(lines)
-    
-    # Split content into individual SecRule/SecMarker directives
-    rule_pattern = r'(SecRule|SecMarker)\s+[^\n]*(?:\n\s*\\[^\n]*)*?(?=\n(?:SecRule|SecMarker)|$|\n\s*[^\\])'
-    rules = re.findall(rule_pattern, content, re.DOTALL)
-    
-    # Process each rule to collapse into a single line
+    # Initialize variables
     processed_rules = []
-    for rule in rules:
-        rule = re.sub(r'\\\n\s*', ' ', rule)
-        rule = re.sub(r'\s+', ' ', rule.strip())
-        processed_rules.append(rule)
+    current_rule = []
+    in_rule = False
+
+    # Process lines
+    for line in lines:
+        line = line.rstrip('\n')
+        # Skip comments and empty lines
+        if not line.strip() or line.strip().startswith('#'):
+            continue
+        
+        # Check if line starts a new rule
+        if line.strip().startswith(('SecRule ', 'SecMarker ')):
+            # Save previous rule if exists
+            if current_rule:
+                # Collapse rule into single line
+                rule_text = ' '.join(current_rule).strip()
+                rule_text = ' '.join(rule_text.split())  # Normalize whitespace
+                processed_rules.append(rule_text)
+                current_rule = []
+            in_rule = True
+            current_rule.append(line.strip())
+        elif in_rule and line.strip().startswith('\\'):
+            # Continuation line, append content after '\'
+            current_rule.append(line.strip()[1:].strip())
+        elif in_rule:
+            # Part of multi-line rule
+            current_rule.append(line.strip())
+    
+    # Save the last rule if exists
+    if current_rule:
+        rule_text = ' '.join(current_rule).strip()
+        rule_text = ' '.join(rule_text.split())  # Normalize whitespace
+        processed_rules.append(rule_text)
     
     # Create output filename with -strip.conf suffix
     output_filename = os.path.splitext(conf_file)[0] + "-strip.conf"
