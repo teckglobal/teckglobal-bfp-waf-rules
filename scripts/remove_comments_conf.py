@@ -2,7 +2,7 @@ import os
 
 # Input and output directories
 input_dir = "rules"
-output_dir = "stripped_files"
+output_dir = "stripped_conf_files"
 
 # Ensure input directory exists
 if not os.path.isdir(input_dir):
