@@ -1,0 +1,32 @@
+[2025-06-14 10:48:55 UTC] Starting strip and stage
+[2025-06-14 10:48:55 UTC] Fetching file list from https://api.github.com/repos/teckglobal/teckglobal-bfp-waf-rules/contents/rules
+[2025-06-14 10:48:56 UTC] No .conf files found in repository
+[2025-06-14 10:50:39 UTC] Starting strip and stage
+[2025-06-14 10:50:39 UTC] Fetching file list from https://api.github.com/repos/teckglobal/teckglobal-bfp-waf-rules/contents/rules
+[2025-06-14 10:50:39 UTC] No .conf files found in repository
+[2025-06-14 10:52:25 UTC] Starting strip and stage
+[2025-06-14 10:52:25 UTC] Fetching file list from https://api.github.com/repos/teckglobal/teckglobal-bfp-waf-rules/contents/rules
+[2025-06-14 10:52:25 UTC] No .conf files found in repository
+[2025-06-14 10:58:55 UTC] Starting strip and stage
+[2025-06-14 10:58:55 UTC] Fetching file list from https://api.github.com/repos/teckglobal/teckglobal-bfp-waf-rules/contents/rules
+[2025-06-14 10:58:55 UTC] Fetching https://raw.githubusercontent.com/teckglobal/teckglobal-bfp-waf-rules/main/rules/REQUEST-905-COMMON-EXCEPTIONS.conf
+[2025-06-14 10:58:55 UTC] Stripping REQUEST-905-COMMON-EXCEPTIONS.conf, original size: 1652 bytes
+[2025-06-14 10:58:55 UTC] Filtered line:     SecRule REMOTE_ADDR "@ipMatch 127.0.0.1,::1" "t:none,ctl:ruleRemoveByTag=OWASP_CRS,ctl:auditEngi
+[2025-06-14 10:58:55 UTC] Filtered line:     SecRule REQUEST_HEADERS:User-Agent "@endsWith (internal dummy connection)" "t:none,chain"
+[2025-06-14 10:58:55 UTC] Filtered line:         SecRule REQUEST_LINE "@rx ^(?:GET /|OPTIONS \*) HTTP/[12]\.[01]$" "t:none,ctl:ruleRemoveByTa
+[2025-06-14 10:58:55 UTC] Warning: REQUEST-905-COMMON-EXCEPTIONS.conf contains 4 unexpected lines
+[2025-06-14 10:58:55 UTC] Staged REQUEST-905-COMMON-EXCEPTIONS.conf, new size: 430 bytes, lines: 2
+[2025-06-14 10:58:55 UTC] Fetching https://raw.githubusercontent.com/teckglobal/teckglobal-bfp-waf-rules/main/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf
+[2025-06-14 10:58:56 UTC] Stripping REQUEST-941-APPLICATION-ATTACK-XSS.conf, original size: 51796 bytes
+[2025-06-14 10:58:56 UTC] Filtered line:     SecRule MATCHED_VARS "@rx (?:\xbc\s*/\s*[^\xbe>]*[\xbe>])|(?:<\s*/\s*[^\xbe]*\xbe)" "setvar:'tx.
+[2025-06-14 10:58:56 UTC] Warning: REQUEST-941-APPLICATION-ATTACK-XSS.conf contains 39 unexpected lines
+[2025-06-14 10:58:56 UTC] Staged REQUEST-941-APPLICATION-ATTACK-XSS.conf, new size: 34241 bytes, lines: 43
+[2025-06-14 10:58:56 UTC] Fetching https://raw.githubusercontent.com/teckglobal/teckglobal-bfp-waf-rules/main/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf
+[2025-06-14 10:58:56 UTC] Stripping REQUEST-942-APPLICATION-ATTACK-SQLI.conf, original size: 97489 bytes
+[2025-06-14 10:58:56 UTC] Filtered line:     SecRule TX:1 "@streq %{TX.2}" "t:none,setvar:'tx.sql_injection_score=+%{tx.critical_anomaly_scor
+[2025-06-14 10:58:56 UTC] Filtered line:     SecRule TX:1 "!@streq %{TX.2}" "t:none,setvar:'tx.sql_injection_score=+%{tx.critical_anomaly_sco
+[2025-06-14 10:58:56 UTC] Filtered line:     SecRule MATCHED_VARS "!@rx ^ey[\-0-9A-Z_a-z]+\.ey[\-0-9A-Z_a-z]+\.[\-0-9A-Z_a-z]+$" "t:none,setv
+[2025-06-14 10:58:56 UTC] Filtered line:     SecRule TX:1 "@rx ^(?:and|or)$" "t:none,setvar:'tx.sql_injection_score=+%{tx.critical_anomaly_sc
+[2025-06-14 10:58:56 UTC] Warning: REQUEST-942-APPLICATION-ATTACK-SQLI.conf contains 70 unexpected lines
+[2025-06-14 10:58:56 UTC] Staged REQUEST-942-APPLICATION-ATTACK-SQLI.conf, new size: 62473 bytes, lines: 71
+[2025-06-14 10:58:56 UTC] Completed: 3 files processed, 0 failed
