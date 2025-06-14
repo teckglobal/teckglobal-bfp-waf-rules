@@ -23,7 +23,8 @@
     "variables": [
       "REQUEST_LINE"
     ],
-    "operator": "@streq GET /",
+    "operator": "@streq",
+    "rule_pattern": "GET /",
     "actions": {
       "id": "905100, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain",
       "tags": [],
@@ -54,7 +55,8 @@
     "variables": [
       "REMOTE_ADDR"
     ],
-    "operator": "@ipMatch 127.0.0.1,::1",
+    "operator": "@ipMatch",
+    "rule_pattern": "127.0.0.1,::1",
     "actions": {
       "tags": [],
       "transforms": [
@@ -82,7 +84,8 @@
     "variables": [
       "REMOTE_ADDR"
     ],
-    "operator": "@ipMatch 127.0.0.1,::1",
+    "operator": "@ipMatch",
+    "rule_pattern": "127.0.0.1,::1",
     "actions": {
       "id": "905110, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain",
       "tags": [],
@@ -109,7 +112,8 @@
     "variables": [
       "REQUEST_HEADERS:User-Agent"
     ],
-    "operator": "@endsWith (internal dummy connection)",
+    "operator": "@endsWith",
+    "rule_pattern": "(internal dummy connection)",
     "actions": {
       "tags": [],
       "transforms": [
@@ -137,7 +141,8 @@
     "variables": [
       "REQUEST_LINE"
     ],
-    "operator": "@rx ^(?:GET /|OPTIONS \\*) HTTP/[12]\\.[01]$",
+    "operator": "@rx",
+    "rule_pattern": "^(?:GET /|OPTIONS \\*) HTTP/[12]\\.[01]$",
     "actions": {
       "tags": [],
       "transforms": [
