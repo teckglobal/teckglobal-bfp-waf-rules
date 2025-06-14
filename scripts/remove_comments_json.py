@@ -17,7 +17,7 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
         "file_name": os.path.splitext(conf_file)[0] + "-strip.conf",
         "comments": comments,
         "parsing_status": "success",
-        "raw_rule": re.sub(r'\s*\\\s*', ' ', rule_text).strip()
+        "raw_rule": rule_text.strip()
     }
     
     # Match SecMarker
@@ -162,7 +162,7 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
     return rule, None, 0
 
 # Input and output directories
-input_dir = "rules"
+input_dir = "stripped_conf_files"
 output_dir = "stripped_json_files"
 
 # Ensure input directory exists
@@ -173,7 +173,7 @@ if not os.path.isdir(input_dir):
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
-# Get list of .conf files in the rules directory
+# Get list of .conf files in the stripped_conf_files directory
 conf_files = [f for f in os.listdir(input_dir) if f.endswith('.conf')]
 
 if not conf_files:
@@ -191,52 +191,30 @@ for conf_file in conf_files:
         continue
     
     rules = []
-    current_rule = []
     current_comments = []
-    in_rule = False
     chain_id = None
     chain_order = 0
     rule_count = 0
-    total_rules = sum(1 for line in lines if line.strip().startswith(('SecRule ', 'SecMarker ')))
+    total_rules = len([line for line in lines if line.strip().startswith(('SecRule ', 'SecMarker '))])
 
-    # Process lines
+    # Process lines (single-line rules, no continuations)
     for line in lines:
-        line = line.rstrip('\n')
-        if line.strip().startswith('#'):
-            current_comments.append(line.strip('#').strip())
-            continue
-        if not line.strip():
+        line = line.rstrip('\n').strip()
+        if not line:
             continue
         
-        if line.strip().startswith(('SecRule ', 'SecMarker ')):
-            if current_rule:
-                rule_text = ' '.join(current_rule).strip()
-                rule_text = ' '.join(rule_text.split())
-                parsed_rule, chain_id, chain_order = parse_rule(rule_text, conf_file, current_comments, rule_count, total_rules, chain_id, chain_order)
-                rules.append(parsed_rule)
-                current_rule = []
-                current_comments = []
-                rule_count += 1
-            in_rule = True
-            current_rule.append(line.strip())
-        elif in_rule and line.strip().startswith('\\'):
-            current_rule.append(line.strip()[1:].strip())
-        elif in_rule:
-            current_rule.append(line.strip())
-    
-    if current_rule:
-        rule_text = ' '.join(current_rule).strip()
-        rule_text = ' '.join(rule_text.split())
-        parsed_rule, chain_id, chain_order = parse_rule(rule_text, conf_file, current_comments, rule_count, total_rules, chain_id, chain_order)
-        rules.append(parsed_rule)
-        rule_count += 1
+        if line.startswith(('SecRule ', 'SecMarker ')):
+            parsed_rule, chain_id, chain_order = parse_rule(line, conf_file, current_comments, rule_count, total_rules, chain_id, chain_order)
+            rules.append(parsed_rule)
+            current_comments = []
+            rule_count += 1
     
     # Validate rule count
     if rule_count != total_rules:
         logging.warning(f"Parsed {rule_count} of {total_rules} rules in {conf_file}; missing rules detected")
     
     # Create output filename with -strip.json suffix
-    output_filename = os.path.splitext(conf_file)[0] + "-strip.json"
+    output_filename = os.path.splitext(conf_file)[0] + ".json"
     output_path = os.path.join(output_dir, output_filename)
     
     # Write JSON to output file
