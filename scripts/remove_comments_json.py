@@ -4,7 +4,7 @@ import re
 
 # Input and output directories
 input_dir = "rules"
-output_dir = "stripped_files"
+output_dir = "stripped_json_files"
 
 # Ensure input directory exists
 if not os.path.isdir(input_dir):
@@ -45,7 +45,9 @@ for conf_file in conf_files:
             if current_rule:
                 rule_text = ' '.join(current_rule).strip()
                 rule_text = ' '.join(rule_text.split())
-                rules.append(parse_rule(rule_text, conf_file))
+                parsed_rule = parse_rule(rule_text, conf_file)
+                if parsed_rule:
+                    rules.append(parsed_rule)
                 current_rule = []
             in_rule = True
             current_rule.append(line.strip())
@@ -57,7 +59,9 @@ for conf_file in conf_files:
     if current_rule:
         rule_text = ' '.join(current_rule).strip()
         rule_text = ' '.join(rule_text.split())
-        rules.append(parse_rule(rule_text, conf_file))
+        parsed_rule = parse_rule(rule_text, conf_file)
+        if parsed_rule:
+            rules.append(parsed_rule)
     
     # Create output filename with -strip.json suffix
     output_filename = os.path.splitext(conf_file)[0] + "-strip.json"
@@ -120,7 +124,7 @@ def parse_rule(rule_text, conf_file):
             elif part.startswith('t:'):
                 transforms.append(part[3:-1] if part.endswith('"') else part[3:])
             elif part.startswith('setvar:'):
-                if ':' in part[7:]:
+                if '=' in part[7:]:
                     var, val = part[7:].split('=', 1)
                     setvars.append({"variable": var.strip('"'), "value": val.strip('"')})
             elif ':' in part:
