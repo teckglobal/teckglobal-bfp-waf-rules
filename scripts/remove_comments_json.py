@@ -10,6 +10,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 SECRULE_RE = re.compile(r'^SecRule\s+([^\s]+)\s+("[^"]*"|[^\s"]+)?\s*(.*)$', re.DOTALL)
 SECMARKER_RE = re.compile(r'^SecMarker\s+"([^"]+)"$')
 OPERATOR_RE = re.compile(r'^(!?@)?([^\s]+)\s*(.*)$')
+ACTION_KEY_RE = re.compile(r'^([^:]+):(.+)$')
 
 # Define parse_rule function
 def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id, chain_order):
@@ -89,7 +90,7 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
             if not part:
                 continue
             # Handle key-value pairs and lists
-            match = re.match(r'^([^:]+):(.+)$', part)
+            match = ACTION_KEY_RE.match(part)
             if match and not part.startswith(('http:', 'https:')):
                 key = match.group(1).strip()
                 value = match.group(2).strip('"\'')
@@ -98,16 +99,15 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
                 elif key == 't':
                     transforms.append(value)
                 elif key == 'setvar':
-                    if '=' in value:
-                        var_val_match = re.match(r'^([^=]+)=(.*)$', value)
-                        if var_val_match:
-                            var = var_val_match.group(1).strip('"\'')
-                            val = var_val_match.group(2).strip('"\'')
-                            score_type = "attack" if "score" in var.lower() and "anomaly" not in var.lower() else ("anomaly" if "anomaly" in var.lower() else "other")
-                            setvars.append({"variable": var, "value": val, "score_type": score_type})
-                        else:
-                            logging.warning(f"Invalid setvar format in rule {rule_count}: {part[:50]}...")
-                            rule["parsing_status"] = "partial"
+                    var_val_match = re.match(r'^([^=]+)=(.*)$', value)
+                    if var_val_match:
+                        var = var_val_match.group(1).strip('"\'')
+                        val = var_val_match.group(2).strip('"\'')
+                        score_type = "attack" if "score" in var.lower() and "anomaly" not in var.lower() else ("anomaly" if "anomaly" in var.lower() else "other")
+                        setvars.append({"variable": var, "value": val, "score_type": score_type})
+                    else:
+                        logging.warning(f"Invalid setvar format in rule {rule_count}: {part[:50]}...")
+                        rule["parsing_status"] = "partial"
                 elif key == 'ctl':
                     ctl.append(value)
                 else:
@@ -161,7 +161,7 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
         return rule, new_chain_id, new_chain_order
     
     rule["parsing_status"] = "failed"
-    logging.warning(f"Failed to parse rule {rule_count} in {conf_file}: {rule_text[:100]}...")
+    logging.error(f"Failed to parse rule {rule_count} in {conf_file}: {rule_text[:100]}...")
     return rule, None, 0
 
 # Input and output directories
@@ -201,7 +201,7 @@ for conf_file in conf_files:
     total_rules = len([line for line in lines if line.strip().startswith(('SecRule ', 'SecMarker '))])
 
     # Process lines (single-line rules, no continuations)
-    for line in lines:
+    for line_number, line in enumerate(lines, 1):
         line = line.rstrip('\n').strip()
         if not line:
             continue
@@ -211,6 +211,8 @@ for conf_file in conf_files:
             rules.append(parsed_rule)
             current_comments = []
             rule_count += 1
+        else:
+            logging.warning(f"Skipped invalid line {line_number} in {conf_file}: {line[:100]}...")
     
     # Validate rule count
     if rule_count != total_rules:
