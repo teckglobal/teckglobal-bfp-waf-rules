@@ -9,6 +9,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 # Precompile regex
 SECRULE_RE = re.compile(r'^SecRule\s+([^\s]+)\s+("[^"]*"|[^\s"]+)?\s*(.*)$', re.DOTALL)
 SECMARKER_RE = re.compile(r'^SecMarker\s+"([^"]+)"$')
+OPERATOR_RE = re.compile(r'^(!?@)?([^\s]+)\s*(.*)$')
 
 # Define parse_rule function
 def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id, chain_order):
@@ -40,8 +41,18 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
     if secrule_match:
         rule["directive"] = "SecRule"
         rule["variables"] = [v.strip() for v in secrule_match.group(1).split('|') if v.strip()]
-        rule["operator"] = secrule_match.group(2).strip('"') if secrule_match.group(2) else ""
+        operator_full = secrule_match.group(2).strip('"') if secrule_match.group(2) else ""
         actions_str = secrule_match.group(3).strip('"') if secrule_match.group(3) else ""
+        
+        # Split operator and rule_pattern
+        operator_match = OPERATOR_RE.match(operator_full)
+        if operator_match:
+            prefix = operator_match.group(1) or ""
+            rule["operator"] = prefix + (operator_match.group(2) or "")
+            rule["rule_pattern"] = operator_match.group(3).strip() or ""
+        else:
+            rule["operator"] = operator_full
+            rule["rule_pattern"] = ""
         
         actions = {}
         tags = []
@@ -77,7 +88,6 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules, chain_id
             part = part.strip()
             if not part:
                 continue
-            # Handle key-value pairs and lists
             if ':' in part and not part.startswith(('http:', 'https:')):
                 match = re.match(r'^([^:]+):(.+)$', part)
                 if match:
