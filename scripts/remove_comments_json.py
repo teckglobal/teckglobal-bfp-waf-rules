@@ -7,9 +7,12 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Define parse_rule function
-def parse_rule(rule_text, conf_file):
+def parse_rule(rule_text, conf_file, comments, rule_count, total_rules):
     rule = {
-        "file_name": os.path.splitext(conf_file)[0] + "-strip.conf"
+        "file_name": os.path.splitext(conf_file)[0] + "-strip.conf",
+        "comments": comments,
+        "parsing_status": "success",
+        "raw_rule": rule_text
     }
     
     # Match SecMarker
@@ -17,11 +20,19 @@ def parse_rule(rule_text, conf_file):
     if secmarker_match:
         rule["directive"] = "SecMarker"
         rule["rule_id"] = secmarker_match.group(1)
+        rule["chain_id"] = None
+        rule["chain_order"] = 0
+        rule["paranoia_level"] = None
+        rule["rule_category"] = conf_file.split('-')[1] if '-' in conf_file else "Generic"
+        rule["attack_vectors"] = []
+        rule["confidence_level"] = None
+        rule["rule_source"] = "OWASP_CRS/4.16.0-dev"
+        rule["execution_phase"] = None
         logging.debug(f"Parsed SecMarker: {rule['rule_id']}")
         return rule
     
-    # Match SecRule with flexible parsing
-    secrule_match = re.match(r'^SecRule\s+([^\s]+)(?:\s+("[^"]*"|[^\s]+))?(?:\s+(.+))?$', rule_text, re.DOTALL)
+    # Match SecRule
+    secrule_match = re.match(r'^SecRule\s+([^\s]+)\s+("[^"]*"|[^\s"]+)?\s*(.*)$', rule_text, re.DOTALL)
     if secrule_match:
         rule["directive"] = "SecRule"
         rule["variables"] = [v.strip() for v in secrule_match.group(1).split('|') if v.strip()]
@@ -32,8 +43,9 @@ def parse_rule(rule_text, conf_file):
         tags = []
         transforms = []
         setvars = []
+        ctl = []
         
-        # Parse actions, handling commas outside quotes
+        # Parse actions
         action_parts = []
         current_part = ""
         in_quotes = False
@@ -66,8 +78,12 @@ def parse_rule(rule_text, conf_file):
             elif part.startswith('setvar:'):
                 if '=' in part[7:]:
                     var, val = part[7:].split('=', 1)
-                    setvars.append({"variable": var.strip('"\''), "value": val.strip('"\'')})
-            elif ':' in part and not part.startswith('ctl:'):
+                    score_type = "attack" if "score" in var.lower() and not "anomaly" in var.lower() else ("anomaly" if "anomaly" in var.lower() else "other")
+                    setvars.append({"variable": var.strip('"\''), "value": val.strip('"\''), "score_type": score_type})
+            elif part.startswith('ctl:'):
+                ctl_value = part[4:].strip('"\'')
+                ctl.append(ctl_value)
+            elif ':' in part:
                 key, value = part.split(':', 1)
                 actions[key.strip()] = value.strip('"\'')
             else:
@@ -76,14 +92,30 @@ def parse_rule(rule_text, conf_file):
         actions['tags'] = tags
         actions['transforms'] = transforms
         actions['setvars'] = setvars
-        rule["rule_id"] = actions.get('id', '')
+        actions['ctl'] = ctl
+        rule["rule_id"] = actions.get('id', f"unknown-{rule_count}")
         rule["actions"] = actions
+        
+        # Paranoia level
+        rule["paranoia_level"] = next((t.split('/')[1] for t in tags if t.startswith('paranoia-level/')), None)
+        if not rule["paranoia_level"] and rule["variables"] == ["TX:DETECTION_PARANOIA_LEVEL"]:
+            pl_match = re.match(r'@lt (\d+)', rule["operator"])
+            if pl_match:
+                rule["paranoia_level"] = f"PL{pl_match.group(1)}"
+        
+        # Additional fields
+        rule["rule_category"] = conf_file.split('-')[1] if '-' in conf_file else "Generic"
+        rule["attack_vectors"] = [t.split('/')[-1] for t in tags if t.startswith('capec/')] + ([actions.get('msg', '').split(':')[-1].strip()] if actions.get('msg') else [])
+        rule["confidence_level"] = "high" if actions.get('severity') == "CRITICAL" else ("medium" if actions.get('severity') == "WARNING" else "low")
+        rule["rule_source"] = actions.get('ver', "OWASP_CRS/4.16.0-dev")
+        rule["execution_phase"] = {1: "request_headers", 2: "request_body", 3: "response_headers", 4: "response_body", 5: "logging"}.get(int(actions.get('phase', 0)), None)
         
         logging.debug(f"Parsed SecRule: {rule['rule_id']} with {len(tags)} tags, {len(transforms)} transforms")
         return rule
     
+    rule["parsing_status"] = "failed"
     logging.warning(f"Failed to parse rule: {rule_text[:100]}...")
-    return None
+    return rule
 
 # Input and output directories
 input_dir = "rules"
@@ -116,22 +148,44 @@ for conf_file in conf_files:
     
     rules = []
     current_rule = []
+    current_comments = []
     in_rule = False
+    chain_id = None
+    chain_order = 0
+    rule_count = 0
+    total_rules = sum(1 for line in lines if line.strip().startswith(('SecRule ', 'SecMarker ')))
 
     # Process lines
     for line in lines:
         line = line.rstrip('\n')
-        if not line.strip() or line.strip().startswith('#'):
+        if line.strip().startswith('#'):
+            current_comments.append(line.strip('#').strip())
+            continue
+        if not line.strip():
             continue
         
         if line.strip().startswith(('SecRule ', 'SecMarker ')):
             if current_rule:
                 rule_text = ' '.join(current_rule).strip()
                 rule_text = ' '.join(rule_text.split())
-                parsed_rule = parse_rule(rule_text, conf_file)
+                parsed_rule = parse_rule(rule_text, conf_file, current_comments, rule_count, total_rules)
                 if parsed_rule:
+                    if chain_id and parsed_rule.get("actions", {}).get("chain", False):
+                        parsed_rule["chain_id"] = chain_id
+                        parsed_rule["chain_order"] = chain_order
+                        chain_order += 1
+                    elif chain_id and not parsed_rule.get("actions", {}).get("chain", False):
+                        parsed_rule["chain_id"] = chain_id
+                        parsed_rule["chain_order"] = chain_order
+                        chain_id = None
+                        chain_order = 0
+                    else:
+                        chain_id = parsed_rule["rule_id"] if parsed_rule.get("actions", {}).get("chain", False) else None
+                        chain_order = 1 if chain_id else 0
                     rules.append(parsed_rule)
                 current_rule = []
+                current_comments = []
+                rule_count += 1
             in_rule = True
             current_rule.append(line.strip())
         elif in_rule and line.strip().startswith('\\'):
@@ -142,9 +196,17 @@ for conf_file in conf_files:
     if current_rule:
         rule_text = ' '.join(current_rule).strip()
         rule_text = ' '.join(rule_text.split())
-        parsed_rule = parse_rule(rule_text, conf_file)
+        parsed_rule = parse_rule(rule_text, conf_file, current_comments, rule_count, total_rules)
         if parsed_rule:
+            if chain_id:
+                parsed_rule["chain_id"] = chain_id
+                parsed_rule["chain_order"] = chain_order
             rules.append(parsed_rule)
+        rule_count += 1
+    
+    # Validate rule count
+    if rule_count < total_rules * 0.9:
+        logging.warning(f"Parsed {rule_count} of {total_rules} rules in {conf_file}; possible missing rules")
     
     # Create output filename with -strip.json suffix
     output_filename = os.path.splitext(conf_file)[0] + "-strip.json"
