@@ -17,7 +17,7 @@
       "Exception for Apache SSL pinger",
       ""
     ],
-    "parsing_status": "partial",
+    "parsing_status": "success",
     "raw_rule": "SecRule REQUEST_LINE \"@streq GET /\" \"id:905100, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain\"",
     "directive": "SecRule",
     "variables": [
@@ -25,13 +25,13 @@
     ],
     "operator": "@streq GET /",
     "actions": {
-      "\\ \"id": "905100,\\ phase:1,\\ pass,\\ t:none,\\ nolog,\\ tag:'application-multi',\\ tag:'language-multi',\\ tag:'platform-apache',\\ tag:'attack-generic',\\ tag:'OWASP_CRS',\\ ver:'OWASP_CRS/4.16.0-dev',\\ chain",
+      "id": "905100, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain",
       "tags": [],
       "transforms": [],
       "setvars": [],
       "ctl": []
     },
-    "rule_id": "unknown-0",
+    "rule_id": "905100, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain",
     "chain_id": null,
     "chain_order": 0,
     "paranoia_level": null,
@@ -56,9 +56,10 @@
     ],
     "operator": "@ipMatch 127.0.0.1,::1",
     "actions": {
-      "\\ \"t": "none,\\ ctl:ruleRemoveByTag=OWASP_CRS,\\ ctl:auditEngine=Off",
       "tags": [],
-      "transforms": [],
+      "transforms": [
+        "none, ctl:ruleRemoveByTag=OWASP_CRS, ctl:auditEngine=Off"
+      ],
       "setvars": [],
       "ctl": []
     },
@@ -75,7 +76,7 @@
   {
     "file_name": "REQUEST-905-COMMON-EXCEPTIONS-strip.conf",
     "comments": [],
-    "parsing_status": "partial",
+    "parsing_status": "success",
     "raw_rule": "SecRule REMOTE_ADDR \"@ipMatch 127.0.0.1,::1\" \"id:905110, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain\"",
     "directive": "SecRule",
     "variables": [
@@ -83,13 +84,13 @@
     ],
     "operator": "@ipMatch 127.0.0.1,::1",
     "actions": {
-      "\\ \"id": "905110,\\ phase:1,\\ pass,\\ t:none,\\ nolog,\\ tag:'application-multi',\\ tag:'language-multi',\\ tag:'platform-apache',\\ tag:'attack-generic',\\ tag:'OWASP_CRS',\\ ver:'OWASP_CRS/4.16.0-dev',\\ chain",
+      "id": "905110, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain",
       "tags": [],
       "transforms": [],
       "setvars": [],
       "ctl": []
     },
-    "rule_id": "unknown-2",
+    "rule_id": "905110, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain",
     "chain_id": null,
     "chain_order": 0,
     "paranoia_level": null,
@@ -110,9 +111,10 @@
     ],
     "operator": "@endsWith (internal dummy connection)",
     "actions": {
-      "\\ \"t": "none,\\ chain",
       "tags": [],
-      "transforms": [],
+      "transforms": [
+        "none, chain"
+      ],
       "setvars": [],
       "ctl": []
     },
@@ -137,9 +139,10 @@
     ],
     "operator": "@rx ^(?:GET /|OPTIONS \\*) HTTP/[12]\\.[01]$",
     "actions": {
-      "\\ \"t": "none,\\ ctl:ruleRemoveByTag=OWASP_CRS,\\ ctl:auditEngine=Off",
       "tags": [],
-      "transforms": [],
+      "transforms": [
+        "none, ctl:ruleRemoveByTag=OWASP_CRS, ctl:auditEngine=Off"
+      ],
       "setvars": [],
       "ctl": []
     },
