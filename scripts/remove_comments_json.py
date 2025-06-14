@@ -1,6 +1,10 @@
 import os
 import json
 import re
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Define parse_rule function first
 def parse_rule(rule_text, conf_file):
@@ -8,32 +12,33 @@ def parse_rule(rule_text, conf_file):
         "file_name": os.path.splitext(conf_file)[0] + "-strip.conf"
     }
     
-    # Match SecRule or SecMarker
-    secrule_match = re.match(r'^SecRule\s+([^"]+)"([^"]+)"\s+"([^"]+)"$', rule_text)
+    # Match SecRule or SecMarker with flexible format
+    secrule_match = re.match(r'^SecRule\s+([^\s"]+)(?:\s+"([^"]*)")?(?:\s+"([^"]*)")?$', rule_text)
     secmarker_match = re.match(r'^SecMarker\s+"([^"]+)"$', rule_text)
     
     if secmarker_match:
         rule["directive"] = "SecMarker"
         rule["rule_id"] = secmarker_match.group(1)
+        logging.debug(f"Parsed SecMarker: {rule['rule_id']}")
         return rule
     
     if secrule_match:
         rule["directive"] = "SecRule"
         rule["variables"] = [v.strip() for v in secrule_match.group(1).split('|') if v.strip()]
-        rule["operator"] = secrule_match.group(2)
-        actions_str = secrule_match.group(3)
+        rule["operator"] = secrule_match.group(2) or ""
+        actions_str = secrule_match.group(3) or ""
         
         actions = {}
         tags = []
         transforms = []
         setvars = []
         
-        # Parse actions
+        # Parse actions with comma handling
         action_parts = []
         current_part = ""
         in_quotes = False
         for char in actions_str:
-            if char == '"' and (not current_part.endswith('\\')):
+            if char == '"' and (len(current_part) == 0 or current_part[-1] != '\\'):
                 in_quotes = not in_quotes
                 current_part += char
             elif char == ',' and not in_quotes:
@@ -46,10 +51,14 @@ def parse_rule(rule_text, conf_file):
         
         for part in action_parts:
             part = part.strip()
+            if not part:
+                continue
             if part.startswith('tag:'):
-                tags.append(part[5:-1] if part.endswith('"') else part[5:])
+                tag_value = part[4:].strip('"')
+                tags.append(tag_value)
             elif part.startswith('t:'):
-                transforms.append(part[3:-1] if part.endswith('"') else part[3:])
+                transform_value = part[2:].strip('"')
+                transforms.append(transform_value)
             elif part.startswith('setvar:'):
                 if '=' in part[7:]:
                     var, val = part[7:].split('=', 1)
@@ -65,8 +74,11 @@ def parse_rule(rule_text, conf_file):
         actions['setvars'] = setvars
         rule["rule_id"] = actions.get('id', '')
         rule["actions"] = actions
+        
+        logging.debug(f"Parsed SecRule: {rule['rule_id']} with {len(tags)} tags, {len(transforms)} transforms")
         return rule
     
+    logging.warning(f"Failed to parse rule: {rule_text[:100]}...")
     return None
 
 # Input and output directories
@@ -75,7 +87,7 @@ output_dir = "stripped_json_files"
 
 # Ensure input directory exists
 if not os.path.isdir(input_dir):
-    print(f"Error: Input directory '{input_dir}' does not exist")
+    logging.error(f"Input directory '{input_dir}' does not exist")
     exit(1)
 
 # Create output directory if it doesn't exist
@@ -85,7 +97,7 @@ os.makedirs(output_dir, exist_ok=True)
 conf_files = [f for f in os.listdir(input_dir) if f.endswith('.conf')]
 
 if not conf_files:
-    print(f"No .conf files found in '{input_dir}'")
+    logging.info(f"No .conf files found in '{input_dir}'")
     exit(0)
 
 for conf_file in conf_files:
@@ -95,7 +107,7 @@ for conf_file in conf_files:
         with open(input_path, 'r') as f:
             lines = f.readlines()
     except Exception as e:
-        print(f"Error reading {conf_file}: {e}")
+        logging.error(f"Error reading {conf_file}: {e}")
         continue
     
     rules = []
@@ -138,7 +150,7 @@ for conf_file in conf_files:
     try:
         with open(output_path, 'w') as f:
             json.dump(rules, f, indent=2)
-        print(f"Processed {conf_file} -> {output_path} ({len(rules)} rules)")
+        logging.info(f"Processed {conf_file} -> {output_path} ({len(rules)} rules)")
     except Exception as e:
-        print(f"Error writing {output_path}: {e}")
+        logging.error(f"Error writing {output_path}: {e}")
         continue
