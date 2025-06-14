@@ -7,7 +7,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Precompile regex
-SECRULE_RE = re.compile(r'^SecRule\s+([^\s]+)\s+("[^"]*"|[^\s"]*)?\s*(".*"|.*)$', re.DOTALL)
+SECRULE_RE = re.compile(r'^SecRule\s+([^\s]+)\s+("[^"]*"|[^\s"]+)?\s*(.*)$', re.DOTALL)
 SECMARKER_RE = re.compile(r'^SecMarker\s+"([^"]+)"$')
 
 # Define parse_rule function
@@ -16,7 +16,7 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules):
         "file_name": os.path.splitext(conf_file)[0] + "-strip.conf",
         "comments": comments,
         "parsing_status": "success",
-        "raw_rule": rule_text.replace(' \\ ', ' ')
+        "raw_rule": re.sub(r'\s*\\\s*', ' ', rule_text).strip()
     }
     
     # Match SecMarker
@@ -87,12 +87,13 @@ def parse_rule(rule_text, conf_file, comments, rule_count, total_rules):
                 key, value = part.split(':', 1)
                 actions[key.strip()] = value.strip('"\'')
             else:
-                actions[part] = True
+                actions[part.strip('"\'')] = True
         
         actions['tags'] = tags
         actions['transforms'] = transforms
         actions['setvars'] = setvars
         actions['ctl'] = ctl
+        rule["actions"] = actions
         rule["rule_id"] = actions.get('id', f"unknown-{rule_count}")
         
         # Paranoia level
