@@ -41,4 +41,3 @@ jobs:
         file_pattern: "stripped_files/*.conf"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
