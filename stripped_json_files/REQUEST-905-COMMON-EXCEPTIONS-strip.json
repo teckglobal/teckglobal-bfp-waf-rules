@@ -17,7 +17,7 @@
       "Exception for Apache SSL pinger",
       ""
     ],
-    "parsing_status": "success",
+    "parsing_status": "partial",
     "raw_rule": "SecRule REQUEST_LINE \"@streq GET /\" \"id:905100, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain\"",
     "directive": "SecRule",
     "variables": [
@@ -25,7 +25,7 @@
     ],
     "operator": "@streq GET /",
     "actions": {
-      "\"id": "905100, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain",
+      "\\ \"id": "905100,\\ phase:1,\\ pass,\\ t:none,\\ nolog,\\ tag:'application-multi',\\ tag:'language-multi',\\ tag:'platform-apache',\\ tag:'attack-generic',\\ tag:'OWASP_CRS',\\ ver:'OWASP_CRS/4.16.0-dev',\\ chain",
       "tags": [],
       "transforms": [],
       "setvars": [],
@@ -48,7 +48,7 @@
       "Exception for Apache internal dummy connection",
       ""
     ],
-    "parsing_status": "success",
+    "parsing_status": "partial",
     "raw_rule": "SecRule REMOTE_ADDR \"@ipMatch 127.0.0.1,::1\" \"t:none, ctl:ruleRemoveByTag=OWASP_CRS, ctl:auditEngine=Off\"",
     "directive": "SecRule",
     "variables": [
@@ -56,7 +56,7 @@
     ],
     "operator": "@ipMatch 127.0.0.1,::1",
     "actions": {
-      "\"t": "none, ctl:ruleRemoveByTag=OWASP_CRS, ctl:auditEngine=Off",
+      "\\ \"t": "none,\\ ctl:ruleRemoveByTag=OWASP_CRS,\\ ctl:auditEngine=Off",
       "tags": [],
       "transforms": [],
       "setvars": [],
@@ -75,7 +75,7 @@
   {
     "file_name": "REQUEST-905-COMMON-EXCEPTIONS-strip.conf",
     "comments": [],
-    "parsing_status": "success",
+    "parsing_status": "partial",
     "raw_rule": "SecRule REMOTE_ADDR \"@ipMatch 127.0.0.1,::1\" \"id:905110, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain\"",
     "directive": "SecRule",
     "variables": [
@@ -83,7 +83,7 @@
     ],
     "operator": "@ipMatch 127.0.0.1,::1",
     "actions": {
-      "\"id": "905110, phase:1, pass, t:none, nolog, tag:'application-multi', tag:'language-multi', tag:'platform-apache', tag:'attack-generic', tag:'OWASP_CRS', ver:'OWASP_CRS/4.16.0-dev', chain",
+      "\\ \"id": "905110,\\ phase:1,\\ pass,\\ t:none,\\ nolog,\\ tag:'application-multi',\\ tag:'language-multi',\\ tag:'platform-apache',\\ tag:'attack-generic',\\ tag:'OWASP_CRS',\\ ver:'OWASP_CRS/4.16.0-dev',\\ chain",
       "tags": [],
       "transforms": [],
       "setvars": [],
@@ -102,7 +102,7 @@
   {
     "file_name": "REQUEST-905-COMMON-EXCEPTIONS-strip.conf",
     "comments": [],
-    "parsing_status": "success",
+    "parsing_status": "partial",
     "raw_rule": "SecRule REQUEST_HEADERS:User-Agent \"@endsWith (internal dummy connection)\" \"t:none, chain\"",
     "directive": "SecRule",
     "variables": [
@@ -110,7 +110,7 @@
     ],
     "operator": "@endsWith (internal dummy connection)",
     "actions": {
-      "\"t": "none, chain",
+      "\\ \"t": "none,\\ chain",
       "tags": [],
       "transforms": [],
       "setvars": [],
@@ -129,7 +129,7 @@
   {
     "file_name": "REQUEST-905-COMMON-EXCEPTIONS-strip.conf",
     "comments": [],
-    "parsing_status": "success",
+    "parsing_status": "partial",
     "raw_rule": "SecRule REQUEST_LINE \"@rx ^(?:GET /|OPTIONS *) HTTP/[12] .[01]$\" \"t:none, ctl:ruleRemoveByTag=OWASP_CRS, ctl:auditEngine=Off\"",
     "directive": "SecRule",
     "variables": [
@@ -137,7 +137,7 @@
     ],
     "operator": "@rx ^(?:GET /|OPTIONS \\*) HTTP/[12]\\.[01]$",
     "actions": {
-      "\"t": "none, ctl:ruleRemoveByTag=OWASP_CRS, ctl:auditEngine=Off",
+      "\\ \"t": "none,\\ ctl:ruleRemoveByTag=OWASP_CRS,\\ ctl:auditEngine=Off",
       "tags": [],
       "transforms": [],
       "setvars": [],
