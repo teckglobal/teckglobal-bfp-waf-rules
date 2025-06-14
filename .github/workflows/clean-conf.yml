@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   clean-conf:
@@ -32,12 +33,12 @@ jobs:
         python scripts/remove_comments_conf.py
 
     - name: List output files
-      run: ls -l stripped_files/ || echo "No output files generated"
+      run: ls -l stripped_conf_files/ || echo "No output files generated"
 
     - name: Commit stripped files
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "Add stripped .conf files"
-        file_pattern: "stripped_files/*.conf"
+        file_pattern: "stripped_conf_files/*.conf"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
