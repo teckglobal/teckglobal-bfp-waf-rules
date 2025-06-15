@@ -3,7 +3,12 @@ import re
 import logging
 
 # Setup logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', filename='preprocess.log')
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename='preprocess.log',
+    filemode='w'
+)
 
 # Input and output directories
 input_dir = "rules"
@@ -41,19 +46,24 @@ for conf_file in conf_files:
     processed_rules = []
     current_rule = []
     in_rule = False
+    line_number = 0
 
     # Process lines
-    for line_number, line in enumerate(lines, 1):
+    for line in lines:
+        line_number += 1
         line = line.rstrip('\n')
         # Skip empty lines and comments
         if not line.strip() or line.strip().startswith('#'):
             continue
         
-        # Remove backslashes and unescape commas early
-        line = re.sub(r'\\\s*(?=")', '', line)  # Remove backslash before quotes
-        line = re.sub(r'\\,', ',', line)        # Unescape commas
+        # Clean line: remove backslashes and unescape commas
+        original_line = line
+        # Remove backslash before quotes or spaces
+        line = re.sub(r'\\\s*(?=["\s])', '', line)
+        # Unescape commas
+        line = re.sub(r'\\,', ',', line)
         
-        logging.debug(f"Line {line_number} in {conf_file}: {line}")
+        logging.debug(f"Line {line_number} in {conf_file}: Original: '{original_line}' -> Cleaned: '{line}'")
 
         # Check if line starts a new rule
         if line.strip().startswith(('SecRule ', 'SecMarker ')):
@@ -61,28 +71,28 @@ for conf_file in conf_files:
             if current_rule:
                 # Join rule lines
                 rule_text = ' '.join(current_rule).strip()
-                # Ensure no residual backslashes or escaped commas
-                rule_text = re.sub(r'\\\s*(?=")', '', rule_text)
+                # Final clean: remove any residual backslashes or escaped commas
+                rule_text = re.sub(r'\\\s*(?=["\s])', '', rule_text)
                 rule_text = re.sub(r'\\,', ',', rule_text)
                 # Normalize excessive whitespace outside quotes
                 rule_text = re.sub(r'\s+', ' ', rule_text).strip()
                 processed_rules.append(rule_text)
-                logging.debug(f"Processed rule: {rule_text}")
+                logging.debug(f"Processed rule: '{rule_text}'")
                 current_rule = []
             in_rule = True
             current_rule.append(line.strip())
         elif in_rule:
-            # Part of multi-line rule, append as-is
+            # Part of multi-line rule
             current_rule.append(line.strip())
     
     # Save the last rule if exists
     if current_rule:
         rule_text = ' '.join(current_rule).strip()
-        rule_text = re.sub(r'\\\s*(?=")', '', rule_text)
+        rule_text = re.sub(r'\\\s*(?=["\s])', '', rule_text)
         rule_text = re.sub(r'\\,', ',', rule_text)
         rule_text = re.sub(r'\s+', ' ', rule_text).strip()
         processed_rules.append(rule_text)
-        logging.debug(f"Processed final rule: {rule_text}")
+        logging.debug(f"Processed final rule: '{rule_text}'")
     
     # Create output filename with -strip.conf suffix
     output_filename = os.path.splitext(conf_file)[0] + "-strip.conf"
