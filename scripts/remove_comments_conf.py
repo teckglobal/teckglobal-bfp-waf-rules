@@ -1,4 +1,5 @@
 import os
+import re
 
 # Input and output directories
 input_dir = "rules"
@@ -23,7 +24,7 @@ for conf_file in conf_files:
     # Read the input file
     input_path = os.path.join(input_dir, conf_file)
     try:
-        with open(input_path, 'r') as f:
+        with open(input_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
     except Exception as e:
         print(f"Error reading {conf_file}: {e}")
@@ -37,7 +38,7 @@ for conf_file in conf_files:
     # Process lines
     for line in lines:
         line = line.rstrip('\n')
-        # Skip comments and empty lines
+        # Skip empty lines and comments
         if not line.strip() or line.strip().startswith('#'):
             continue
         
@@ -45,16 +46,22 @@ for conf_file in conf_files:
         if line.strip().startswith(('SecRule ', 'SecMarker ')):
             # Save previous rule if exists
             if current_rule:
-                # Collapse rule into single line
+                # Join rule lines
                 rule_text = ' '.join(current_rule).strip()
-                rule_text = ' '.join(rule_text.split())  # Normalize whitespace
+                # Remove backslashes before action quotes and unescape commas
+                rule_text = re.sub(r'\\\s*"', '"', rule_text)
+                rule_text = re.sub(r'\\,', ',', rule_text)
+                # Normalize excessive whitespace outside quotes
+                rule_text = re.sub(r'\s+', ' ', rule_text).strip()
                 processed_rules.append(rule_text)
                 current_rule = []
             in_rule = True
             current_rule.append(line.strip())
         elif in_rule and line.strip().startswith('\\'):
-            # Continuation line, append content after '\', replacing with space
-            current_rule.append(line.strip()[1:].strip())
+            # Continuation line, append content after '\'
+            content = line.strip()[1:].strip()
+            if content:
+                current_rule.append(content)
         elif in_rule:
             # Part of multi-line rule
             current_rule.append(line.strip())
@@ -62,7 +69,9 @@ for conf_file in conf_files:
     # Save the last rule if exists
     if current_rule:
         rule_text = ' '.join(current_rule).strip()
-        rule_text = ' '.join(rule_text.split())  # Normalize whitespace
+        rule_text = re.sub(r'\\\s*"', '"', rule_text)
+        rule_text = re.sub(r'\\,', ',', rule_text)
+        rule_text = re.sub(r'\s+', ' ', rule_text).strip()
         processed_rules.append(rule_text)
     
     # Create output filename with -strip.conf suffix
@@ -71,7 +80,7 @@ for conf_file in conf_files:
     
     # Write the processed rules to the output file
     try:
-        with open(output_path, 'w') as f:
+        with open(output_path, 'w', encoding='utf-8') as f:
             f.write('\n'.join(processed_rules) + '\n')
         print(f"Processed {conf_file} -> {output_path} ({len(processed_rules)} rules)")
     except Exception as e:
