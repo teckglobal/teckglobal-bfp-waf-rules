@@ -48,8 +48,8 @@ for conf_file in conf_files:
             if current_rule:
                 # Join rule lines
                 rule_text = ' '.join(current_rule).strip()
-                # Remove backslashes before action quotes and unescape commas
-                rule_text = re.sub(r'\\\s*"', '"', rule_text)
+                # Remove all backslashes before action quotes and unescape commas
+                rule_text = re.sub(r'\\\s*(?=")', '', rule_text)
                 rule_text = re.sub(r'\\,', ',', rule_text)
                 # Normalize excessive whitespace outside quotes
                 rule_text = re.sub(r'\s+', ' ', rule_text).strip()
@@ -69,7 +69,7 @@ for conf_file in conf_files:
     # Save the last rule if exists
     if current_rule:
         rule_text = ' '.join(current_rule).strip()
-        rule_text = re.sub(r'\\\s*"', '"', rule_text)
+        rule_text = re.sub(r'\\\s*(?=")', '', rule_text)
         rule_text = re.sub(r'\\,', ',', rule_text)
         rule_text = re.sub(r'\s+', ' ', rule_text).strip()
         processed_rules.append(rule_text)
