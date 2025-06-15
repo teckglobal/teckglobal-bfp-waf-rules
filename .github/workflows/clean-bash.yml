@@ -1,0 +1,30 @@
+name: Strip CRS Conf Files
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  strip-conf-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x scripts/strip_crs_conf.sh
+
+      - name: Run strip script
+        run: scripts/strip_crs_conf.sh
+
+      - name: Commit and push stripped files
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add stripped_bash_files/*
+          git commit -m "Add stripped CRS conf files" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
