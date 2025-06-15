@@ -1,4 +1,4 @@
-name: Clean Conf Files
+name: Strip CRS Conf Files to .conf W/Bash
 
 on:
   push:
