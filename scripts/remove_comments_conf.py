@@ -46,29 +46,32 @@ for conf_file in conf_files:
         if line.strip().startswith(('SecRule ', 'SecMarker ')):
             # Save previous rule if exists
             if current_rule:
-                # Join rule lines, preserving quotes and removing continuation backslashes
+                # Join rule lines, preserving quotes
                 rule_text = ' '.join(current_rule).strip()
-                # Remove backslashes before actions
-                rule_text = re.sub(r'\\(\s*")', r'\1"', rule_text)
-                # Normalize only excessive whitespace, preserving quoted content
+                # Remove backslashes before action quotes
+                rule_text = re.sub(r'\\\s*"', '"', rule_text)
+                # Restore quotes around operators if missing
+                rule_text = re.sub(r'(\@[a-zA-Z]+(?:\s+[^\s"]+)?)(?=\s+"id:)', '"\1"', rule_text)
+                # Normalize excessive whitespace outside quotes
                 rule_text = re.sub(r'\s+', ' ', rule_text).strip()
                 processed_rules.append(rule_text)
                 current_rule = []
             in_rule = True
             current_rule.append(line.strip())
         elif in_rule and line.strip().startswith('\\'):
-            # Continuation line, append content after '\', preserving quotes
+            # Continuation line, append content after '\'
             content = line.strip()[1:].strip()
             if content:
                 current_rule.append(content)
         elif in_rule:
-            # Part of multi-line rule, append as-is
+            # Part of multi-line rule
             current_rule.append(line.strip())
     
     # Save the last rule if exists
     if current_rule:
         rule_text = ' '.join(current_rule).strip()
-        rule_text = re.sub(r'\\(\s*")', r'\1"', rule_text)
+        rule_text = re.sub(r'\\\s*"', '"', rule_text)
+        rule_text = re.sub(r'(\@[a-zA-Z]+(?:\s+[^\s"]+)?)(?=\s+"id:)', '"\1"', rule_text)
         rule_text = re.sub(r'\s+', ' ', rule_text).strip()
         processed_rules.append(rule_text)
     
