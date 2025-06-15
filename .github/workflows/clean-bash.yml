@@ -1,4 +1,4 @@
-name: Strip CRS Conf Files
+name: Strip CRS Conf Files to .conf With Bash
 
 on:
   push:
