@@ -1,0 +1,4 @@
+How the Script Works:
+
+Input: Processes all .conf files in /rules/.
+Output: Creates stripped files in /teckglobal/teckglobal-bfp-waf-rules/stripped_bash_files/, removing comments, empty lines, and excluded rules.
