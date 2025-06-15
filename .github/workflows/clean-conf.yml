@@ -30,10 +30,33 @@ jobs:
           echo "No .conf files found in rules directory"
           exit 0
         fi
-        python scripts/remove_comments_conf.py
+        python scripts/remove_comments_conf.py 2>&1 | tee remove_comments_conf_output.log
+        if [ $? -ne 0 ]; then
+          echo "Error: Python script failed"
+          cat remove_comments_conf_output.log
+          exit 1
+        fi
 
     - name: List output files
-      run: ls -l stripped_conf_files/ || echo "No output files generated"
+      run: |
+        ls -l stripped_conf_files/ || echo "No output files generated"
+        # Sample first few lines of each output file
+        for file in stripped_conf_files/*.conf; do
+          if [ -f "$file" ]; then
+            echo "Sample from $file:"
+            head -n 5 "$file"
+          fi
+        done
+
+    - name: Upload logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: preprocessing-logs
+        path: |
+          remove_comments_conf_output.log
+          remove_comments_conf.log
+          stripped_conf_files/*.conf
 
     - name: Commit stripped files
       uses: stefanzweifel/git-auto-commit-action@v5
