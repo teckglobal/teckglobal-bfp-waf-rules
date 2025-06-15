@@ -1,4 +1,4 @@
-name: Clean JSON Files
+name: Strip CRS Conf Files to .json With Python
 
 on:
   push:
