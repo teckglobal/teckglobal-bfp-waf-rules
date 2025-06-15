@@ -1,0 +1,4680 @@
+[
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:wordpress-rule-exclusions-plugin_enabled \"@eq 0\" \"id:9507099,phase:1,pass,nolog,ctl:ruleRemoveById=9507100-9507999\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:wordpress-rule-exclusions-plugin_enabled"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "0",
+    "actions": {
+      "id": "9507099",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "tags": [],
+      "transforms": [],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveById=9507100-9507999"
+      ]
+    },
+    "rule_id": "9507099",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-login.php\" \"id:9507100, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetById=932236;ARGS_NAMES:pwd, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pwd, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-login.php",
+    "actions": {
+      "id": "9507100",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932236;ARGS_NAMES:pwd",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pwd"
+      ]
+    },
+    "rule_id": "9507100",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx /wp-(?:login|admin/admin-ajax)\\.php$\" \"id:9507101, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetById=920230;ARGS:redirect_to, ctl:ruleRemoveTargetById=931130;ARGS:redirect_to, ctl:ruleRemoveTargetById=942430;ARGS:redirect_to, ctl:ruleRemoveTargetById=942431;ARGS:redirect_to, ctl:ruleRemoveTargetById=942432;ARGS:redirect_to, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "/wp-(?:login|admin/admin-ajax)\\.php$",
+    "actions": {
+      "id": "9507101",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=920230;ARGS:redirect_to",
+        "ruleRemoveTargetById=931130;ARGS:redirect_to",
+        "ruleRemoveTargetById=942430;ARGS:redirect_to",
+        "ruleRemoveTargetById=942431;ARGS:redirect_to",
+        "ruleRemoveTargetById=942432;ARGS:redirect_to"
+      ]
+    },
+    "rule_id": "9507101",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-login.php\" \"id:9507120, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-login.php",
+    "actions": {
+      "id": "9507120",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507120",
+    "chain_id": "9507120",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq resetpass\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "resetpass",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-4",
+    "chain_id": "9507120",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1-text, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass2\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1-text",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass2"
+      ]
+    },
+    "rule_id": "unknown-5",
+    "chain_id": "9507120",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507121, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetById=932236;ARGS_NAMES:pwd, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pwd, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507121",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932236;ARGS_NAMES:pwd",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pwd"
+      ]
+    },
+    "rule_id": "9507121",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-comments-post.php\" \"id:9507130, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:author, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:comment, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:email, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:url, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-comments-post.php",
+    "actions": {
+      "id": "9507130",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:author",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:comment",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:email",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:url"
+      ]
+    },
+    "rule_id": "9507130",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/comment.php\" \"id:9507131, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetById=931130;ARGS:newcomment_author_url, ctl:ruleRemoveTargetByTag=attack-sqli;ARGS:newcomment_author_url, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:content, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:newcomment_author, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/comment.php",
+    "actions": {
+      "id": "9507131",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=931130;ARGS:newcomment_author_url",
+        "ruleRemoveTargetByTag=attack-sqli;ARGS:newcomment_author_url",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:content",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:newcomment_author"
+      ]
+    },
+    "rule_id": "9507131",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507132, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507132",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507132",
+    "chain_id": "9507132",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq replyto-comment\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "replyto-comment",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-10",
+    "chain_id": "9507132",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:content\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:content"
+      ]
+    },
+    "rule_id": "unknown-11",
+    "chain_id": "9507132",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx /wp-json/wp/v[0-9]/global-styles/[0-9]+$\" \"id:9507139, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetById=932220;ARGS, ctl:ruleRemoveTargetById=932235;ARGS, ctl:ruleRemoveTargetById=932236;ARGS, ctl:ruleRemoveTargetById=942100;ARGS, ctl:ruleRemoveTargetById=942430;ARGS, ctl:ruleRemoveTargetById=942431;ARGS, ctl:ruleRemoveTargetById=942432;ARGS, ctl:ruleRemoveTargetById=942440;ARGS, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "/wp-json/wp/v[0-9]/global-styles/[0-9]+$",
+    "actions": {
+      "id": "9507139",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932220;ARGS",
+        "ruleRemoveTargetById=932235;ARGS",
+        "ruleRemoveTargetById=932236;ARGS",
+        "ruleRemoveTargetById=942100;ARGS",
+        "ruleRemoveTargetById=942430;ARGS",
+        "ruleRemoveTargetById=942431;ARGS",
+        "ruleRemoveTargetById=942432;ARGS",
+        "ruleRemoveTargetById=942440;ARGS"
+      ]
+    },
+    "rule_id": "9507139",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx /wp-json/wp/v[0-9]+/(?:navigation|pages|posts|template-parts|templates)\" \"id:9507140, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:content, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.content, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "/wp-json/wp/v[0-9]+/(?:navigation|pages|posts|template-parts|templates)",
+    "actions": {
+      "id": "9507140",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:content",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.content"
+      ]
+    },
+    "rule_id": "9507140",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /index.php\" \"id:9507141, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/index.php",
+    "actions": {
+      "id": "9507141",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507141",
+    "chain_id": "9507141",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:rest_route \"@eq 1\" \"t:none, nolog, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:rest_route"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "nolog": true,
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-15",
+    "chain_id": "9507141",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:rest_route \"@rx ^/wp/v[0-9]+/(?:posts|pages|widget-types|tags|templates|users)\" \"t:none, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:content, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.content, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:search, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.search, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:name, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.name, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:excerpt, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.excerpt, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:instance.raw.text, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.instance.raw.text\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:rest_route"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^/wp/v[0-9]+/(?:posts|pages|widget-types|tags|templates|users)",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:content",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.content",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:search",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.search",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:name",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.name",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:excerpt",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.excerpt",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:instance.raw.text",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:json.instance.raw.text"
+      ]
+    },
+    "rule_id": "unknown-16",
+    "chain_id": "9507141",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx /wp-json/wp/v[0-9]+/media\" \"id:9507142, phase:1, pass, t:none, nolog, ctl:ruleRemoveById=200002, ctl:ruleRemoveById=200004, ctl:ruleRemoveTargetById=920120;FILES:file, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "/wp-json/wp/v[0-9]+/media",
+    "actions": {
+      "id": "9507142",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveById=200002",
+        "ruleRemoveById=200004",
+        "ruleRemoveTargetById=920120;FILES:file"
+      ]
+    },
+    "rule_id": "9507142",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /index.php\" \"id:9507143, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/index.php",
+    "actions": {
+      "id": "9507143",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507143",
+    "chain_id": "9507143",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:rest_route \"@eq 1\" \"t:none, nolog, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:rest_route"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "nolog": true,
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-19",
+    "chain_id": "9507143",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:rest_route \"@rx ^/wp/v[0-9]+/media\" \"t:none, ctl:ruleRemoveById=200002, ctl:ruleRemoveById=200004\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:rest_route"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^/wp/v[0-9]+/media",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveById=200002",
+        "ruleRemoveById=200004"
+      ]
+    },
+    "rule_id": "unknown-20",
+    "chain_id": "9507143",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /index.php\" \"id:9507144, phase:1, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/index.php",
+    "actions": {
+      "id": "9507144",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507144",
+    "chain_id": "9507144",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule REQUEST_HEADERS:x-http-method-override \"@streq PUT\" \"t:none, ctl:ruleRemoveById=920450\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_HEADERS:x-http-method-override"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "PUT",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveById=920450"
+      ]
+    },
+    "rule_id": "unknown-22",
+    "chain_id": "9507144",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /index.php\" \"id:9507145, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/index.php",
+    "actions": {
+      "id": "9507145",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507145",
+    "chain_id": "9507145",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:rest_route \"@eq 1\" \"t:none, nolog, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:rest_route"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "nolog": true,
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-24",
+    "chain_id": "9507145",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:rest_route \"@rx ^/wp/v[0-9]+/global-styles/[0-9]+$\" \"t:none, ctl:ruleRemoveTargetById=942100;ARGS\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:rest_route"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^/wp/v[0-9]+/global-styles/[0-9]+$",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=942100;ARGS"
+      ]
+    },
+    "rule_id": "unknown-25",
+    "chain_id": "9507145",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx /wp-json/wp/v[0-9]+/(?:global-styles|navigation|pages|posts|sidebars|template-parts|templates|users)\" \"id:9507146, phase:1, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "/wp-json/wp/v[0-9]+/(?:global-styles|navigation|pages|posts|sidebars|template-parts|templates|users)",
+    "actions": {
+      "id": "9507146",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507146",
+    "chain_id": "9507146",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &REQUEST_HEADERS:x-http-method-override \"!@eq 0\" \"t:none, ctl:ruleRemoveById=920450\"",
+    "directive": "SecRule",
+    "variables": [
+      "&REQUEST_HEADERS:x-http-method-override"
+    ],
+    "operator": "!@eq",
+    "rule_pattern": "0",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveById=920450"
+      ]
+    },
+    "rule_id": "unknown-27",
+    "chain_id": "9507146",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /index.php\" \"id:9507147, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/index.php",
+    "actions": {
+      "id": "9507147",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507147",
+    "chain_id": "9507147",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:_fields \"@rx ^id[a-z,_]*$\" \"t:none, ctl:ruleRemoveTargetById=932236;ARGS:_fields\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:_fields"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^id[a-z,_]*$",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932236;ARGS:_fields"
+      ]
+    },
+    "rule_id": "unknown-29",
+    "chain_id": "9507147",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /index.php\" \"id:9507148, phase:2, pass, t:none, nolog, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/index.php",
+    "actions": {
+      "id": "9507148",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507148",
+    "chain_id": "9507148",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:orderby \"@streq id\" \"t:none, ctl:ruleRemoveTargetById=932236;ARGS:orderby\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:orderby"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "id",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932236;ARGS:orderby"
+      ]
+    },
+    "rule_id": "unknown-31",
+    "chain_id": "9507148",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /index.php\" \"id:9507149, phase:2, pass, t:none, nolog, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/index.php",
+    "actions": {
+      "id": "9507149",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507149",
+    "chain_id": "9507149",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:rest_route \"@rx ^/wp-block-editor/v[0-9]/url-details$\" \"t:none, ctl:ruleRemoveTargetById=931130;ARGS:url\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:rest_route"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^/wp-block-editor/v[0-9]/url-details$",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=931130;ARGS:url"
+      ]
+    },
+    "rule_id": "unknown-33",
+    "chain_id": "9507149",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule ARGS:wp_customize \"@streq on\" \"id:9507150, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:wp_customize"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "on",
+    "actions": {
+      "id": "9507150",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507150",
+    "chain_id": "9507150",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 0\" \"t:none, ctl:ruleRemoveTargetById=942200;ARGS:customized, ctl:ruleRemoveTargetById=942260;ARGS:customized, ctl:ruleRemoveTargetById=942300;ARGS:customized, ctl:ruleRemoveTargetById=942330;ARGS:customized, ctl:ruleRemoveTargetById=942340;ARGS:customized, ctl:ruleRemoveTargetById=942370;ARGS:customized, ctl:ruleRemoveTargetById=942430;ARGS:customized, ctl:ruleRemoveTargetById=942431;ARGS:customized, ctl:ruleRemoveTargetById=942460;ARGS:customized\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "0",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=942200;ARGS:customized",
+        "ruleRemoveTargetById=942260;ARGS:customized",
+        "ruleRemoveTargetById=942300;ARGS:customized",
+        "ruleRemoveTargetById=942330;ARGS:customized",
+        "ruleRemoveTargetById=942340;ARGS:customized",
+        "ruleRemoveTargetById=942370;ARGS:customized",
+        "ruleRemoveTargetById=942430;ARGS:customized",
+        "ruleRemoveTargetById=942431;ARGS:customized",
+        "ruleRemoveTargetById=942460;ARGS:customized"
+      ]
+    },
+    "rule_id": "unknown-35",
+    "chain_id": "9507150",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule ARGS:wp_customize \"@streq on\" \"id:9507160, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:wp_customize"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "on",
+    "actions": {
+      "id": "9507160",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507160",
+    "chain_id": "9507160",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@rx ^(?:customize_save|update-widget)$\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^(?:customize_save|update-widget)$",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-37",
+    "chain_id": "9507160",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=942200;ARGS:customized, ctl:ruleRemoveTargetById=942260;ARGS:customized, ctl:ruleRemoveTargetById=942300;ARGS:customized, ctl:ruleRemoveTargetById=942330;ARGS:customized, ctl:ruleRemoveTargetById=942340;ARGS:customized, ctl:ruleRemoveTargetById=942370;ARGS:customized, ctl:ruleRemoveTargetById=942430;ARGS:customized, ctl:ruleRemoveTargetById=942431;ARGS:customized, ctl:ruleRemoveTargetById=942460;ARGS:customized, ctl:ruleRemoveTargetById=920230;ARGS:partials, ctl:ruleRemoveTargetById=941320;ARGS:partials, ctl:ruleRemoveTargetById=942180;ARGS:partials, ctl:ruleRemoveTargetById=942200;ARGS:partials, ctl:ruleRemoveTargetById=942260;ARGS:partials, ctl:ruleRemoveTargetById=942330;ARGS:partials, ctl:ruleRemoveTargetById=942340;ARGS:partials, ctl:ruleRemoveTargetById=942370;ARGS:partials, ctl:ruleRemoveTargetById=942430;ARGS:partials, ctl:ruleRemoveTargetById=942431;ARGS:partials, ctl:ruleRemoveTargetById=942460;ARGS:partials\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=942200;ARGS:customized",
+        "ruleRemoveTargetById=942260;ARGS:customized",
+        "ruleRemoveTargetById=942300;ARGS:customized",
+        "ruleRemoveTargetById=942330;ARGS:customized",
+        "ruleRemoveTargetById=942340;ARGS:customized",
+        "ruleRemoveTargetById=942370;ARGS:customized",
+        "ruleRemoveTargetById=942430;ARGS:customized",
+        "ruleRemoveTargetById=942431;ARGS:customized",
+        "ruleRemoveTargetById=942460;ARGS:customized",
+        "ruleRemoveTargetById=920230;ARGS:partials",
+        "ruleRemoveTargetById=941320;ARGS:partials",
+        "ruleRemoveTargetById=942180;ARGS:partials",
+        "ruleRemoveTargetById=942200;ARGS:partials",
+        "ruleRemoveTargetById=942260;ARGS:partials",
+        "ruleRemoveTargetById=942330;ARGS:partials",
+        "ruleRemoveTargetById=942340;ARGS:partials",
+        "ruleRemoveTargetById=942370;ARGS:partials",
+        "ruleRemoveTargetById=942430;ARGS:partials",
+        "ruleRemoveTargetById=942431;ARGS:partials",
+        "ruleRemoveTargetById=942460;ARGS:partials"
+      ]
+    },
+    "rule_id": "unknown-38",
+    "chain_id": "9507160",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-cron.php\" \"id:9507200, phase:1, pass, t:none, nolog, ctl:ruleRemoveById=920180, ctl:ruleRemoveById=920300, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-cron.php",
+    "actions": {
+      "id": "9507200",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveById=920180",
+        "ruleRemoveById=920300"
+      ]
+    },
+    "rule_id": "9507200",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx /wp-json/batch/v[0-9]$\" \"id:9507201, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "/wp-json/batch/v[0-9]$",
+    "actions": {
+      "id": "9507201",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507201",
+    "chain_id": "9507201",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:_locale \"@streq user\" \"t:none, ctl:ruleRemoveTargetById=920272;ARGS, ctl:ruleRemoveTargetById=920273;ARGS, ctl:ruleRemoveTargetById=932200;ARGS, ctl:ruleRemoveTargetById=932236;ARGS, ctl:ruleRemoveTargetById=932240;ARGS, ctl:ruleRemoveTargetById=932370;ARGS, ctl:ruleRemoveTargetById=941150;ARGS, ctl:ruleRemoveTargetById=941180;ARGS, ctl:ruleRemoveTargetById=941181;ARGS, ctl:ruleRemoveTargetById=941320;ARGS, ctl:ruleRemoveTargetById=941330;ARGS, ctl:ruleRemoveTargetById=942130;ARGS, ctl:ruleRemoveTargetById=942131;ARGS, ctl:ruleRemoveTargetById=942200;ARGS, ctl:ruleRemoveTargetById=942210;ARGS, ctl:ruleRemoveTargetById=942260;ARGS, ctl:ruleRemoveTargetById=942330;ARGS, ctl:ruleRemoveTargetById=942340;ARGS, ctl:ruleRemoveTargetById=942370;ARGS, ctl:ruleRemoveTargetById=942430;ARGS, ctl:ruleRemoveTargetById=942431;ARGS, ctl:ruleRemoveTargetById=942432;ARGS, ctl:ruleRemoveTargetById=942440;ARGS, ctl:ruleRemoveTargetById=942460;ARGS, ctl:ruleRemoveTargetById=942520;ARGS, ctl:ruleRemoveTargetById=920272;REQUEST_BODY, ctl:ruleRemoveTargetById=920273;REQUEST_BODY\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:_locale"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "user",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=920272;ARGS",
+        "ruleRemoveTargetById=920273;ARGS",
+        "ruleRemoveTargetById=932200;ARGS",
+        "ruleRemoveTargetById=932236;ARGS",
+        "ruleRemoveTargetById=932240;ARGS",
+        "ruleRemoveTargetById=932370;ARGS",
+        "ruleRemoveTargetById=941150;ARGS",
+        "ruleRemoveTargetById=941180;ARGS",
+        "ruleRemoveTargetById=941181;ARGS",
+        "ruleRemoveTargetById=941320;ARGS",
+        "ruleRemoveTargetById=941330;ARGS",
+        "ruleRemoveTargetById=942130;ARGS",
+        "ruleRemoveTargetById=942131;ARGS",
+        "ruleRemoveTargetById=942200;ARGS",
+        "ruleRemoveTargetById=942210;ARGS",
+        "ruleRemoveTargetById=942260;ARGS",
+        "ruleRemoveTargetById=942330;ARGS",
+        "ruleRemoveTargetById=942340;ARGS",
+        "ruleRemoveTargetById=942370;ARGS",
+        "ruleRemoveTargetById=942430;ARGS",
+        "ruleRemoveTargetById=942431;ARGS",
+        "ruleRemoveTargetById=942432;ARGS",
+        "ruleRemoveTargetById=942440;ARGS",
+        "ruleRemoveTargetById=942460;ARGS",
+        "ruleRemoveTargetById=942520;ARGS",
+        "ruleRemoveTargetById=920272;REQUEST_BODY",
+        "ruleRemoveTargetById=920273;REQUEST_BODY"
+      ]
+    },
+    "rule_id": "unknown-41",
+    "chain_id": "9507201",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule ARGS:wp_customize \"@streq on\" \"id:9507202, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:wp_customize"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "on",
+    "actions": {
+      "id": "9507202",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507202",
+    "chain_id": "9507202",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:wp_customize \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=920273;ARGS:customize_autosaved, ctl:ruleRemoveTargetById=942432;ARGS:customize_changeset_uuid, ctl:ruleRemoveTargetById=920273;ARGS:partials, ctl:ruleRemoveTargetById=932200;ARGS:partials, ctl:ruleRemoveTargetById=932240;ARGS:partials, ctl:ruleRemoveTargetById=942370;ARGS:partials, ctl:ruleRemoveTargetById=942430;ARGS:partials, ctl:ruleRemoveTargetById=942431;ARGS:partials, ctl:ruleRemoveTargetById=942432;ARGS:partials, ctl:ruleRemoveTargetById=942460;ARGS:partials, ctl:ruleRemoveTargetById=942520;ARGS:partials, ctl:ruleRemoveTargetById=920272;REQUEST_BODY, ctl:ruleRemoveTargetById=920273;REQUEST_BODY, ctl:ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:customized, ctl:ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:customize_changeset_uuid, ctl:ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:customize_theme, ctl:ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:customize_autosaved, ctl:ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:customize_messenger_channel, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:customized\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:wp_customize"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=920273;ARGS:customize_autosaved",
+        "ruleRemoveTargetById=942432;ARGS:customize_changeset_uuid",
+        "ruleRemoveTargetById=920273;ARGS:partials",
+        "ruleRemoveTargetById=932200;ARGS:partials",
+        "ruleRemoveTargetById=932240;ARGS:partials",
+        "ruleRemoveTargetById=942370;ARGS:partials",
+        "ruleRemoveTargetById=942430;ARGS:partials",
+        "ruleRemoveTargetById=942431;ARGS:partials",
+        "ruleRemoveTargetById=942432;ARGS:partials",
+        "ruleRemoveTargetById=942460;ARGS:partials",
+        "ruleRemoveTargetById=942520;ARGS:partials",
+        "ruleRemoveTargetById=920272;REQUEST_BODY",
+        "ruleRemoveTargetById=920273;REQUEST_BODY",
+        "ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:customized",
+        "ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:customize_changeset_uuid",
+        "ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:customize_theme",
+        "ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:customize_autosaved",
+        "ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:customize_messenger_channel",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:customized"
+      ]
+    },
+    "rule_id": "unknown-43",
+    "chain_id": "9507202",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507203, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507203",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507203",
+    "chain_id": "9507203",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:wp_customize \"@streq on\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:wp_customize"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "on",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-45",
+    "chain_id": "9507203",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:wp_customize \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=942432;ARGS:customize_changeset_uuid, ctl:ruleRemoveTargetById=920272;REQUEST_BODY, ctl:ruleRemoveTargetById=920273;REQUEST_BODY, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:changes, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:customized, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:customize_changeset_data, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:data\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:wp_customize"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=942432;ARGS:customize_changeset_uuid",
+        "ruleRemoveTargetById=920272;REQUEST_BODY",
+        "ruleRemoveTargetById=920273;REQUEST_BODY",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:changes",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:customized",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:customize_changeset_data",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:data"
+      ]
+    },
+    "rule_id": "unknown-46",
+    "chain_id": "9507203",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/customize.php\" \"id:9507204, phase:4, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/customize.php",
+    "actions": {
+      "id": "9507204",
+      "phase": "4",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507204",
+    "chain_id": "9507204",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "response_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule RESPONSE_BODY \"@contains Invalid date.\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "RESPONSE_BODY"
+    ],
+    "operator": "@contains",
+    "rule_pattern": "Invalid date.",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-48",
+    "chain_id": "9507204",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule REQUEST_METHOD \"@streq GET\" \"t:none, ctl:ruleRemoveById=953101\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_METHOD"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "GET",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveById=953101"
+      ]
+    },
+    "rule_id": "unknown-49",
+    "chain_id": "9507204",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_COOKIES:_wp_session \"@rx ^[0-9a-f]+\\|\\|\\d+\\|\\|\\d+$\" \"id:9507300, phase:1, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_COOKIES:_wp_session"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^[0-9a-f]+\\|\\|\\d+\\|\\|\\d+$",
+    "actions": {
+      "id": "9507300",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507300",
+    "chain_id": "9507300",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &REQUEST_COOKIES:_wp_session \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=942100;REQUEST_COOKIES:_wp_session\"",
+    "directive": "SecRule",
+    "variables": [
+      "&REQUEST_COOKIES:_wp_session"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=942100;REQUEST_COOKIES:_wp_session"
+      ]
+    },
+    "rule_id": "unknown-51",
+    "chain_id": "9507300",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@unconditionalMatch\" \"id:9507350, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetById=932236;ARGS:nonce, ctl:ruleRemoveTargetById=942450;ARGS:nonce, ctl:ruleRemoveTargetById=932236;ARGS:ver, ctl:ruleRemoveTargetById=942450;ARGS:ver, ctl:ruleRemoveTargetById=920230;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=920273;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=931130;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=932150;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=932200;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=932235;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=932236;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=932370;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=941100;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=942120;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=942130;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=942200;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=942230;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=942260;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=942430;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=942431;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=942432;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=942440;ARGS:_wp_http_referer, ctl:ruleRemoveTargetById=920230;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=920273;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=931130;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=932150;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=932200;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=932235;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=932236;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=932370;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=941100;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=942120;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=942130;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=942200;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=942230;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=942260;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=942430;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=942431;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=942432;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=942440;ARGS:wp_http_referer, ctl:ruleRemoveTargetById=932236;ARGS:_wpnonce, ctl:ruleRemoveTargetById=942450;ARGS:_wpnonce, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@unconditionalMatch",
+    "rule_pattern": "",
+    "actions": {
+      "id": "9507350",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932236;ARGS:nonce",
+        "ruleRemoveTargetById=942450;ARGS:nonce",
+        "ruleRemoveTargetById=932236;ARGS:ver",
+        "ruleRemoveTargetById=942450;ARGS:ver",
+        "ruleRemoveTargetById=920230;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=920273;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=931130;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=932150;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=932200;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=932235;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=932236;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=932370;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=941100;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=942120;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=942130;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=942200;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=942230;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=942260;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=942430;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=942431;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=942432;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=942440;ARGS:_wp_http_referer",
+        "ruleRemoveTargetById=920230;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=920273;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=931130;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=932150;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=932200;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=932235;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=932236;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=932370;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=941100;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=942120;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=942130;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=942200;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=942230;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=942260;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=942430;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=942431;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=942432;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=942440;ARGS:wp_http_referer",
+        "ruleRemoveTargetById=932236;ARGS:_wpnonce",
+        "ruleRemoveTargetById=942450;ARGS:_wpnonce"
+      ]
+    },
+    "rule_id": "9507350",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule ARGS_NAMES \"@rx ^_wp_original_http_referer|referredby$\" \"id:9507355, phase:2, pass, t:none, nolog, ctl:ruleRemoveTargetById=920273;ARGS:_wp_original_http_referer, ctl:ruleRemoveTargetById=932235;ARGS:_wp_original_http_referer, ctl:ruleRemoveTargetById=932236;ARGS:_wp_original_http_referer, ctl:ruleRemoveTargetById=942120;ARGS:_wp_original_http_referer, ctl:ruleRemoveTargetById=942430;ARGS:_wp_original_http_referer, ctl:ruleRemoveTargetById=942431;ARGS:_wp_original_http_referer, ctl:ruleRemoveTargetById=942432;ARGS:_wp_original_http_referer, ctl:ruleRemoveTargetById=920273;ARGS:referredby, ctl:ruleRemoveTargetById=932235;ARGS:referredby, ctl:ruleRemoveTargetById=932236;ARGS:referredby, ctl:ruleRemoveTargetById=942120;ARGS:referredby, ctl:ruleRemoveTargetById=942430;ARGS:referredby, ctl:ruleRemoveTargetById=942431;ARGS:referredby, ctl:ruleRemoveTargetById=942432;ARGS:referredby, ctl:ruleRemoveTargetById=920273;ARGS_NAMES:_wp_original_http_referer, ctl:ruleRemoveTargetById=920273;ARGS_NAMES:referredby, ctl:ruleRemoveTargetById=920273;REQUEST_BODY, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS_NAMES"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^_wp_original_http_referer|referredby$",
+    "actions": {
+      "id": "9507355",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=920273;ARGS:_wp_original_http_referer",
+        "ruleRemoveTargetById=932235;ARGS:_wp_original_http_referer",
+        "ruleRemoveTargetById=932236;ARGS:_wp_original_http_referer",
+        "ruleRemoveTargetById=942120;ARGS:_wp_original_http_referer",
+        "ruleRemoveTargetById=942430;ARGS:_wp_original_http_referer",
+        "ruleRemoveTargetById=942431;ARGS:_wp_original_http_referer",
+        "ruleRemoveTargetById=942432;ARGS:_wp_original_http_referer",
+        "ruleRemoveTargetById=920273;ARGS:referredby",
+        "ruleRemoveTargetById=932235;ARGS:referredby",
+        "ruleRemoveTargetById=932236;ARGS:referredby",
+        "ruleRemoveTargetById=942120;ARGS:referredby",
+        "ruleRemoveTargetById=942430;ARGS:referredby",
+        "ruleRemoveTargetById=942431;ARGS:referredby",
+        "ruleRemoveTargetById=942432;ARGS:referredby",
+        "ruleRemoveTargetById=920273;ARGS_NAMES:_wp_original_http_referer",
+        "ruleRemoveTargetById=920273;ARGS_NAMES:referredby",
+        "ruleRemoveTargetById=920273;REQUEST_BODY"
+      ]
+    },
+    "rule_id": "9507355",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"!@contains /wp-admin/\" \"id:9507400, phase:1, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', skipAfter:END-WORDPRESS-ADMIN\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "!@contains",
+    "rule_pattern": "/wp-admin/",
+    "actions": {
+      "id": "9507400",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "skipAfter": "END-WORDPRESS-ADMIN",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507400",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"!@contains /wp-admin/\" \"id:9507401, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', skipAfter:END-WORDPRESS-ADMIN\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "!@contains",
+    "rule_pattern": "/wp-admin/",
+    "actions": {
+      "id": "9507401",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "skipAfter": "END-WORDPRESS-ADMIN",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507401",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/setup-config.php\" \"id:9507410, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/setup-config.php",
+    "actions": {
+      "id": "9507410",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507410",
+    "chain_id": "9507410",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:step \"@streq 2\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:step"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "2",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-57",
+    "chain_id": "9507410",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:step \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=932260;ARGS_NAMES:uname, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pwd\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:step"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932260;ARGS_NAMES:uname",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pwd"
+      ]
+    },
+    "rule_id": "unknown-58",
+    "chain_id": "9507410",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/install.php\" \"id:9507420, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/install.php",
+    "actions": {
+      "id": "9507420",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507420",
+    "chain_id": "9507420",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:step \"@streq 2\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:step"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "2",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-60",
+    "chain_id": "9507420",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:step \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:admin_password, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:admin_password2, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1-text\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:step"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:admin_password",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:admin_password2",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1-text"
+      ]
+    },
+    "rule_id": "unknown-61",
+    "chain_id": "9507420",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx /wp-admin/(?:profile|user-edit)\\.php$\" \"id:9507520, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "/wp-admin/(?:profile|user-edit)\\.php$",
+    "actions": {
+      "id": "9507520",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507520",
+    "chain_id": "9507520",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq update\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "update",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-63",
+    "chain_id": "9507520",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=931130;ARGS:url, ctl:ruleRemoveTargetById=931130;ARGS:facebook, ctl:ruleRemoveTargetById=931130;ARGS:instagram, ctl:ruleRemoveTargetById=931130;ARGS:linkedin, ctl:ruleRemoveTargetById=931130;ARGS:myspace, ctl:ruleRemoveTargetById=931130;ARGS:pinterest, ctl:ruleRemoveTargetById=931130;ARGS:soundcloud, ctl:ruleRemoveTargetById=931130;ARGS:tumblr, ctl:ruleRemoveTargetById=931130;ARGS:youtube, ctl:ruleRemoveTargetById=931130;ARGS:wikipedia, ctl:ruleRemoveTargetById=931130;ARGS:github, ctl:ruleRemoveTargetById=931130;ARGS:tiktok, ctl:ruleRemoveTargetById=931130;ARGS:vkontakte, ctl:ruleRemoveTargetById=931130;ARGS:medium, ctl:ruleRemoveTargetById=931130;ARGS:twitter, ctl:ruleRemoveTargetById=931130;ARGS:tsf-user-meta[facebook_page], ctl:ruleRemoveTargetById=931130;ARGS:odnoklassniki, ctl:ruleRemoveTargetById=931130;ARGS:vimeo, ctl:ruleRemoveTargetById=931130;ARGS:dribbble, ctl:ruleRemoveTargetById=931130;ARGS:wordpress, ctl:ruleRemoveTargetByTag=attack-sqli;ARGS:url, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:description, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:first_name, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:last_name, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1-text, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass2\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=931130;ARGS:url",
+        "ruleRemoveTargetById=931130;ARGS:facebook",
+        "ruleRemoveTargetById=931130;ARGS:instagram",
+        "ruleRemoveTargetById=931130;ARGS:linkedin",
+        "ruleRemoveTargetById=931130;ARGS:myspace",
+        "ruleRemoveTargetById=931130;ARGS:pinterest",
+        "ruleRemoveTargetById=931130;ARGS:soundcloud",
+        "ruleRemoveTargetById=931130;ARGS:tumblr",
+        "ruleRemoveTargetById=931130;ARGS:youtube",
+        "ruleRemoveTargetById=931130;ARGS:wikipedia",
+        "ruleRemoveTargetById=931130;ARGS:github",
+        "ruleRemoveTargetById=931130;ARGS:tiktok",
+        "ruleRemoveTargetById=931130;ARGS:vkontakte",
+        "ruleRemoveTargetById=931130;ARGS:medium",
+        "ruleRemoveTargetById=931130;ARGS:twitter",
+        "ruleRemoveTargetById=931130;ARGS:tsf-user-meta[facebook_page]",
+        "ruleRemoveTargetById=931130;ARGS:odnoklassniki",
+        "ruleRemoveTargetById=931130;ARGS:vimeo",
+        "ruleRemoveTargetById=931130;ARGS:dribbble",
+        "ruleRemoveTargetById=931130;ARGS:wordpress",
+        "ruleRemoveTargetByTag=attack-sqli;ARGS:url",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:description",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:first_name",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:last_name",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1-text",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass2"
+      ]
+    },
+    "rule_id": "unknown-64",
+    "chain_id": "9507520",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/user-new.php\" \"id:9507540, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/user-new.php",
+    "actions": {
+      "id": "9507540",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507540",
+    "chain_id": "9507540",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq createuser\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "createuser",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-66",
+    "chain_id": "9507540",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=931130;ARGS:url, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1-text, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass2\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=931130;ARGS:url",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass1-text",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:pass2"
+      ]
+    },
+    "rule_id": "unknown-67",
+    "chain_id": "9507540",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx /wp-admin/(?:admin|admin-ajax|edit|users)\\.php$\" \"id:9507601, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetById=932236;ARGS_NAMES:id, ctl:ruleRemoveTargetById=932236;ARGS_NAMES:ids, ctl:ruleRemoveTargetById=920273;ARGS_NAMES:users[0], ctl:ruleRemoveTargetById=942432;ARGS_NAMES:users[0], ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "/wp-admin/(?:admin|admin-ajax|edit|users)\\.php$",
+    "actions": {
+      "id": "9507601",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932236;ARGS_NAMES:id",
+        "ruleRemoveTargetById=932236;ARGS_NAMES:ids",
+        "ruleRemoveTargetById=920273;ARGS_NAMES:users[0]",
+        "ruleRemoveTargetById=942432;ARGS_NAMES:users[0]"
+      ]
+    },
+    "rule_id": "9507601",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/post.php\" \"id:9507700, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/post.php",
+    "actions": {
+      "id": "9507700",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507700",
+    "chain_id": "9507700",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@rx ^(?:edit|editpost)$\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^(?:edit|editpost)$",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-70",
+    "chain_id": "9507700",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=attack-sqli;ARGS:post_title, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:content, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:excerpt, ctl:ruleRemoveById=920272, ctl:ruleRemoveById=921180\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=attack-sqli;ARGS:post_title",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:content",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:excerpt",
+        "ruleRemoveById=920272",
+        "ruleRemoveById=921180"
+      ]
+    },
+    "rule_id": "unknown-71",
+    "chain_id": "9507700",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507710, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507710",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507710",
+    "chain_id": "9507710",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq heartbeat\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "heartbeat",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-73",
+    "chain_id": "9507710",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=attack-sqli;ARGS:data[wp_autosave][post_title], ctl:ruleRemoveTargetByTag=attack-xss;ARGS:data[wp_autosave][post_title], ctl:ruleRemoveTargetById=932110;ARGS:data[wp_autosave][post_title], ctl:ruleRemoveTargetById=932150;ARGS:data[wp_autosave][post_title], ctl:ruleRemoveTargetById=941270;ARGS:data[wp_autosave][post_title], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:data[wp_autosave][content], ctl:ruleRemoveTargetByTag=attack-xss;ARGS:data[wp_autosave][excerpt], ctl:ruleRemoveTargetById=921110;ARGS:data[wp_autosave][excerpt], ctl:ruleRemoveTargetById=932105;ARGS:data[wp_autosave][excerpt], ctl:ruleRemoveTargetById=932110;ARGS:data[wp_autosave][excerpt], ctl:ruleRemoveTargetById=932115;ARGS:data[wp_autosave][excerpt], ctl:ruleRemoveTargetById=933210;ARGS:data[wp_autosave][excerpt], ctl:ruleRemoveTargetById=942131;ARGS:data[wp_autosave][excerpt], ctl:ruleRemoveTargetById=942431;ARGS_NAMES:data[wp-refresh-post-lock][post_id], ctl:ruleRemoveTargetById=942431;ARGS_NAMES:data[wp-refresh-post-lock][lock], ctl:ruleRemoveTargetById=942431;ARGS_NAMES:data[wp-check-locked-posts][], ctl:ruleRemoveById=921180, ctl:ruleRemoveById=920272\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=attack-sqli;ARGS:data[wp_autosave][post_title]",
+        "ruleRemoveTargetByTag=attack-xss;ARGS:data[wp_autosave][post_title]",
+        "ruleRemoveTargetById=932110;ARGS:data[wp_autosave][post_title]",
+        "ruleRemoveTargetById=932150;ARGS:data[wp_autosave][post_title]",
+        "ruleRemoveTargetById=941270;ARGS:data[wp_autosave][post_title]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:data[wp_autosave][content]",
+        "ruleRemoveTargetByTag=attack-xss;ARGS:data[wp_autosave][excerpt]",
+        "ruleRemoveTargetById=921110;ARGS:data[wp_autosave][excerpt]",
+        "ruleRemoveTargetById=932105;ARGS:data[wp_autosave][excerpt]",
+        "ruleRemoveTargetById=932110;ARGS:data[wp_autosave][excerpt]",
+        "ruleRemoveTargetById=932115;ARGS:data[wp_autosave][excerpt]",
+        "ruleRemoveTargetById=933210;ARGS:data[wp_autosave][excerpt]",
+        "ruleRemoveTargetById=942131;ARGS:data[wp_autosave][excerpt]",
+        "ruleRemoveTargetById=942431;ARGS_NAMES:data[wp-refresh-post-lock][post_id]",
+        "ruleRemoveTargetById=942431;ARGS_NAMES:data[wp-refresh-post-lock][lock]",
+        "ruleRemoveTargetById=942431;ARGS_NAMES:data[wp-check-locked-posts][]",
+        "ruleRemoveById=921180",
+        "ruleRemoveById=920272"
+      ]
+    },
+    "rule_id": "unknown-74",
+    "chain_id": "9507710",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/nav-menus.php\" \"id:9507720, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/nav-menus.php",
+    "actions": {
+      "id": "9507720",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507720",
+    "chain_id": "9507720",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@rx ^(?:update|edit)$\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^(?:update|edit)$",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-76",
+    "chain_id": "9507720",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@le 2\" \"t:none, ctl:ruleRemoveTargetById=920273;ARGS, ctl:ruleRemoveTargetById=931130;ARGS, ctl:ruleRemoveTargetById=932150;ARGS, ctl:ruleRemoveTargetById=932200;ARGS, ctl:ruleRemoveTargetById=941130;ARGS, ctl:ruleRemoveTargetById=942100;ARGS, ctl:ruleRemoveTargetById=920273;ARGS_NAMES, ctl:ruleRemoveTargetById=921220;ARGS_NAMES, ctl:ruleRemoveTargetById=942432;ARGS_NAMES, ctl:ruleRemoveTargetById=942460;ARGS:menu-name, ctl:ruleRemoveTargetById=932240;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=941330;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=941340;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942200;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942260;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942330;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942340;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942370;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942430;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942431;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942432;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942460;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942490;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=942520;ARGS:nav-menu-data, ctl:ruleRemoveTargetById=920272;REQUEST_BODY, ctl:ruleRemoveTargetById=920273;REQUEST_BODY, ctl:ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:action, ctl:ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:menu\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@le",
+    "rule_pattern": "2",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=920273;ARGS",
+        "ruleRemoveTargetById=931130;ARGS",
+        "ruleRemoveTargetById=932150;ARGS",
+        "ruleRemoveTargetById=932200;ARGS",
+        "ruleRemoveTargetById=941130;ARGS",
+        "ruleRemoveTargetById=942100;ARGS",
+        "ruleRemoveTargetById=920273;ARGS_NAMES",
+        "ruleRemoveTargetById=921220;ARGS_NAMES",
+        "ruleRemoveTargetById=942432;ARGS_NAMES",
+        "ruleRemoveTargetById=942460;ARGS:menu-name",
+        "ruleRemoveTargetById=932240;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=941330;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=941340;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942200;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942260;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942330;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942340;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942370;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942430;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942431;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942432;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942460;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942490;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=942520;ARGS:nav-menu-data",
+        "ruleRemoveTargetById=920272;REQUEST_BODY",
+        "ruleRemoveTargetById=920273;REQUEST_BODY",
+        "ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:action",
+        "ruleRemoveTargetById=921180;TX:paramcounter_ARGS_NAMES:menu"
+      ]
+    },
+    "rule_id": "unknown-77",
+    "chain_id": "9507720",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507730, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507730",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507730",
+    "chain_id": "9507730",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@rx ^(?:save-widget|update-widget)$\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^(?:save-widget|update-widget)$",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-79",
+    "chain_id": "9507730",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[0][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[1][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[2][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[3][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[4][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[5][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[6][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[7][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[8][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[9][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[10][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[11][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[12][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[13][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[14][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[15][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[16][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[17][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[18][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[19][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[20][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[21][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[22][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[23][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[24][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[25][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[26][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[27][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[28][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[29][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[30][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[31][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[32][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[33][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[34][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[35][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[36][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[37][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[38][text], ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[39][text]\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[0][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[1][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[2][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[3][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[4][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[5][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[6][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[7][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[8][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[9][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[10][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[11][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[12][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[13][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[14][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[15][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[16][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[17][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[18][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[19][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[20][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[21][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[22][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[23][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[24][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[25][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[26][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[27][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[28][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[29][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[30][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[31][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[32][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[33][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[34][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[35][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[36][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[37][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[38][text]",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:widget-text[39][text]"
+      ]
+    },
+    "rule_id": "unknown-80",
+    "chain_id": "9507730",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507740, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507740",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507740",
+    "chain_id": "9507740",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq widgets-order\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "widgets-order",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-82",
+    "chain_id": "9507740",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-1], ctl:ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-1], ctl:ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-2], ctl:ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-2], ctl:ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-3], ctl:ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-3], ctl:ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-4], ctl:ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-4], ctl:ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-5], ctl:ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-5], ctl:ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-6], ctl:ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-6], ctl:ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-7], ctl:ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-7]\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-1]",
+        "ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-1]",
+        "ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-2]",
+        "ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-2]",
+        "ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-3]",
+        "ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-3]",
+        "ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-4]",
+        "ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-4]",
+        "ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-5]",
+        "ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-5]",
+        "ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-6]",
+        "ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-6]",
+        "ruleRemoveTargetById=942430;ARGS:sidebars[sidebar-7]",
+        "ruleRemoveTargetById=942431;ARGS:sidebars[sidebar-7]"
+      ]
+    },
+    "rule_id": "unknown-83",
+    "chain_id": "9507740",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507750, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507750",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507750",
+    "chain_id": "9507750",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq sample-permalink\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "sample-permalink",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-85",
+    "chain_id": "9507750",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=attack-sqli;ARGS:new_title, ctl:ruleRemoveTargetById=941270;ARGS:new_title\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=attack-sqli;ARGS:new_title",
+        "ruleRemoveTargetById=941270;ARGS:new_title"
+      ]
+    },
+    "rule_id": "unknown-86",
+    "chain_id": "9507750",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507760, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507760",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507760",
+    "chain_id": "9507760",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq add-menu-item\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "add-menu-item",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-88",
+    "chain_id": "9507760",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=931130;ARGS:menu-item[-1][menu-item-url]\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=931130;ARGS:menu-item[-1][menu-item-url]"
+      ]
+    },
+    "rule_id": "unknown-89",
+    "chain_id": "9507760",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507770, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507770",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507770",
+    "chain_id": "9507770",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq send-attachment-to-editor\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "send-attachment-to-editor",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-91",
+    "chain_id": "9507770",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:html\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:html"
+      ]
+    },
+    "rule_id": "unknown-92",
+    "chain_id": "9507770",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507780, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507780",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507780",
+    "chain_id": "9507780",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq add-tag\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "add-tag",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-94",
+    "chain_id": "9507780",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=attack-xss;ARGS:description\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=attack-xss;ARGS:description"
+      ]
+    },
+    "rule_id": "unknown-95",
+    "chain_id": "9507780",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/async-upload.php\" \"id:9507790, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/async-upload.php",
+    "actions": {
+      "id": "9507790",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507790",
+    "chain_id": "9507790",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq upload-attachment\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "upload-attachment",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-97",
+    "chain_id": "9507790",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=920120;FILES:async-upload, ctl:ruleRemoveTargetById=933210;ARGS:name, ctl:ruleRemoveTargetById=942100;ARGS:name\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=920120;FILES:async-upload",
+        "ruleRemoveTargetById=933210;ARGS:name",
+        "ruleRemoveTargetById=942100;ARGS:name"
+      ]
+    },
+    "rule_id": "unknown-98",
+    "chain_id": "9507790",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507791, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507791",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507791",
+    "chain_id": "9507791",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq save-attachment\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "save-attachment",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-100",
+    "chain_id": "9507791",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=932100;ARGS:changes[caption], ctl:ruleRemoveTargetById=941100;ARGS:changes[caption], ctl:ruleRemoveTargetById=941160;ARGS:changes[caption], ctl:ruleRemoveTargetById=932130;ARGS:changes[smush], ctl:ruleRemoveTargetById=941310;ARGS:changes[smush], ctl:ruleRemoveTargetByTag=attack-xss;ARGS:changes[compat][item], ctl:ruleRemoveTargetById=932130;ARGS:changes[compat][item], ctl:ruleRemoveTargetById=933210;ARGS:changes[compat][item]\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932100;ARGS:changes[caption]",
+        "ruleRemoveTargetById=941100;ARGS:changes[caption]",
+        "ruleRemoveTargetById=941160;ARGS:changes[caption]",
+        "ruleRemoveTargetById=932130;ARGS:changes[smush]",
+        "ruleRemoveTargetById=941310;ARGS:changes[smush]",
+        "ruleRemoveTargetByTag=attack-xss;ARGS:changes[compat][item]",
+        "ruleRemoveTargetById=932130;ARGS:changes[compat][item]",
+        "ruleRemoveTargetById=933210;ARGS:changes[compat][item]"
+      ]
+    },
+    "rule_id": "unknown-101",
+    "chain_id": "9507791",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/options.php\" \"id:9507800, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/options.php",
+    "actions": {
+      "id": "9507800",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507800",
+    "chain_id": "9507800",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:option_page \"@streq general\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:option_page"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "general",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-103",
+    "chain_id": "9507800",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:option_page \"@eq 1\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:option_page"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-104",
+    "chain_id": "9507800",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq update\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "update",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-105",
+    "chain_id": "9507800",
+    "chain_order": 3,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=931130;ARGS:home, ctl:ruleRemoveTargetById=931130;ARGS:siteurl\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=931130;ARGS:home",
+        "ruleRemoveTargetById=931130;ARGS:siteurl"
+      ]
+    },
+    "rule_id": "unknown-106",
+    "chain_id": "9507800",
+    "chain_order": 4,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/options-permalink.php\" \"id:9507810, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetById=920230;ARGS:selection, ctl:ruleRemoveTargetById=920272;ARGS:selection, ctl:ruleRemoveTargetById=942431;ARGS:selection, ctl:ruleRemoveTargetById=920230;ARGS:permalink_structure, ctl:ruleRemoveTargetById=920272;ARGS:permalink_structure, ctl:ruleRemoveTargetById=942100;ARGS:permalink_structure, ctl:ruleRemoveTargetById=942130;ARGS:tag_base, ctl:ruleRemoveTargetById=942130;ARGS:category_base, ctl:ruleRemoveTargetById=942130;ARGS:permalink_structure, ctl:ruleRemoveTargetById=942180;ARGS:permalink_structure, ctl:ruleRemoveTargetById=942330;ARGS:permalink_structure, ctl:ruleRemoveTargetById=942390;ARGS:permalink_structure, ctl:ruleRemoveTargetById=942390;ARGS:category_base, ctl:ruleRemoveTargetById=942390;ARGS:tag_base, ctl:ruleRemoveTargetById=942431;ARGS:permalink_structure, ctl:ruleRemoveTargetById=942521;ARGS:permalink_structure, ctl:ruleRemoveTargetById=920272;REQUEST_BODY, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/options-permalink.php",
+    "actions": {
+      "id": "9507810",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=920230;ARGS:selection",
+        "ruleRemoveTargetById=920272;ARGS:selection",
+        "ruleRemoveTargetById=942431;ARGS:selection",
+        "ruleRemoveTargetById=920230;ARGS:permalink_structure",
+        "ruleRemoveTargetById=920272;ARGS:permalink_structure",
+        "ruleRemoveTargetById=942100;ARGS:permalink_structure",
+        "ruleRemoveTargetById=942130;ARGS:tag_base",
+        "ruleRemoveTargetById=942130;ARGS:category_base",
+        "ruleRemoveTargetById=942130;ARGS:permalink_structure",
+        "ruleRemoveTargetById=942180;ARGS:permalink_structure",
+        "ruleRemoveTargetById=942330;ARGS:permalink_structure",
+        "ruleRemoveTargetById=942390;ARGS:permalink_structure",
+        "ruleRemoveTargetById=942390;ARGS:category_base",
+        "ruleRemoveTargetById=942390;ARGS:tag_base",
+        "ruleRemoveTargetById=942431;ARGS:permalink_structure",
+        "ruleRemoveTargetById=942521;ARGS:permalink_structure",
+        "ruleRemoveTargetById=920272;REQUEST_BODY"
+      ]
+    },
+    "rule_id": "9507810",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/options.php\" \"id:9507820, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/options.php",
+    "actions": {
+      "id": "9507820",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507820",
+    "chain_id": "9507820",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:option_page \"@streq discussion\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:option_page"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "discussion",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-109",
+    "chain_id": "9507820",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:option_page \"@eq 1\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:option_page"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-110",
+    "chain_id": "9507820",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq update\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "update",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-111",
+    "chain_id": "9507820",
+    "chain_order": 3,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:disallowed_keys, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:blacklist_keys, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:moderation_keys\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:disallowed_keys",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:blacklist_keys",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:moderation_keys"
+      ]
+    },
+    "rule_id": "unknown-112",
+    "chain_id": "9507820",
+    "chain_order": 4,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/edit.php\" \"id:9507830, phase:1, pass, t:none, nolog, ctl:ruleRemoveTargetById=932236;ARGS_NAMES:cat, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:s, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/edit.php",
+    "actions": {
+      "id": "9507830",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932236;ARGS_NAMES:cat",
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:s"
+      ]
+    },
+    "rule_id": "9507830",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx /wp-admin/load-(?:scripts|styles)\\.php$\" \"id:9507900, phase:1, pass, t:none, nolog, ctl:ruleRemoveById=921180, ctl:ruleRemoveTargetById=920273;ARGS_NAMES:load[], ctl:ruleRemoveTargetById=921220;ARGS_NAMES:load[], ctl:ruleRemoveTargetById=942432;ARGS_NAMES:load[], ctl:ruleRemoveTargetById=920273;ARGS_NAMES:load[chunk_0], ctl:ruleRemoveTargetById=921220;ARGS_NAMES:load[chunk_0], ctl:ruleRemoveTargetById=942432;ARGS_NAMES:load[chunk_0], ctl:ruleRemoveTargetById=920273;ARGS_NAMES:load[chunk_1], ctl:ruleRemoveTargetById=921220;ARGS_NAMES:load[chunk_1], ctl:ruleRemoveTargetById=942432;ARGS_NAMES:load[chunk_1], ctl:ruleRemoveTargetById=920273;ARGS_NAMES:load[chunk_2], ctl:ruleRemoveTargetById=921220;ARGS_NAMES:load[chunk_2], ctl:ruleRemoveTargetById=942432;ARGS_NAMES:load[chunk_2], ctl:ruleRemoveTargetById=920273;ARGS_NAMES:load[chunk_3], ctl:ruleRemoveTargetById=921220;ARGS_NAMES:load[chunk_3], ctl:ruleRemoveTargetById=942432;ARGS_NAMES:load[chunk_3], ctl:ruleRemoveTargetById=932236;ARGS:load[], ctl:ruleRemoveTargetById=942360;ARGS:load[], ctl:ruleRemoveTargetById=942430;ARGS:load[], ctl:ruleRemoveTargetById=942431;ARGS:load[], ctl:ruleRemoveTargetById=942432;ARGS:load[], ctl:ruleRemoveTargetById=932236;ARGS:load[chunk_0], ctl:ruleRemoveTargetById=942360;ARGS:load[chunk_0], ctl:ruleRemoveTargetById=942430;ARGS:load[chunk_0], ctl:ruleRemoveTargetById=942431;ARGS:load[chunk_0], ctl:ruleRemoveTargetById=942432;ARGS:load[chunk_0], ctl:ruleRemoveTargetById=932236;ARGS:load[chunk_1], ctl:ruleRemoveTargetById=942360;ARGS:load[chunk_1], ctl:ruleRemoveTargetById=942430;ARGS:load[chunk_1], ctl:ruleRemoveTargetById=942431;ARGS:load[chunk_1], ctl:ruleRemoveTargetById=942432;ARGS:load[chunk_1], ctl:ruleRemoveTargetById=932236;ARGS:load[chunk_2], ctl:ruleRemoveTargetById=942360;ARGS:load[chunk_2], ctl:ruleRemoveTargetById=942430;ARGS:load[chunk_2], ctl:ruleRemoveTargetById=942431;ARGS:load[chunk_2], ctl:ruleRemoveTargetById=942432;ARGS:load[chunk_2], ctl:ruleRemoveTargetById=932236;ARGS:load[chunk_3], ctl:ruleRemoveTargetById=942360;ARGS:load[chunk_3], ctl:ruleRemoveTargetById=942430;ARGS:load[chunk_3], ctl:ruleRemoveTargetById=942431;ARGS:load[chunk_3], ctl:ruleRemoveTargetById=942432;ARGS:load[chunk_3], ctl:ruleRemoveTargetById=920100;REQUEST_LINE, ver:'wordpress-rule-exclusions-plugin/1.1.0'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "/wp-admin/load-(?:scripts|styles)\\.php$",
+    "actions": {
+      "id": "9507900",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveById=921180",
+        "ruleRemoveTargetById=920273;ARGS_NAMES:load[]",
+        "ruleRemoveTargetById=921220;ARGS_NAMES:load[]",
+        "ruleRemoveTargetById=942432;ARGS_NAMES:load[]",
+        "ruleRemoveTargetById=920273;ARGS_NAMES:load[chunk_0]",
+        "ruleRemoveTargetById=921220;ARGS_NAMES:load[chunk_0]",
+        "ruleRemoveTargetById=942432;ARGS_NAMES:load[chunk_0]",
+        "ruleRemoveTargetById=920273;ARGS_NAMES:load[chunk_1]",
+        "ruleRemoveTargetById=921220;ARGS_NAMES:load[chunk_1]",
+        "ruleRemoveTargetById=942432;ARGS_NAMES:load[chunk_1]",
+        "ruleRemoveTargetById=920273;ARGS_NAMES:load[chunk_2]",
+        "ruleRemoveTargetById=921220;ARGS_NAMES:load[chunk_2]",
+        "ruleRemoveTargetById=942432;ARGS_NAMES:load[chunk_2]",
+        "ruleRemoveTargetById=920273;ARGS_NAMES:load[chunk_3]",
+        "ruleRemoveTargetById=921220;ARGS_NAMES:load[chunk_3]",
+        "ruleRemoveTargetById=942432;ARGS_NAMES:load[chunk_3]",
+        "ruleRemoveTargetById=932236;ARGS:load[]",
+        "ruleRemoveTargetById=942360;ARGS:load[]",
+        "ruleRemoveTargetById=942430;ARGS:load[]",
+        "ruleRemoveTargetById=942431;ARGS:load[]",
+        "ruleRemoveTargetById=942432;ARGS:load[]",
+        "ruleRemoveTargetById=932236;ARGS:load[chunk_0]",
+        "ruleRemoveTargetById=942360;ARGS:load[chunk_0]",
+        "ruleRemoveTargetById=942430;ARGS:load[chunk_0]",
+        "ruleRemoveTargetById=942431;ARGS:load[chunk_0]",
+        "ruleRemoveTargetById=942432;ARGS:load[chunk_0]",
+        "ruleRemoveTargetById=932236;ARGS:load[chunk_1]",
+        "ruleRemoveTargetById=942360;ARGS:load[chunk_1]",
+        "ruleRemoveTargetById=942430;ARGS:load[chunk_1]",
+        "ruleRemoveTargetById=942431;ARGS:load[chunk_1]",
+        "ruleRemoveTargetById=942432;ARGS:load[chunk_1]",
+        "ruleRemoveTargetById=932236;ARGS:load[chunk_2]",
+        "ruleRemoveTargetById=942360;ARGS:load[chunk_2]",
+        "ruleRemoveTargetById=942430;ARGS:load[chunk_2]",
+        "ruleRemoveTargetById=942431;ARGS:load[chunk_2]",
+        "ruleRemoveTargetById=942432;ARGS:load[chunk_2]",
+        "ruleRemoveTargetById=932236;ARGS:load[chunk_3]",
+        "ruleRemoveTargetById=942360;ARGS:load[chunk_3]",
+        "ruleRemoveTargetById=942430;ARGS:load[chunk_3]",
+        "ruleRemoveTargetById=942431;ARGS:load[chunk_3]",
+        "ruleRemoveTargetById=942432;ARGS:load[chunk_3]",
+        "ruleRemoveTargetById=920100;REQUEST_LINE"
+      ]
+    },
+    "rule_id": "9507900",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/site-health.php\" \"id:9507910, phase:1, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/site-health.php",
+    "actions": {
+      "id": "9507910",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507910",
+    "chain_id": "9507910",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule REQUEST_METHOD \"@streq GET\" \"t:none, ctl:ruleRemoveById=951220, ctl:ruleRemoveById=953110\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_METHOD"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "GET",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveById=951220",
+        "ruleRemoveById=953110"
+      ]
+    },
+    "rule_id": "unknown-116",
+    "chain_id": "9507910",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507950, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507950",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507950",
+    "chain_id": "9507950",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@rx ^(?:update-plugin|delete-plugin)$\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^(?:update-plugin|delete-plugin)$",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-118",
+    "chain_id": "9507950",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=932120;ARGS:plugin, ctl:ruleRemoveTargetById=932120;ARGS:slug\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932120;ARGS:plugin",
+        "ruleRemoveTargetById=932120;ARGS:slug"
+      ]
+    },
+    "rule_id": "unknown-119",
+    "chain_id": "9507950",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507970, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507970",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507970",
+    "chain_id": "9507970",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq edit-theme-plugin-file\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "edit-theme-plugin-file",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-121",
+    "chain_id": "9507970",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetByTag=OWASP_CRS;ARGS:newcontent\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetByTag=OWASP_CRS;ARGS:newcontent"
+      ]
+    },
+    "rule_id": "unknown-122",
+    "chain_id": "9507970",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx /wp-admin/(?:plugins|plugin-install)\\.php$\" \"id:9507971, phase:1, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', ctl:ruleRemoveTargetById=951230;RESPONSE_BODY, ctl:ruleRemoveTargetById=951240;RESPONSE_BODY, ctl:ruleRemoveTargetById=953100;RESPONSE_BODY, ctl:ruleRemoveTargetById=953110;RESPONSE_BODY, ctl:ruleRemoveTargetById=953101;RESPONSE_BODY\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "/wp-admin/(?:plugins|plugin-install)\\.php$",
+    "actions": {
+      "id": "9507971",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=951230;RESPONSE_BODY",
+        "ruleRemoveTargetById=951240;RESPONSE_BODY",
+        "ruleRemoveTargetById=953100;RESPONSE_BODY",
+        "ruleRemoveTargetById=953110;RESPONSE_BODY",
+        "ruleRemoveTargetById=953101;RESPONSE_BODY"
+      ]
+    },
+    "rule_id": "9507971",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/admin-ajax.php\" \"id:9507972, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/admin-ajax.php",
+    "actions": {
+      "id": "9507972",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507972",
+    "chain_id": "9507972",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq search-install-plugins\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "search-install-plugins",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-125",
+    "chain_id": "9507972",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule &ARGS:action \"@eq 1\" \"t:none, ctl:ruleRemoveTargetById=942360;ARGS:s\"",
+    "directive": "SecRule",
+    "variables": [
+      "&ARGS:action"
+    ],
+    "operator": "@eq",
+    "rule_pattern": "1",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=942360;ARGS:s"
+      ]
+    },
+    "rule_id": "unknown-126",
+    "chain_id": "9507972",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/update.php\" \"id:9507973, phase:2, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/update.php",
+    "actions": {
+      "id": "9507973",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "9507973",
+    "chain_id": "9507973",
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule ARGS:action \"@streq upload-plugin\" \"t:none, chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS:action"
+    ],
+    "operator": "@streq",
+    "rule_pattern": "upload-plugin",
+    "actions": {
+      "chain": true,
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "unknown-128",
+    "chain_id": "9507973",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule FILES:pluginzip \"@endsWith .zip\" \"t:none, ctl:ruleRemoveTargetById=944110;REQUEST_BODY, ctl:ruleRemoveTargetById=944250;REQUEST_BODY\"",
+    "directive": "SecRule",
+    "variables": [
+      "FILES:pluginzip"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": ".zip",
+    "actions": {
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=944110;REQUEST_BODY",
+        "ruleRemoveTargetById=944250;REQUEST_BODY"
+      ]
+    },
+    "rule_id": "unknown-129",
+    "chain_id": "9507973",
+    "chain_order": 2,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@endsWith /wp-admin/update.php\" \"id:9507974, phase:1, pass, t:none, nolog, ver:'wordpress-rule-exclusions-plugin/1.1.0', ctl:ruleRemoveTargetById=932236;ARGS:install-plugin-submit\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@endsWith",
+    "rule_pattern": "/wp-admin/update.php",
+    "actions": {
+      "id": "9507974",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "wordpress-rule-exclusions-plugin/1.1.0",
+      "tags": [],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [],
+      "ctl": [
+        "ruleRemoveTargetById=932236;ARGS:install-plugin-submit"
+      ]
+    },
+    "rule_id": "9507974",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "wordpress-rule-exclusions-plugin/1.1.0",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "WORDPRESS-RULE-EXCLUSION-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecMarker \"END-WORDPRESS-ADMIN\"",
+    "directive": "SecMarker",
+    "rule_id": "END-WORDPRESS-ADMIN",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "RULE-EXCLUSION",
+    "attack_vectors": [],
+    "confidence_level": null,
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  }
+]
