@@ -1,5 +1,4 @@
-name: Strip CRS Conf Files to .conf W/Bash
-
+name: Strip CRS Conf Files to .conf With Python
 on:
   push:
     branches: [ main ]
