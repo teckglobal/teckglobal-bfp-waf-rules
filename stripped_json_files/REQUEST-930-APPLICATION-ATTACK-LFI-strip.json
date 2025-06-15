@@ -1,0 +1,625 @@
+[
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 1\" \"id:930011,phase:1,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-930-APPLICATION-ATTACK-LFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "1",
+    "actions": {
+      "id": "930011",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-930-APPLICATION-ATTACK-LFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "930011",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "930-LFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 1\" \"id:930012,phase:2,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-930-APPLICATION-ATTACK-LFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "1",
+    "actions": {
+      "id": "930012",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-930-APPLICATION-ATTACK-LFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "930012",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "930-LFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_URI_RAW|ARGS|REQUEST_HEADERS|!REQUEST_HEADERS:Referer|FILES|XML:/* \"@rx (?i)(?:[/\\x5c]|%(?:2(?:f|5(?:2f|5c|c(?:1%259c|0%25af))|%46)|5c|c(?:0%(?:[2aq]f|5c|9v)|1%(?:[19p]c|8s|af))|(?:bg%q|(?:e|f(?:8%8)?0%8)0%80%a)f|u(?:221[56]|EFC8|F025|002f)|%3(?:2(?:%(?:%6|4)6|F)|5%%63)|1u)|0x(?:2f|5c))(?:\\.(?:%0[01]|\\?)?|\\?\\.?|%(?:2(?:(?:5(?:2|c0%25a))?e|%45)|c0(?:\\.|%[256aef]e)|u(?:(?:ff0|002)e|2024)|%32(?:%(?:%6|4)5|E)|(?:e|f(?:(?:8|c%80)%8)?0%8)0%80%ae)|0x2e){2,3}(?:[/\\x5c]|%(?:2(?:f|5(?:2f|5c|c(?:1%259c|0%25af))|%46)|5c|c(?:0%(?:[2aq]f|5c|9v)|1%(?:[19p]c|8s|af))|(?:bg%q|(?:e|f(?:8%8)?0%8)0%80%a)f|u(?:221[56]|EFC8|F025|002f)|%3(?:2(?:%(?:%6|4)6|F)|5%%63)|1u)|0x(?:2f|5c))\" \"id:930100, phase:2, block, capture, t:none, msg:'Path Traversal Attack (/../) or (/.../)', logdata:'Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}', tag:'application-multi', tag:'language-multi', tag:'platform-multi', tag:'attack-lfi', tag:'paranoia-level/1', tag:'OWASP_CRS', tag:'OWASP_CRS/ATTACK-LFI', tag:'capec/1000/255/153/126', ver:'OWASP_CRS/4.16.0-dev', severity:'CRITICAL', setvar:'tx.inbound_anomaly_score_pl1=+%{tx.critical_anomaly_score}', setvar:'tx.lfi_score=+%{tx.critical_anomaly_score}'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_URI_RAW",
+      "ARGS",
+      "REQUEST_HEADERS",
+      "!REQUEST_HEADERS:Referer",
+      "FILES",
+      "XML:/*"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "(?i)(?:[/\\x5c]|%(?:2(?:f|5(?:2f|5c|c(?:1%259c|0%25af))|%46)|5c|c(?:0%(?:[2aq]f|5c|9v)|1%(?:[19p]c|8s|af))|(?:bg%q|(?:e|f(?:8%8)?0%8)0%80%a)f|u(?:221[56]|EFC8|F025|002f)|%3(?:2(?:%(?:%6|4)6|F)|5%%63)|1u)|0x(?:2f|5c))(?:\\.(?:%0[01]|\\?)?|\\?\\.?|%(?:2(?:(?:5(?:2|c0%25a))?e|%45)|c0(?:\\.|%[256aef]e)|u(?:(?:ff0|002)e|2024)|%32(?:%(?:%6|4)5|E)|(?:e|f(?:(?:8|c%80)%8)?0%8)0%80%ae)|0x2e){2,3}(?:[/\\x5c]|%(?:2(?:f|5(?:2f|5c|c(?:1%259c|0%25af))|%46)|5c|c(?:0%(?:[2aq]f|5c|9v)|1%(?:[19p]c|8s|af))|(?:bg%q|(?:e|f(?:8%8)?0%8)0%80%a)f|u(?:221[56]|EFC8|F025|002f)|%3(?:2(?:%(?:%6|4)6|F)|5%%63)|1u)|0x(?:2f|5c))",
+    "actions": {
+      "id": "930100",
+      "phase": "2",
+      "block": true,
+      "capture": true,
+      "msg": "Path Traversal Attack (/../) or (/.../)",
+      "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "severity": "CRITICAL",
+      "tags": [
+        "application-multi",
+        "language-multi",
+        "platform-multi",
+        "attack-lfi",
+        "paranoia-level/1",
+        "OWASP_CRS",
+        "OWASP_CRS/ATTACK-LFI",
+        "capec/1000/255/153/126"
+      ],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [
+        {
+          "variable": "tx.inbound_anomaly_score_pl1",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "anomaly"
+        },
+        {
+          "variable": "tx.lfi_score",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "attack"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "930100",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": "1",
+    "rule_category": "930-LFI",
+    "attack_vectors": [
+      "126"
+    ],
+    "confidence_level": "high",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_URI_RAW|ARGS|REQUEST_HEADERS|!REQUEST_HEADERS:Referer|FILES|XML:/* \"@rx (?:(?:^|[\\x5c/;])\\.{2,3}[\\x5c/;]|[\\x5c/;]\\.{2,3}[\\x5c/;])\" \"id:930110, phase:2, block, capture, t:none,t:utf8toUnicode,t:urlDecodeUni,t:removeNulls,t:cmdLine, msg:'Path Traversal Attack (/../) or (/.../)', logdata:'Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}', tag:'application-multi', tag:'language-multi', tag:'platform-multi', tag:'attack-lfi', tag:'paranoia-level/1', tag:'OWASP_CRS', tag:'OWASP_CRS/ATTACK-LFI', tag:'capec/1000/255/153/126', ver:'OWASP_CRS/4.16.0-dev', severity:'CRITICAL', multiMatch, setvar:'tx.inbound_anomaly_score_pl1=+%{tx.critical_anomaly_score}', setvar:'tx.lfi_score=+%{tx.critical_anomaly_score}'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_URI_RAW",
+      "ARGS",
+      "REQUEST_HEADERS",
+      "!REQUEST_HEADERS:Referer",
+      "FILES",
+      "XML:/*"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "(?:(?:^|[\\x5c/;])\\.{2,3}[\\x5c/;]|[\\x5c/;]\\.{2,3}[\\x5c/;])",
+    "actions": {
+      "id": "930110",
+      "phase": "2",
+      "block": true,
+      "capture": true,
+      "msg": "Path Traversal Attack (/../) or (/.../)",
+      "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "severity": "CRITICAL",
+      "multiMatch": true,
+      "tags": [
+        "application-multi",
+        "language-multi",
+        "platform-multi",
+        "attack-lfi",
+        "paranoia-level/1",
+        "OWASP_CRS",
+        "OWASP_CRS/ATTACK-LFI",
+        "capec/1000/255/153/126"
+      ],
+      "transforms": [
+        "none",
+        "utf8toUnicode",
+        "urlDecodeUni",
+        "removeNulls",
+        "cmdLine"
+      ],
+      "setvars": [
+        {
+          "variable": "tx.inbound_anomaly_score_pl1",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "anomaly"
+        },
+        {
+          "variable": "tx.lfi_score",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "attack"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "930110",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": "1",
+    "rule_category": "930-LFI",
+    "attack_vectors": [
+      "126"
+    ],
+    "confidence_level": "high",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_COOKIES|REQUEST_COOKIES_NAMES|ARGS_NAMES|ARGS|XML:/* \"@pmFromFile lfi-os-files.data\" \"id:930120, phase:2, block, capture, t:none,t:utf8toUnicode,t:urlDecodeUni,t:normalizePathWin, msg:'OS File Access Attempt', logdata:'Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}', tag:'application-multi', tag:'language-multi', tag:'platform-multi', tag:'attack-lfi', tag:'paranoia-level/1', tag:'OWASP_CRS', tag:'OWASP_CRS/ATTACK-LFI', tag:'capec/1000/255/153/126', tag:'PCI/6.5.4', ver:'OWASP_CRS/4.16.0-dev', severity:'CRITICAL', setvar:'tx.lfi_score=+%{tx.critical_anomaly_score}', setvar:'tx.inbound_anomaly_score_pl1=+%{tx.critical_anomaly_score}'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_COOKIES",
+      "REQUEST_COOKIES_NAMES",
+      "ARGS_NAMES",
+      "ARGS",
+      "XML:/*"
+    ],
+    "operator": "@pmFromFile",
+    "rule_pattern": "lfi-os-files.data",
+    "actions": {
+      "id": "930120",
+      "phase": "2",
+      "block": true,
+      "capture": true,
+      "msg": "OS File Access Attempt",
+      "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "severity": "CRITICAL",
+      "tags": [
+        "application-multi",
+        "language-multi",
+        "platform-multi",
+        "attack-lfi",
+        "paranoia-level/1",
+        "OWASP_CRS",
+        "OWASP_CRS/ATTACK-LFI",
+        "capec/1000/255/153/126",
+        "PCI/6.5.4"
+      ],
+      "transforms": [
+        "none",
+        "utf8toUnicode",
+        "urlDecodeUni",
+        "normalizePathWin"
+      ],
+      "setvars": [
+        {
+          "variable": "tx.lfi_score",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "attack"
+        },
+        {
+          "variable": "tx.inbound_anomaly_score_pl1",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "anomaly"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "930120",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": "1",
+    "rule_category": "930-LFI",
+    "attack_vectors": [
+      "126"
+    ],
+    "confidence_level": "high",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@pmFromFile restricted-files.data\" \"id:930130, phase:1, block, capture, t:none,t:utf8toUnicode,t:urlDecodeUni,t:normalizePathWin, msg:'Restricted File Access Attempt', logdata:'Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}', tag:'application-multi', tag:'language-multi', tag:'platform-multi', tag:'attack-lfi', tag:'paranoia-level/1', tag:'OWASP_CRS', tag:'OWASP_CRS/ATTACK-LFI', tag:'capec/1000/255/153/126', tag:'PCI/6.5.4', ver:'OWASP_CRS/4.16.0-dev', severity:'CRITICAL', setvar:'tx.lfi_score=+%{tx.critical_anomaly_score}', setvar:'tx.inbound_anomaly_score_pl1=+%{tx.critical_anomaly_score}'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@pmFromFile",
+    "rule_pattern": "restricted-files.data",
+    "actions": {
+      "id": "930130",
+      "phase": "1",
+      "block": true,
+      "capture": true,
+      "msg": "Restricted File Access Attempt",
+      "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "severity": "CRITICAL",
+      "tags": [
+        "application-multi",
+        "language-multi",
+        "platform-multi",
+        "attack-lfi",
+        "paranoia-level/1",
+        "OWASP_CRS",
+        "OWASP_CRS/ATTACK-LFI",
+        "capec/1000/255/153/126",
+        "PCI/6.5.4"
+      ],
+      "transforms": [
+        "none",
+        "utf8toUnicode",
+        "urlDecodeUni",
+        "normalizePathWin"
+      ],
+      "setvars": [
+        {
+          "variable": "tx.lfi_score",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "attack"
+        },
+        {
+          "variable": "tx.inbound_anomaly_score_pl1",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "anomaly"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "930130",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": "1",
+    "rule_category": "930-LFI",
+    "attack_vectors": [
+      "126"
+    ],
+    "confidence_level": "high",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 2\" \"id:930013,phase:1,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-930-APPLICATION-ATTACK-LFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "2",
+    "actions": {
+      "id": "930013",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-930-APPLICATION-ATTACK-LFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "930013",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "930-LFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 2\" \"id:930014,phase:2,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-930-APPLICATION-ATTACK-LFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "2",
+    "actions": {
+      "id": "930014",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-930-APPLICATION-ATTACK-LFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "930014",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "930-LFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_HEADERS:Referer|REQUEST_HEADERS:User-Agent \"@pmFromFile lfi-os-files.data\" \"id:930121, phase:1, block, capture, t:none,t:utf8toUnicode,t:urlDecodeUni,t:normalizePathWin, msg:'OS File Access Attempt in REQUEST_HEADERS', logdata:'Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}', tag:'application-multi', tag:'language-multi', tag:'platform-multi', tag:'attack-lfi', tag:'paranoia-level/2', tag:'OWASP_CRS', tag:'OWASP_CRS/ATTACK-LFI', tag:'capec/1000/255/153/126', tag:'PCI/6.5.4', ver:'OWASP_CRS/4.16.0-dev', severity:'CRITICAL', setvar:'tx.lfi_score=+%{tx.critical_anomaly_score}', setvar:'tx.inbound_anomaly_score_pl2=+%{tx.critical_anomaly_score}'\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_HEADERS:Referer",
+      "REQUEST_HEADERS:User-Agent"
+    ],
+    "operator": "@pmFromFile",
+    "rule_pattern": "lfi-os-files.data",
+    "actions": {
+      "id": "930121",
+      "phase": "1",
+      "block": true,
+      "capture": true,
+      "msg": "OS File Access Attempt in REQUEST_HEADERS",
+      "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "severity": "CRITICAL",
+      "tags": [
+        "application-multi",
+        "language-multi",
+        "platform-multi",
+        "attack-lfi",
+        "paranoia-level/2",
+        "OWASP_CRS",
+        "OWASP_CRS/ATTACK-LFI",
+        "capec/1000/255/153/126",
+        "PCI/6.5.4"
+      ],
+      "transforms": [
+        "none",
+        "utf8toUnicode",
+        "urlDecodeUni",
+        "normalizePathWin"
+      ],
+      "setvars": [
+        {
+          "variable": "tx.lfi_score",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "attack"
+        },
+        {
+          "variable": "tx.inbound_anomaly_score_pl2",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "anomaly"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "930121",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": "2",
+    "rule_category": "930-LFI",
+    "attack_vectors": [
+      "126"
+    ],
+    "confidence_level": "high",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 3\" \"id:930015,phase:1,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-930-APPLICATION-ATTACK-LFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "3",
+    "actions": {
+      "id": "930015",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-930-APPLICATION-ATTACK-LFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "930015",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "930-LFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 3\" \"id:930016,phase:2,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-930-APPLICATION-ATTACK-LFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "3",
+    "actions": {
+      "id": "930016",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-930-APPLICATION-ATTACK-LFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "930016",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "930-LFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 4\" \"id:930017,phase:1,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-930-APPLICATION-ATTACK-LFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "4",
+    "actions": {
+      "id": "930017",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-930-APPLICATION-ATTACK-LFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "930017",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "930-LFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 4\" \"id:930018,phase:2,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-930-APPLICATION-ATTACK-LFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "4",
+    "actions": {
+      "id": "930018",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-930-APPLICATION-ATTACK-LFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "930018",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "930-LFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-930-APPLICATION-ATTACK-LFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecMarker \"END-REQUEST-930-APPLICATION-ATTACK-LFI\"",
+    "directive": "SecMarker",
+    "rule_id": "END-REQUEST-930-APPLICATION-ATTACK-LFI",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "930-LFI",
+    "attack_vectors": [],
+    "confidence_level": null,
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  }
+]

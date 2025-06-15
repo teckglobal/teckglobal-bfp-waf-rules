@@ -1,0 +1,669 @@
+[
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 1\" \"id:931011,phase:1,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-931-APPLICATION-ATTACK-RFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "1",
+    "actions": {
+      "id": "931011",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-931-APPLICATION-ATTACK-RFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "931011",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 1\" \"id:931012,phase:2,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-931-APPLICATION-ATTACK-RFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "1",
+    "actions": {
+      "id": "931012",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-931-APPLICATION-ATTACK-RFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "931012",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule ARGS \"@rx ^(?i:file|ftps?|https?)://(?:\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})\" \"id:931100, phase:2, block, capture, t:none, msg:'Possible Remote File Inclusion (RFI) Attack: URL Parameter using IP Address', logdata:'Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}', tag:'application-multi', tag:'language-multi', tag:'platform-multi', tag:'attack-rfi', tag:'paranoia-level/1', tag:'OWASP_CRS', tag:'OWASP_CRS/ATTACK-RFI', tag:'capec/1000/152/175/253', ver:'OWASP_CRS/4.16.0-dev', severity:'CRITICAL', setvar:'tx.rfi_score=+%{tx.critical_anomaly_score}', setvar:'tx.inbound_anomaly_score_pl1=+%{tx.critical_anomaly_score}'\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^(?i:file|ftps?|https?)://(?:\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})",
+    "actions": {
+      "id": "931100",
+      "phase": "2",
+      "block": true,
+      "capture": true,
+      "msg": "Possible Remote File Inclusion (RFI) Attack: URL Parameter using IP Address",
+      "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "severity": "CRITICAL",
+      "tags": [
+        "application-multi",
+        "language-multi",
+        "platform-multi",
+        "attack-rfi",
+        "paranoia-level/1",
+        "OWASP_CRS",
+        "OWASP_CRS/ATTACK-RFI",
+        "capec/1000/152/175/253"
+      ],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [
+        {
+          "variable": "tx.rfi_score",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "attack"
+        },
+        {
+          "variable": "tx.inbound_anomaly_score_pl1",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "anomaly"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "931100",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": "1",
+    "rule_category": "931-RFI",
+    "attack_vectors": [
+      "253",
+      "URL Parameter using IP Address"
+    ],
+    "confidence_level": "high",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule QUERY_STRING|REQUEST_BODY \"@rx (?i)(?:\\binclude\\s*\\([^)]*|mosConfig_absolute_path|_CONF\\[path\\]|_SERVER\\[DOCUMENT_ROOT\\]|GALLERY_BASEDIR|path\\[docroot\\]|appserv_root|config\\[root_dir\\])=(?:file|ftps?|https?)://\" \"id:931110, phase:2, block, capture, t:none,t:urlDecodeUni, msg:'Possible Remote File Inclusion (RFI) Attack: Common RFI Vulnerable Parameter Name used w/URL Payload', logdata:'Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}', tag:'application-multi', tag:'language-multi', tag:'platform-multi', tag:'attack-rfi', tag:'paranoia-level/1', tag:'OWASP_CRS', tag:'OWASP_CRS/ATTACK-RFI', tag:'capec/1000/152/175/253', ver:'OWASP_CRS/4.16.0-dev', severity:'CRITICAL', setvar:'tx.rfi_score=+%{tx.critical_anomaly_score}', setvar:'tx.inbound_anomaly_score_pl1=+%{tx.critical_anomaly_score}'\"",
+    "directive": "SecRule",
+    "variables": [
+      "QUERY_STRING",
+      "REQUEST_BODY"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "(?i)(?:\\binclude\\s*\\([^)]*|mosConfig_absolute_path|_CONF\\[path\\]|_SERVER\\[DOCUMENT_ROOT\\]|GALLERY_BASEDIR|path\\[docroot\\]|appserv_root|config\\[root_dir\\])=(?:file|ftps?|https?)://",
+    "actions": {
+      "id": "931110",
+      "phase": "2",
+      "block": true,
+      "capture": true,
+      "msg": "Possible Remote File Inclusion (RFI) Attack: Common RFI Vulnerable Parameter Name used w/URL Payload",
+      "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "severity": "CRITICAL",
+      "tags": [
+        "application-multi",
+        "language-multi",
+        "platform-multi",
+        "attack-rfi",
+        "paranoia-level/1",
+        "OWASP_CRS",
+        "OWASP_CRS/ATTACK-RFI",
+        "capec/1000/152/175/253"
+      ],
+      "transforms": [
+        "none",
+        "urlDecodeUni"
+      ],
+      "setvars": [
+        {
+          "variable": "tx.rfi_score",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "attack"
+        },
+        {
+          "variable": "tx.inbound_anomaly_score_pl1",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "anomaly"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "931110",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": "1",
+    "rule_category": "931-RFI",
+    "attack_vectors": [
+      "253",
+      "Common RFI Vulnerable Parameter Name used w/URL Payload"
+    ],
+    "confidence_level": "high",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule ARGS \"@rx ^(?i:file|ftps?|https?).*?\\?+$\" \"id:931120, phase:2, block, capture, t:none, msg:'Possible Remote File Inclusion (RFI) Attack: URL Payload Used w/Trailing Question Mark Character (?)', logdata:'Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}', tag:'application-multi', tag:'language-multi', tag:'platform-multi', tag:'attack-rfi', tag:'paranoia-level/1', tag:'OWASP_CRS', tag:'OWASP_CRS/ATTACK-RFI', tag:'capec/1000/152/175/253', ver:'OWASP_CRS/4.16.0-dev', severity:'CRITICAL', setvar:'tx.rfi_score=+%{tx.critical_anomaly_score}', setvar:'tx.inbound_anomaly_score_pl1=+%{tx.critical_anomaly_score}'\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "^(?i:file|ftps?|https?).*?\\?+$",
+    "actions": {
+      "id": "931120",
+      "phase": "2",
+      "block": true,
+      "capture": true,
+      "msg": "Possible Remote File Inclusion (RFI) Attack: URL Payload Used w/Trailing Question Mark Character (?)",
+      "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "severity": "CRITICAL",
+      "tags": [
+        "application-multi",
+        "language-multi",
+        "platform-multi",
+        "attack-rfi",
+        "paranoia-level/1",
+        "OWASP_CRS",
+        "OWASP_CRS/ATTACK-RFI",
+        "capec/1000/152/175/253"
+      ],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [
+        {
+          "variable": "tx.rfi_score",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "attack"
+        },
+        {
+          "variable": "tx.inbound_anomaly_score_pl1",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "anomaly"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "931120",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": "1",
+    "rule_category": "931-RFI",
+    "attack_vectors": [
+      "253",
+      "URL Payload Used w/Trailing Question Mark Character (?)"
+    ],
+    "confidence_level": "high",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 2\" \"id:931013,phase:1,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-931-APPLICATION-ATTACK-RFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "2",
+    "actions": {
+      "id": "931013",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-931-APPLICATION-ATTACK-RFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "931013",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 2\" \"id:931014,phase:2,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-931-APPLICATION-ATTACK-RFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "2",
+    "actions": {
+      "id": "931014",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-931-APPLICATION-ATTACK-RFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "931014",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule ARGS \"@rx (?i)(?:(?:url|jar):)?(?:a(?:cap|f[ps]|ttachment)|b(?:eshare|itcoin|lob)|c(?:a(?:llto|p)|id|vs|ompress.(?:zlib|bzip2))|d(?:a(?:v|ta)|ict|n(?:s|tp))|e(?:d2k|xpect)|f(?:(?:ee)?d|i(?:le|nger|sh)|tps?)|g(?:it|o(?:pher)?|lob)|h(?:323|ttps?)|i(?:ax|cap|(?:ma|p)ps?|rc[6s]?)|ja(?:bbe)?r|l(?:dap[is]?|ocal_file)|m(?:a(?:ilto|ven)|ms|umble)|n(?:e(?:tdoc|ws)|fs|ntps?)|ogg|p(?:aparazzi|h(?:ar|p)|op(?:2|3s?)|r(?:es|oxy)|syc)|r(?:mi|sync|tm(?:f?p)?|ar)|s(?:3|ftp|ips?|m(?:[bs]|tps?)|n(?:ews|mp)|sh(?:2(?:.(?:s(?:hell|(?:ft|c)p)|exec|tunnel))?)?|vn(?:\\+ssh)?)|t(?:e(?:amspeak|lnet)|ftp|urns?)|u(?:dp|nreal|t2004)|v(?:entrilo|iew-source|nc)|w(?:ebcal|ss?)|x(?:mpp|ri)|zip)://(?:[^@]+@)?([^/]*)\" \"id:931130, phase:2, block, capture, t:none, msg:'Possible Remote File Inclusion (RFI) Attack: Off-Domain Reference/Link', logdata:'Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}', tag:'application-multi', tag:'language-multi', tag:'platform-multi', tag:'attack-rfi', tag:'paranoia-level/2', tag:'OWASP_CRS', tag:'OWASP_CRS/ATTACK-RFI', tag:'capec/1000/152/175/253', ver:'OWASP_CRS/4.16.0-dev', severity:'CRITICAL', setvar:'tx.rfi_parameter_%{MATCHED_VAR_NAME}=.%{tx.1}', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "ARGS"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "(?i)(?:(?:url|jar):)?(?:a(?:cap|f[ps]|ttachment)|b(?:eshare|itcoin|lob)|c(?:a(?:llto|p)|id|vs|ompress.(?:zlib|bzip2))|d(?:a(?:v|ta)|ict|n(?:s|tp))|e(?:d2k|xpect)|f(?:(?:ee)?d|i(?:le|nger|sh)|tps?)|g(?:it|o(?:pher)?|lob)|h(?:323|ttps?)|i(?:ax|cap|(?:ma|p)ps?|rc[6s]?)|ja(?:bbe)?r|l(?:dap[is]?|ocal_file)|m(?:a(?:ilto|ven)|ms|umble)|n(?:e(?:tdoc|ws)|fs|ntps?)|ogg|p(?:aparazzi|h(?:ar|p)|op(?:2|3s?)|r(?:es|oxy)|syc)|r(?:mi|sync|tm(?:f?p)?|ar)|s(?:3|ftp|ips?|m(?:[bs]|tps?)|n(?:ews|mp)|sh(?:2(?:.(?:s(?:hell|(?:ft|c)p)|exec|tunnel))?)?|vn(?:\\+ssh)?)|t(?:e(?:amspeak|lnet)|ftp|urns?)|u(?:dp|nreal|t2004)|v(?:entrilo|iew-source|nc)|w(?:ebcal|ss?)|x(?:mpp|ri)|zip)://(?:[^@]+@)?([^/]*)",
+    "actions": {
+      "id": "931130",
+      "phase": "2",
+      "block": true,
+      "capture": true,
+      "msg": "Possible Remote File Inclusion (RFI) Attack: Off-Domain Reference/Link",
+      "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "severity": "CRITICAL",
+      "chain": true,
+      "tags": [
+        "application-multi",
+        "language-multi",
+        "platform-multi",
+        "attack-rfi",
+        "paranoia-level/2",
+        "OWASP_CRS",
+        "OWASP_CRS/ATTACK-RFI",
+        "capec/1000/152/175/253"
+      ],
+      "transforms": [
+        "none"
+      ],
+      "setvars": [
+        {
+          "variable": "tx.rfi_parameter_%{MATCHED_VAR_NAME}",
+          "value": ".%{tx.1}",
+          "score_type": "other"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "931130",
+    "chain_id": "931130",
+    "chain_order": 0,
+    "paranoia_level": "2",
+    "rule_category": "931-RFI",
+    "attack_vectors": [
+      "253",
+      "Off-Domain Reference/Link"
+    ],
+    "confidence_level": "high",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule TX:/rfi_parameter_.*/ \"!@endsWith .%{request_headers.host}\" \"setvar:'tx.rfi_score=+%{tx.critical_anomaly_score}', setvar:'tx.inbound_anomaly_score_pl2=+%{tx.critical_anomaly_score}'\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:/rfi_parameter_.*/"
+    ],
+    "operator": "!@endsWith",
+    "rule_pattern": ".%{request_headers.host}",
+    "actions": {
+      "tags": [],
+      "transforms": [],
+      "setvars": [
+        {
+          "variable": "tx.rfi_score",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "attack"
+        },
+        {
+          "variable": "tx.inbound_anomaly_score_pl2",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "anomaly"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "unknown-8",
+    "chain_id": "931130",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule REQUEST_FILENAME \"@rx (?i)(?:(?:url|jar):)?(?:a(?:cap|f[ps]|ttachment)|b(?:eshare|itcoin|lob)|c(?:a(?:llto|p)|id|vs|ompress.(?:zlib|bzip2))|d(?:a(?:v|ta)|ict|n(?:s|tp))|e(?:d2k|xpect)|f(?:(?:ee)?d|i(?:le|nger|sh)|tps?)|g(?:it|o(?:pher)?|lob)|h(?:323|ttps?)|i(?:ax|cap|(?:ma|p)ps?|rc[6s]?)|ja(?:bbe)?r|l(?:dap[is]?|ocal_file)|m(?:a(?:ilto|ven)|ms|umble)|n(?:e(?:tdoc|ws)|fs|ntps?)|ogg|p(?:aparazzi|h(?:ar|p)|op(?:2|3s?)|r(?:es|oxy)|syc)|r(?:mi|sync|tm(?:f?p)?|ar)|s(?:3|ftp|ips?|m(?:[bs]|tps?)|n(?:ews|mp)|sh(?:2(?:.(?:s(?:hell|(?:ft|c)p)|exec|tunnel))?)?|vn(?:\\+ssh)?)|t(?:e(?:amspeak|lnet)|ftp|urns?)|u(?:dp|nreal|t2004)|v(?:entrilo|iew-source|nc)|w(?:ebcal|ss?)|x(?:mpp|ri)|zip)://(?:[^@]+@)?([^/]*)\" \"id:931131, phase:1, block, capture, t:none,t:urlDecodeUni, msg:'Possible Remote File Inclusion (RFI) Attack: Off-Domain Reference/Link', logdata:'Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}', tag:'application-multi', tag:'language-multi', tag:'platform-multi', tag:'attack-rfi', tag:'paranoia-level/2', tag:'OWASP_CRS', tag:'OWASP_CRS/ATTACK-RFI', tag:'capec/1000/152/175/253', ver:'OWASP_CRS/4.16.0-dev', severity:'CRITICAL', setvar:'tx.rfi_parameter_%{MATCHED_VAR_NAME}=.%{tx.1}', chain\"",
+    "directive": "SecRule",
+    "variables": [
+      "REQUEST_FILENAME"
+    ],
+    "operator": "@rx",
+    "rule_pattern": "(?i)(?:(?:url|jar):)?(?:a(?:cap|f[ps]|ttachment)|b(?:eshare|itcoin|lob)|c(?:a(?:llto|p)|id|vs|ompress.(?:zlib|bzip2))|d(?:a(?:v|ta)|ict|n(?:s|tp))|e(?:d2k|xpect)|f(?:(?:ee)?d|i(?:le|nger|sh)|tps?)|g(?:it|o(?:pher)?|lob)|h(?:323|ttps?)|i(?:ax|cap|(?:ma|p)ps?|rc[6s]?)|ja(?:bbe)?r|l(?:dap[is]?|ocal_file)|m(?:a(?:ilto|ven)|ms|umble)|n(?:e(?:tdoc|ws)|fs|ntps?)|ogg|p(?:aparazzi|h(?:ar|p)|op(?:2|3s?)|r(?:es|oxy)|syc)|r(?:mi|sync|tm(?:f?p)?|ar)|s(?:3|ftp|ips?|m(?:[bs]|tps?)|n(?:ews|mp)|sh(?:2(?:.(?:s(?:hell|(?:ft|c)p)|exec|tunnel))?)?|vn(?:\\+ssh)?)|t(?:e(?:amspeak|lnet)|ftp|urns?)|u(?:dp|nreal|t2004)|v(?:entrilo|iew-source|nc)|w(?:ebcal|ss?)|x(?:mpp|ri)|zip)://(?:[^@]+@)?([^/]*)",
+    "actions": {
+      "id": "931131",
+      "phase": "1",
+      "block": true,
+      "capture": true,
+      "msg": "Possible Remote File Inclusion (RFI) Attack: Off-Domain Reference/Link",
+      "logdata": "Matched Data: %{TX.0} found within %{MATCHED_VAR_NAME}: %{MATCHED_VAR}",
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "severity": "CRITICAL",
+      "chain": true,
+      "tags": [
+        "application-multi",
+        "language-multi",
+        "platform-multi",
+        "attack-rfi",
+        "paranoia-level/2",
+        "OWASP_CRS",
+        "OWASP_CRS/ATTACK-RFI",
+        "capec/1000/152/175/253"
+      ],
+      "transforms": [
+        "none",
+        "urlDecodeUni"
+      ],
+      "setvars": [
+        {
+          "variable": "tx.rfi_parameter_%{MATCHED_VAR_NAME}",
+          "value": ".%{tx.1}",
+          "score_type": "other"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "931131",
+    "chain_id": "931131",
+    "chain_order": 0,
+    "paranoia_level": "2",
+    "rule_category": "931-RFI",
+    "attack_vectors": [
+      "253",
+      "Off-Domain Reference/Link"
+    ],
+    "confidence_level": "high",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "partial",
+    "raw_rule": "SecRule TX:/rfi_parameter_.*/ \"!@endsWith .%{request_headers.host}\" \"setvar:'tx.rfi_score=+%{tx.critical_anomaly_score}', setvar:'tx.inbound_anomaly_score_pl2=+%{tx.critical_anomaly_score}'\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:/rfi_parameter_.*/"
+    ],
+    "operator": "!@endsWith",
+    "rule_pattern": ".%{request_headers.host}",
+    "actions": {
+      "tags": [],
+      "transforms": [],
+      "setvars": [
+        {
+          "variable": "tx.rfi_score",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "attack"
+        },
+        {
+          "variable": "tx.inbound_anomaly_score_pl2",
+          "value": "+%{tx.critical_anomaly_score}",
+          "score_type": "anomaly"
+        }
+      ],
+      "ctl": []
+    },
+    "rule_id": "unknown-10",
+    "chain_id": "931131",
+    "chain_order": 1,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 3\" \"id:931015,phase:1,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-931-APPLICATION-ATTACK-RFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "3",
+    "actions": {
+      "id": "931015",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-931-APPLICATION-ATTACK-RFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "931015",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 3\" \"id:931016,phase:2,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-931-APPLICATION-ATTACK-RFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "3",
+    "actions": {
+      "id": "931016",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-931-APPLICATION-ATTACK-RFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "931016",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 4\" \"id:931017,phase:1,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-931-APPLICATION-ATTACK-RFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "4",
+    "actions": {
+      "id": "931017",
+      "phase": "1",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-931-APPLICATION-ATTACK-RFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "931017",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_headers"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecRule TX:DETECTION_PARANOIA_LEVEL \"@lt 4\" \"id:931018,phase:2,pass,nolog,tag:'OWASP_CRS',ver:'OWASP_CRS/4.16.0-dev',skipAfter:END-REQUEST-931-APPLICATION-ATTACK-RFI\"",
+    "directive": "SecRule",
+    "variables": [
+      "TX:DETECTION_PARANOIA_LEVEL"
+    ],
+    "operator": "@lt",
+    "rule_pattern": "4",
+    "actions": {
+      "id": "931018",
+      "phase": "2",
+      "pass": true,
+      "nolog": true,
+      "ver": "OWASP_CRS/4.16.0-dev",
+      "skipAfter": "END-REQUEST-931-APPLICATION-ATTACK-RFI",
+      "tags": [
+        "OWASP_CRS"
+      ],
+      "transforms": [],
+      "setvars": [],
+      "ctl": []
+    },
+    "rule_id": "931018",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": "low",
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": "request_body"
+  },
+  {
+    "file_name": "REQUEST-931-APPLICATION-ATTACK-RFI-strip-strip.json",
+    "comments": [],
+    "parsing_status": "success",
+    "raw_rule": "SecMarker \"END-REQUEST-931-APPLICATION-ATTACK-RFI\"",
+    "directive": "SecMarker",
+    "rule_id": "END-REQUEST-931-APPLICATION-ATTACK-RFI",
+    "chain_id": null,
+    "chain_order": 0,
+    "paranoia_level": null,
+    "rule_category": "931-RFI",
+    "attack_vectors": [],
+    "confidence_level": null,
+    "rule_source": "OWASP_CRS/4.16.0-dev",
+    "execution_phase": null
+  }
+]
