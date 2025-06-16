@@ -51,46 +51,41 @@ for conf_file in conf_files:
     # Process lines
     for line in lines:
         line_number += 1
-        line = line.rstrip('\n')
+        original_line = line.rstrip('\n')
         # Skip empty lines and comments
         if not line.strip() or line.strip().startswith('#'):
             continue
         
-        # Clean line: remove backslashes and unescape commas
-        original_line = line
-        # Remove backslash before quotes or spaces
-        line = re.sub(r'\\\s*(?=["\s])', '', line)
-        # Unescape commas
-        line = re.sub(r'\\,', ',', line)
+        # Check for line continuation backslash
+        cleaned_line = original_line
+        if cleaned_line.endswith('\\'):
+            cleaned_line = cleaned_line[:-1].rstrip()  # Remove trailing \ and whitespace
+            logging.debug(f"Line {line_number} in {conf_file}: Removed line continuation backslash: '{original_line}' -> '{cleaned_line}'")
         
-        logging.debug(f"Line {line_number} in {conf_file}: Original: '{original_line}' -> Cleaned: '{line}'")
-
         # Check if line starts a new rule
-        if line.strip().startswith(('SecRule ', 'SecMarker ')):
+        if cleaned_line.strip().startswith(('SecRule ', 'SecMarker ')):
             # Save previous rule if exists
             if current_rule:
-                # Join rule lines
+                # Join rule lines, normalize whitespace outside quotes
                 rule_text = ' '.join(current_rule).strip()
-                # Final clean: remove any residual backslashes or escaped commas
-                rule_text = re.sub(r'\\\s*(?=["\s])', '', rule_text)
+                # Unescape commas
                 rule_text = re.sub(r'\\,', ',', rule_text)
-                # Normalize excessive whitespace outside quotes
-                rule_text = re.sub(r'\s+', ' ', rule_text).strip()
+                # Normalize excessive whitespace, preserving quoted strings
+                rule_text = re.sub(r'\s+(?=(?:[^"]*"[^"]*")*[^"]*$)', ' ', rule_text).strip()
                 processed_rules.append(rule_text)
                 logging.debug(f"Processed rule: '{rule_text}'")
                 current_rule = []
             in_rule = True
-            current_rule.append(line.strip())
+            current_rule.append(cleaned_line.strip())
         elif in_rule:
             # Part of multi-line rule
-            current_rule.append(line.strip())
+            current_rule.append(cleaned_line.strip())
     
     # Save the last rule if exists
     if current_rule:
         rule_text = ' '.join(current_rule).strip()
-        rule_text = re.sub(r'\\\s*(?=["\s])', '', rule_text)
         rule_text = re.sub(r'\\,', ',', rule_text)
-        rule_text = re.sub(r'\s+', ' ', rule_text).strip()
+        rule_text = re.sub(r'\s+(?=(?:[^"]*"[^"]*")*[^"]*$)', ' ', rule_text).strip()
         processed_rules.append(rule_text)
         logging.debug(f"Processed final rule: '{rule_text}'")
     
